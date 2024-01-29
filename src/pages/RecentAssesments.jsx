@@ -17,7 +17,7 @@ export default function RecenetAssessmentsChart(props) {
             <Typography sx={recentAssessmentsText}>
                 Recent Assessments
             </Typography>
-            {/* <AttemptedUnattempted /> */}
+            <AttemptedUnattempted />
             <Typography sx={avgPerformanceText}>
                 Avg.performance
             </Typography>

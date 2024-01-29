@@ -30,6 +30,7 @@ export const leftStack = {
 }
 
 export const leftItem1 = {
+  position: 'relative',
   width: '897px',
   height: '352px',
   borderRadius: '10px',
@@ -39,6 +40,7 @@ export const leftItem1 = {
 }
 
 export const leftItem2 = {
+  position: 'relative',
   padding: '0px',
   margin: '0px',
   width: '897px',
@@ -62,20 +64,21 @@ export const rightItemStack1 = {
 export const rightItem1 = {
   margin: '0px',
   width: '299px',
-  height: '48px',
-  marginBottom: '30px',
+  marginBottom: '20px',
   borderRadius: '10px',
   background: '#FFF',
   padding: '10px',
+  height: '68px',
 }
 
 export const rightItem2 = {
+  position: 'relative',
   padding: '0px',
   margin: '0px',
   bgcolor: 'blue',
   width: '319px',
   height: '236px',
-  marginBottom: '30px',
+  marginBottom: '20px',
   borderRadius: '10px',
   border: '1px solid #F4F6F8',
   background: '#FFF',
@@ -83,12 +86,12 @@ export const rightItem2 = {
 }
 
 export const rightItem3 = {
-  padding: '0px',
   margin: '0px',
   width: '319px',
   height: '466px',
   borderRadius: '10px',
   background: '#FFF',
+  padding: '0px',
 }
 
 export const drawerStyles = {

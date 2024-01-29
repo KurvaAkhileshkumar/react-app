@@ -12,8 +12,8 @@ export default function UserProfile({ name, email }) {
             <Stack direction={'row'}>
                 <MyDiv
                     style={{
-                        width: '28px',
-                        height: '28px',
+                        width: '38px',
+                        height: '38px',
                         borderRadius: '4px',
                     }}
                 >

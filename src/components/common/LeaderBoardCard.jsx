@@ -9,8 +9,7 @@ const LeaderBoardCard = ({ data, width = '100%', height = '100%', isDrawer }) =>
 
     return (
         <CustomCard width={width} height={height}>
-            <Stack gap={'16px'}>
-                {/* <Stack direction={'row'} alignItems={'center'} gap={'8px'}>
+            {/* <Stack direction={'row'} alignItems={'center'} gap={'8px'}>
                     <img src={crownSvg} width={20} height={20} alt='crownSvg'></img>
                     <Typography component={'p'} sx={{
                         fontFamily: 'Poppins-SemiBold',
@@ -18,20 +17,19 @@ const LeaderBoardCard = ({ data, width = '100%', height = '100%', isDrawer }) =>
                         color: 'grey.900'
                     }}>Leader Board</Typography>
                 </Stack> */}
-                {data ? <Stack
-                    gap={'11px'}>
-                    {data?.map((item, index) => {
-                        const noOfItemInTheLeaderBoard = isDrawer ? data.length : 6
-                        if (index < noOfItemInTheLeaderBoard) {
-                            return <LeaderRanking key={index + 1} data={item} value={item.rank} index={index + 1} />
-                        }
+            {data ? <Stack
+                gap={'10px'}>
+                {data?.map((item, index) => {
+                    const noOfItemInTheLeaderBoard = isDrawer ? data.length : 6
+                    if (index < noOfItemInTheLeaderBoard) {
+                        return <LeaderRanking key={index + 1} data={item} value={item.rank} index={index + 1} />
                     }
-                    )}
-                </Stack> :
-                    <LeaderPlaceHolder />
                 }
+                )}
+            </Stack> :
+                <LeaderPlaceHolder />
+            }
 
-            </Stack>
         </CustomCard>
     )
 }

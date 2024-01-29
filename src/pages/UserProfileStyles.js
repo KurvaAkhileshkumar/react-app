@@ -10,6 +10,7 @@ export const userProfileText = {
   lineHeight: pxToRem(28),
   textAlign: 'start',
   marginBottom: '12px',
+  fontWeight: 500,
 }
 
 export const calendarText = {

@@ -24,7 +24,7 @@ const LeaderRanking = ({ data, index, value }) => {
           color: (theme) => theme.palette.grey[900]
         }}>{index}</Typography> */}
         <Stack direction={'row'} alignItems={'center'} gap={'16px'}>
-          <Avatar alt="Avatar" sx={{ width: 30, height: 30 }} src={data.profile_pic} />
+          <Avatar alt="Avatar" sx={{ width: 30, height: 30, margin: '8px 0px 7px 8px' }} src={data.profile_pic} />
           <Typography component={'p'} sx={{
             fontFamily: poppinsFont.fontFamily,
             fontSize: pxToRem(16),
@@ -75,6 +75,7 @@ const LeaderRanking = ({ data, index, value }) => {
         <Typography component={'p'} sx={{
           width: '26px',
           height: '26px',
+          margin: '20px 19px 20px 0px',
           paddingLeft: '6px',
           fontFamily: poppinsFont.fontFamily,
           fontSize: pxToRem(16),

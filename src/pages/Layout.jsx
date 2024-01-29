@@ -64,7 +64,7 @@ export default function Layout() {
             setCoursesData(resData.courses)
         })
     }, [])
-    // console.log(courses)
+
     return (
         <>
 
@@ -127,15 +127,18 @@ export default function Layout() {
                         </MyDiv>
 
                         {/* LeaderBoardText */}
-                        <Stack direction={'row'} gap={'160px'} width={'319px'}>
+                        <Stack direction={'row'} width={'319px'} position={'relative'}>
                             <Typography sx={calendarText}>
                                 LeaderBoard
                             </Typography>
                             <ChevronRightIcon
                                 sx={{
+                                    position: 'absolute',
+                                    right: '20px',
                                     cursor: 'pointer',
                                     fontSize: '24px',
-                                    marginTop: '4px'
+                                    marginTop: '4px',
+
                                 }}
                                 onClick={toggleDrawer('right', true)}
                             />

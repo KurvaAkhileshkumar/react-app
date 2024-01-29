@@ -29,7 +29,7 @@ export const avgPerformanceText = {
 export const attemptedUnattemptedText = {
   position: 'relative',
   top: '-40px',
-  left: '-150px',
+  left: '0px',
   color: '#161C24',
   fontFamily: poppinsFont.fontFamily,
   fontSize: pxToRem(14),
