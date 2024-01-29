@@ -1,0 +1,189 @@
+{
+  "status": 200,
+  "message": "Successfully fetched the data",
+  "data": {
+    "id": 2,
+    "name": "Basics of UI/UX",
+    "tag": "DESIGN",
+    "image": null,
+    "percentage": 63,
+    "description": "Learn the fundamental principles of user interface (UI) design, including layout, color, and typography, to create visually appealing and effective designs.\nUnderstand the basics of user experience (UX) design, focusing on enhancing user satisfaction by improving the usability and accessibility of digital products.\nExplore the importance of user research and usability testing in the UI/UX design process, gaining insights into user behavior and preferences.\nDive into the principles of interaction design, mastering the art of creating intuitive and engaging user interactions through navigation, feedback, and animation.\nGain hands-on experience with industry-standard design tools and software, honing your skills in wireframing, prototyping, and mockup creation for web and mobile applications.",
+    "continue_reading": [
+      {
+        "id": 130,
+        "name": "Color Theory and Visual Design",
+        "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf",
+        "file_name": "Color Theory and Visual Design PDF"
+      },
+      {
+        "id": 131,
+        "name": "User Research",
+        "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf",
+        "file_name": "User Research PDF"
+      },
+      {
+        "id": 132,
+        "name": "Wireframing and Prototyping",
+        "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf",
+        "file_name": "Wireframing and Prototyping PDF"
+      }
+    ],
+    "units": [
+      {
+        "unit_id": 9900,
+        "unit_name": "Unit I",
+        "topics": [
+          {
+            "topic_id": 1101,
+            "topic_name": "Introduction to UI/UX Design",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+          },
+          {
+            "topic_id": 1102,
+            "topic_name": "Principles of Visual Design",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+          },
+          {
+            "topic_id": 1103,
+            "topic_name": "Historical Perspectives in Machine Learning",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+          },
+          {
+            "topic_id": 1104,
+            "topic_name": "Key Concepts in ML",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+          },
+          {
+            "topic_id": 1105,
+            "topic_name": "Human-Computer Interaction (HCI) Basics",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+          }
+        ]
+      },
+      {
+        "unit_id": 9910,
+        "unit_name": "Unit II",
+        "topics": [
+          {
+            "topic_id": 1010,
+            "topic_name": "Linear Algebra for ML",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+          },
+          {
+            "topic_id": 1011,
+            "topic_name": "Design Thinking Process",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+          },
+          {
+            "topic_id": 1013,
+            "topic_name": "Probability and Statistics in ML",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+          },
+          {
+            "topic_id": 1015,
+            "topic_name": "Creating User Personas",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+          },
+          {
+            "topic_id": 1018,
+            "topic_name": "Wireframing and Prototyping",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+          }
+        ]
+      },
+      {
+        "unit_id": 9920,
+        "unit_name": "Unit III",
+        "topics": [
+          {
+            "topic_id": 1020,
+            "topic_name": "Typography and Font Selection",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+          },
+          {
+            "topic_id": 1021,
+            "topic_name": "Handling Missing Data",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+          },
+          {
+            "topic_id": 1023,
+            "topic_name": "Visual Hierarchy and Interaction Design",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+          },
+          {
+            "topic_id": 1025,
+            "topic_name": "Data Normalization and Standardization",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+          },
+          {
+            "topic_id": 1028,
+            "topic_name": "Responsive Design Principles",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+          }
+        ]
+      },
+      {
+        "unit_id": 9930,
+        "unit_name": "Unit IV",
+        "topics": [
+          {
+            "topic_id": 1030,
+            "topic_name": "Microinteractions in UI",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+          },
+          {
+            "topic_id": 1031,
+            "topic_name": "Cross-Validation Techniques",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+          },
+          {
+            "topic_id": 1033,
+            "topic_name": "Navigation Design",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+          },
+          {
+            "topic_id": 1035,
+            "topic_name": "Comparing ML Models and Algorithms",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+          },
+          {
+            "topic_id": 1038,
+            "topic_name": "Usability Testing Techniques",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+          }
+        ]
+      },
+      {
+        "unit_id": 9940,
+        "unit_name": "Unit V",
+        "topics": [
+          {
+            "topic_id": 1040,
+            "topic_name": "Introduction to Supervised Learning",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+          },
+          {
+            "topic_id": 1041,
+            "topic_name": "Career Paths and Future Trends in UI/UX Design",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+          },
+          {
+            "topic_id": 1043,
+            "topic_name": "Regression Algorithms",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+          },
+          {
+            "topic_id": 1045,
+            "topic_name": "Emerging Technologies in UX",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+          },
+          {
+            "topic_id": 1048,
+            "topic_name": "Design Systems and Style Guides",
+            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+          }
+        ]
+      }
+    ]
+  }
+}
