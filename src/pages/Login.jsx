@@ -1,45 +1,35 @@
-import { Stack, Typography } from "@mui/material";
+import { Stack, Typography, Grid } from "@mui/material";
 import { poppinsFont, pxToRem } from "../theme/typography";
 import palette from "../theme/palette";
 import Input from '@mui/material/Input';
+import loginImage from "../assets/loginimg.svg";
+import { MyDiv } from "../components/myStyledComponents/styledComponents.jsx";
+import { leftContent, leftHeader, loginHelper, studentPortal, welcome } from "./LoginStlyes.js";
+
 export default function Login() {
     const ariaLabel = { 'aria-label': 'description' };
     return (
         <>
-            <Stack direction={'row'}>
-                <Stack>
-
-                </Stack>
-                <Stack direction={'column'} marginLeft={'683px'} marginTop={'204px'} marginBottom={'201px'} marginRight={'151px'}>
-                    <Stack gap={'20px'}>
-                        <Typography sx={
-                            {
-                                fontFamily: poppinsFont.fontFamily,
-                                fontSize: pxToRem(48),
-                                fontStyle: 'normal',
-                                fontWeight: '700',
-                                lineHeight: 'normal',
-                                color: palette.grey[900],
-                                textAlign: 'start'
-                            }
-                        }>Login</Typography>
-                        <Typography sx={
-                            {
-                                fontFamily: poppinsFont.fontFamily,
-                                fontSize: pxToRem(16),
-                                fontStyle: 'normal',
-                                fontWeight: '500',
-                                lineHeight: 'normal',
-                                color: palette.grey[900],
-                                textAlign: 'start'
-                            }
-                        }>Enter your account details</Typography>
-                    </Stack>
-                    <Stack marginTop={'48px'}>
-                        <Input placeholder="Placeholder" inputProps={ariaLabel} />
-                    </Stack>
-                </Stack>
-            </Stack>
+            <Grid container sx={{ maxHeight: '100%', height: "768px" }}>
+                <Grid
+                    md={6}
+                    item
+                    display="flex"
+                    justifyContent="center"
+                    backgroundColor="#0B58F5"
+                >
+                    <MyDiv sx={leftContent}>
+                        <MyDiv sx={leftHeader}>
+                            <span sx={welcome}>Welcome to</span>
+                            <span sx={studentPortal}>Student Portal</span>
+                            <span sx={loginHelper}>Login to access your account</span>
+                        </MyDiv>
+                        <MyDiv>
+                            <img sx={loginImage} src={loginImage} alt="" />
+                        </MyDiv>
+                    </MyDiv>
+                </Grid>
+            </Grid>
         </>
     );
 }

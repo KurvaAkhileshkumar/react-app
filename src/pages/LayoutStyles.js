@@ -41,12 +41,11 @@ export const leftItem1 = {
 export const leftItem2 = {
   padding: '0px',
   margin: '0px',
-  bgcolor: 'yellow',
   width: '897px',
   height: '535px',
   borderRadius: '10px',
   border: '1px solid #F4F6F8',
-  // background: '#FFF',
+  background: '#FFF',
   boxShadow: '10px 10px 32px 0px rgba(22, 22, 22, 0.04)',
 }
 

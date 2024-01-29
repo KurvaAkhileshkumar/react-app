@@ -5,8 +5,6 @@ import MuiCustomTableHeaderCellWithSortandSelect from './MuiCustomTableHeaderCel
 
 const MuiCustomTableHeaderRowWithSortandSelect = ({
   headerArray,
-  sortHandler,
-  selectHandler,
 }) => {
 
   const theme = useTheme()
@@ -24,11 +22,6 @@ const MuiCustomTableHeaderRowWithSortandSelect = ({
             key={i}
             itemData={header}
             index={i}
-            isSortable={header.isSortable}
-            isSelectable={header.isSelectable}
-            arrayLength={headerArray.length}
-            sortHandler={sortHandler}
-            selectHandler={selectHandler}
           />
         )
       })}

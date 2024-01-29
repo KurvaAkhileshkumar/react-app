@@ -1,5 +1,4 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import {
   TableRow,
   TableCell,
@@ -52,13 +51,13 @@ const MuiCustomStudentTableRow = ({ stu, viewStudentResult }) => {
         sx={{ border: 'none', borderRadius: '6px 0 0 6px' }}
       >
         <Typography variant='body1' sx={{ color: theme.palette.grey[900] }}>
-          {stu.name}
+          {stu.subject}
         </Typography>
       </TableCell>
       {(
         <TableCell scope='row' sx={{ border: 'none' }}>
           <Typography variant='body1' sx={{ color: theme.palette.grey[900] }}>
-            {stu.class_section_name}
+            {stu.semester}
           </Typography>
         </TableCell>
       )}
@@ -94,17 +93,7 @@ const MuiCustomStudentTableRow = ({ stu, viewStudentResult }) => {
       </TableCell>
       <TableCell scope='row' sx={{ border: 'none' }}>
         <Typography variant='body1' sx={{ color: theme.palette.grey[900] }}>
-          {stu.effective_time_utilization}%
-        </Typography>
-      </TableCell>
-      <TableCell scope='row' sx={{ border: 'none' }}>
-        <Typography variant='body1' sx={{ color: theme.palette.grey[900] }}>
           {getInternetQuality(stu.internet_speed)}
-        </Typography>
-      </TableCell>
-      <TableCell scope='row' sx={{ border: 'none' }}>
-        <Typography variant='body1' sx={{ color: theme.palette.grey[900] }}>
-          {stu.submitted_at}
         </Typography>
       </TableCell>
       <TableCell
@@ -119,30 +108,6 @@ const MuiCustomStudentTableRow = ({ stu, viewStudentResult }) => {
           <Typography variant='body3' sx={{ color: theme.palette.grey[900] }}>
             {stu.percentage_scored}%
           </Typography>
-          <IconButton
-            aria-label='delete'
-            onClick={() => {
-              viewStudentResult(stu)
-            }}
-            sx={{
-              height: '24px',
-              width: '24px',
-              background: theme.palette.grey[500],
-              borderRadius: '6px',
-              '&:hover': {
-                background: theme.palette.grey[900], // Set your desired background color
-              },
-            }}
-          >
-            <ArrowUpward
-              color={theme.palette.grey[100]}
-              sx={{
-                transform: 'rotate(90deg)',
-                fontSize: '20px',
-                fontWeight: 600,
-              }}
-            />
-          </IconButton>
         </Stack>
       </TableCell>
     </TableRow>

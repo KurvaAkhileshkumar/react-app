@@ -64,7 +64,7 @@ export default function Layout() {
             setCoursesData(resData.courses)
         })
     }, [])
-    console.log(courses)
+    // console.log(courses)
     return (
         <>
 

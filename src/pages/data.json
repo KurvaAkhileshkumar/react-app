@@ -1,189 +1,906 @@
 {
   "status": 200,
   "message": "Successfully fetched the data",
-  "data": {
-    "id": 2,
-    "name": "Basics of UI/UX",
-    "tag": "DESIGN",
-    "image": null,
-    "percentage": 63,
-    "description": "Learn the fundamental principles of user interface (UI) design, including layout, color, and typography, to create visually appealing and effective designs.\nUnderstand the basics of user experience (UX) design, focusing on enhancing user satisfaction by improving the usability and accessibility of digital products.\nExplore the importance of user research and usability testing in the UI/UX design process, gaining insights into user behavior and preferences.\nDive into the principles of interaction design, mastering the art of creating intuitive and engaging user interactions through navigation, feedback, and animation.\nGain hands-on experience with industry-standard design tools and software, honing your skills in wireframing, prototyping, and mockup creation for web and mobile applications.",
-    "continue_reading": [
-      {
-        "id": 130,
-        "name": "Color Theory and Visual Design",
-        "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf",
-        "file_name": "Color Theory and Visual Design PDF"
-      },
-      {
-        "id": 131,
-        "name": "User Research",
-        "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf",
-        "file_name": "User Research PDF"
-      },
-      {
-        "id": 132,
-        "name": "Wireframing and Prototyping",
-        "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf",
-        "file_name": "Wireframing and Prototyping PDF"
-      }
-    ],
-    "units": [
-      {
-        "unit_id": 9900,
-        "unit_name": "Unit I",
-        "topics": [
-          {
-            "topic_id": 1101,
-            "topic_name": "Introduction to UI/UX Design",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
-          },
-          {
-            "topic_id": 1102,
-            "topic_name": "Principles of Visual Design",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
-          },
-          {
-            "topic_id": 1103,
-            "topic_name": "Historical Perspectives in Machine Learning",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
-          },
-          {
-            "topic_id": 1104,
-            "topic_name": "Key Concepts in ML",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
-          },
-          {
-            "topic_id": 1105,
-            "topic_name": "Human-Computer Interaction (HCI) Basics",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
-          }
-        ]
-      },
-      {
-        "unit_id": 9910,
-        "unit_name": "Unit II",
-        "topics": [
-          {
-            "topic_id": 1010,
-            "topic_name": "Linear Algebra for ML",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
-          },
-          {
-            "topic_id": 1011,
-            "topic_name": "Design Thinking Process",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
-          },
-          {
-            "topic_id": 1013,
-            "topic_name": "Probability and Statistics in ML",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
-          },
-          {
-            "topic_id": 1015,
-            "topic_name": "Creating User Personas",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
-          },
-          {
-            "topic_id": 1018,
-            "topic_name": "Wireframing and Prototyping",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
-          }
-        ]
-      },
-      {
-        "unit_id": 9920,
-        "unit_name": "Unit III",
-        "topics": [
-          {
-            "topic_id": 1020,
-            "topic_name": "Typography and Font Selection",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
-          },
-          {
-            "topic_id": 1021,
-            "topic_name": "Handling Missing Data",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
-          },
-          {
-            "topic_id": 1023,
-            "topic_name": "Visual Hierarchy and Interaction Design",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
-          },
-          {
-            "topic_id": 1025,
-            "topic_name": "Data Normalization and Standardization",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
-          },
-          {
-            "topic_id": 1028,
-            "topic_name": "Responsive Design Principles",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
-          }
-        ]
-      },
-      {
-        "unit_id": 9930,
-        "unit_name": "Unit IV",
-        "topics": [
-          {
-            "topic_id": 1030,
-            "topic_name": "Microinteractions in UI",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
-          },
-          {
-            "topic_id": 1031,
-            "topic_name": "Cross-Validation Techniques",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
-          },
-          {
-            "topic_id": 1033,
-            "topic_name": "Navigation Design",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
-          },
-          {
-            "topic_id": 1035,
-            "topic_name": "Comparing ML Models and Algorithms",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
-          },
-          {
-            "topic_id": 1038,
-            "topic_name": "Usability Testing Techniques",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
-          }
-        ]
-      },
-      {
-        "unit_id": 9940,
-        "unit_name": "Unit V",
-        "topics": [
-          {
-            "topic_id": 1040,
-            "topic_name": "Introduction to Supervised Learning",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
-          },
-          {
-            "topic_id": 1041,
-            "topic_name": "Career Paths and Future Trends in UI/UX Design",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
-          },
-          {
-            "topic_id": 1043,
-            "topic_name": "Regression Algorithms",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
-          },
-          {
-            "topic_id": 1045,
-            "topic_name": "Emerging Technologies in UX",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
-          },
-          {
-            "topic_id": 1048,
-            "topic_name": "Design Systems and Style Guides",
-            "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
-          }
-        ]
-      }
-    ]
-  }
+  "assessments": [
+    {
+      "subject": "Subject 01",
+      "semester": 1,
+      "total_timespent": null,
+      "submission_type": null,
+      "internet_speed": null,
+      "percentage_scored": null,
+      "attempted": 0
+    },
+    {
+      "subject": "Subject 02",
+      "semester": 2,
+      "total_timespent": 72,
+      "submission_type": 3,
+      "internet_speed": 2,
+      "percentage_scored": 77,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 03",
+      "semester": 2,
+      "total_timespent": 5,
+      "submission_type": 4,
+      "internet_speed": 5,
+      "percentage_scored": 82,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 04",
+      "semester": 1,
+      "total_timespent": 10,
+      "submission_type": 4,
+      "internet_speed": 6,
+      "percentage_scored": 56,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 05",
+      "semester": 2,
+      "total_timespent": 76,
+      "submission_type": 4,
+      "internet_speed": 3,
+      "percentage_scored": 36,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 06",
+      "semester": 3,
+      "total_timespent": 65,
+      "submission_type": 4,
+      "internet_speed": 3,
+      "percentage_scored": 83,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 07",
+      "semester": 2,
+      "total_timespent": 92,
+      "submission_type": 3,
+      "internet_speed": 2,
+      "percentage_scored": 33,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 08",
+      "semester": 3,
+      "total_timespent": 55,
+      "submission_type": 2,
+      "internet_speed": 10,
+      "percentage_scored": 72,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 09",
+      "semester": 1,
+      "total_timespent": 86,
+      "submission_type": 1,
+      "internet_speed": 6,
+      "percentage_scored": 13,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 10",
+      "semester": 2,
+      "total_timespent": 38,
+      "submission_type": 2,
+      "internet_speed": 9,
+      "percentage_scored": 15,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 11",
+      "semester": 2,
+      "total_timespent": 55,
+      "submission_type": 4,
+      "internet_speed": 4,
+      "percentage_scored": 88,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 12",
+      "semester": 1,
+      "total_timespent": 58,
+      "submission_type": 2,
+      "internet_speed": 4,
+      "percentage_scored": 85,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 13",
+      "semester": 3,
+      "total_timespent": null,
+      "submission_type": null,
+      "internet_speed": null,
+      "percentage_scored": null,
+      "attempted": 0
+    },
+    {
+      "subject": "Subject 14",
+      "semester": 1,
+      "total_timespent": 35,
+      "submission_type": 2,
+      "internet_speed": 2,
+      "percentage_scored": 28,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 15",
+      "semester": 2,
+      "total_timespent": 58,
+      "submission_type": 1,
+      "internet_speed": 5,
+      "percentage_scored": 55,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 16",
+      "semester": 3,
+      "total_timespent": 33,
+      "submission_type": 1,
+      "internet_speed": 6,
+      "percentage_scored": 93,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 17",
+      "semester": 2,
+      "total_timespent": 60,
+      "submission_type": 2,
+      "internet_speed": 5,
+      "percentage_scored": 14,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 18",
+      "semester": 3,
+      "total_timespent": 89,
+      "submission_type": 3,
+      "internet_speed": 2,
+      "percentage_scored": 87,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 19",
+      "semester": 3,
+      "total_timespent": 46,
+      "submission_type": 4,
+      "internet_speed": 7,
+      "percentage_scored": 38,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 20",
+      "semester": 3,
+      "total_timespent": 13,
+      "submission_type": 3,
+      "internet_speed": 1,
+      "percentage_scored": 100,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 21",
+      "semester": 3,
+      "total_timespent": 25,
+      "submission_type": 3,
+      "internet_speed": 5,
+      "percentage_scored": 90,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 22",
+      "semester": 1,
+      "total_timespent": 71,
+      "submission_type": 1,
+      "internet_speed": 3,
+      "percentage_scored": 88,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 23",
+      "semester": 3,
+      "total_timespent": 80,
+      "submission_type": 1,
+      "internet_speed": 10,
+      "percentage_scored": 31,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 24",
+      "semester": 3,
+      "total_timespent": 41,
+      "submission_type": 2,
+      "internet_speed": 9,
+      "percentage_scored": 58,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 25",
+      "semester": 2,
+      "total_timespent": 8,
+      "submission_type": 1,
+      "internet_speed": 1,
+      "percentage_scored": 5,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 26",
+      "semester": 1,
+      "total_timespent": 46,
+      "submission_type": 3,
+      "internet_speed": 10,
+      "percentage_scored": 25,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 27",
+      "semester": 1,
+      "total_timespent": 45,
+      "submission_type": 3,
+      "internet_speed": 9,
+      "percentage_scored": 7,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 28",
+      "semester": 2,
+      "total_timespent": 48,
+      "submission_type": 4,
+      "internet_speed": 7,
+      "percentage_scored": 61,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 29",
+      "semester": 2,
+      "total_timespent": 81,
+      "submission_type": 4,
+      "internet_speed": 2,
+      "percentage_scored": 89,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 30",
+      "semester": 3,
+      "total_timespent": 70,
+      "submission_type": 1,
+      "internet_speed": 8,
+      "percentage_scored": 45,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 31",
+      "semester": 3,
+      "total_timespent": 49,
+      "submission_type": 2,
+      "internet_speed": 7,
+      "percentage_scored": 28,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 32",
+      "semester": 1,
+      "total_timespent": 13,
+      "submission_type": 1,
+      "internet_speed": 10,
+      "percentage_scored": 21,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 33",
+      "semester": 1,
+      "total_timespent": 57,
+      "submission_type": 3,
+      "internet_speed": 3,
+      "percentage_scored": 3,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 34",
+      "semester": 2,
+      "total_timespent": 81,
+      "submission_type": 2,
+      "internet_speed": 2,
+      "percentage_scored": 84,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 35",
+      "semester": 2,
+      "total_timespent": 46,
+      "submission_type": 3,
+      "internet_speed": 4,
+      "percentage_scored": 19,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 36",
+      "semester": 2,
+      "total_timespent": 78,
+      "submission_type": 1,
+      "internet_speed": 8,
+      "percentage_scored": 93,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 37",
+      "semester": 2,
+      "total_timespent": 89,
+      "submission_type": 3,
+      "internet_speed": 7,
+      "percentage_scored": 39,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 38",
+      "semester": 3,
+      "total_timespent": 61,
+      "submission_type": 3,
+      "internet_speed": 4,
+      "percentage_scored": 60,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 39",
+      "semester": 3,
+      "total_timespent": 28,
+      "submission_type": 2,
+      "internet_speed": 9,
+      "percentage_scored": 9,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 40",
+      "semester": 1,
+      "total_timespent": 66,
+      "submission_type": 3,
+      "internet_speed": 5,
+      "percentage_scored": 65,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 41",
+      "semester": 1,
+      "total_timespent": 98,
+      "submission_type": 3,
+      "internet_speed": 7,
+      "percentage_scored": 45,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 42",
+      "semester": 2,
+      "total_timespent": 99,
+      "submission_type": 4,
+      "internet_speed": 2,
+      "percentage_scored": 54,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 43",
+      "semester": 1,
+      "total_timespent": 49,
+      "submission_type": 2,
+      "internet_speed": 6,
+      "percentage_scored": 5,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 44",
+      "semester": 2,
+      "total_timespent": 43,
+      "submission_type": 3,
+      "internet_speed": 8,
+      "percentage_scored": 91,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 45",
+      "semester": 1,
+      "total_timespent": 43,
+      "submission_type": 2,
+      "internet_speed": 7,
+      "percentage_scored": 5,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 46",
+      "semester": 3,
+      "total_timespent": 0,
+      "submission_type": 4,
+      "internet_speed": 2,
+      "percentage_scored": 61,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 47",
+      "semester": 1,
+      "total_timespent": null,
+      "submission_type": null,
+      "internet_speed": null,
+      "percentage_scored": null,
+      "attempted": 0
+    },
+    {
+      "subject": "Subject 48",
+      "semester": 3,
+      "total_timespent": 7,
+      "submission_type": 4,
+      "internet_speed": 9,
+      "percentage_scored": 40,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 49",
+      "semester": 3,
+      "total_timespent": 69,
+      "submission_type": 2,
+      "internet_speed": 8,
+      "percentage_scored": 10,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 50",
+      "semester": 1,
+      "total_timespent": 3,
+      "submission_type": 1,
+      "internet_speed": 1,
+      "percentage_scored": 69,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 51",
+      "semester": 3,
+      "total_timespent": 96,
+      "submission_type": 2,
+      "internet_speed": 4,
+      "percentage_scored": 99,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 52",
+      "semester": 3,
+      "total_timespent": 47,
+      "submission_type": 4,
+      "internet_speed": 4,
+      "percentage_scored": 67,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 53",
+      "semester": 1,
+      "total_timespent": 86,
+      "submission_type": 4,
+      "internet_speed": 5,
+      "percentage_scored": 85,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 54",
+      "semester": 2,
+      "total_timespent": 82,
+      "submission_type": 3,
+      "internet_speed": 6,
+      "percentage_scored": 80,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 55",
+      "semester": 2,
+      "total_timespent": 2,
+      "submission_type": 4,
+      "internet_speed": 6,
+      "percentage_scored": 36,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 56",
+      "semester": 3,
+      "total_timespent": 94,
+      "submission_type": 3,
+      "internet_speed": 5,
+      "percentage_scored": 29,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 57",
+      "semester": 1,
+      "total_timespent": null,
+      "submission_type": null,
+      "internet_speed": null,
+      "percentage_scored": null,
+      "attempted": 0
+    },
+    {
+      "subject": "Subject 58",
+      "semester": 3,
+      "total_timespent": 32,
+      "submission_type": 2,
+      "internet_speed": 7,
+      "percentage_scored": 34,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 59",
+      "semester": 2,
+      "total_timespent": null,
+      "submission_type": null,
+      "internet_speed": null,
+      "percentage_scored": null,
+      "attempted": 0
+    },
+    {
+      "subject": "Subject 60",
+      "semester": 1,
+      "total_timespent": 11,
+      "submission_type": 1,
+      "internet_speed": 8,
+      "percentage_scored": 34,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 61",
+      "semester": 2,
+      "total_timespent": 66,
+      "submission_type": 4,
+      "internet_speed": 4,
+      "percentage_scored": 37,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 62",
+      "semester": 1,
+      "total_timespent": 99,
+      "submission_type": 4,
+      "internet_speed": 9,
+      "percentage_scored": 85,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 63",
+      "semester": 1,
+      "total_timespent": 19,
+      "submission_type": 1,
+      "internet_speed": 5,
+      "percentage_scored": 18,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 64",
+      "semester": 2,
+      "total_timespent": 34,
+      "submission_type": 1,
+      "internet_speed": 8,
+      "percentage_scored": 88,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 65",
+      "semester": 3,
+      "total_timespent": 39,
+      "submission_type": 2,
+      "internet_speed": 2,
+      "percentage_scored": 39,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 66",
+      "semester": 3,
+      "total_timespent": 11,
+      "submission_type": 2,
+      "internet_speed": 3,
+      "percentage_scored": 50,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 67",
+      "semester": 1,
+      "total_timespent": null,
+      "submission_type": null,
+      "internet_speed": null,
+      "percentage_scored": null,
+      "attempted": 0
+    },
+    {
+      "subject": "Subject 68",
+      "semester": 2,
+      "total_timespent": 93,
+      "submission_type": 1,
+      "internet_speed": 2,
+      "percentage_scored": 22,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 69",
+      "semester": 2,
+      "total_timespent": 89,
+      "submission_type": 2,
+      "internet_speed": 2,
+      "percentage_scored": 19,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 70",
+      "semester": 1,
+      "total_timespent": 31,
+      "submission_type": 3,
+      "internet_speed": 8,
+      "percentage_scored": 75,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 71",
+      "semester": 1,
+      "total_timespent": 97,
+      "submission_type": 2,
+      "internet_speed": 5,
+      "percentage_scored": 9,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 72",
+      "semester": 1,
+      "total_timespent": 37,
+      "submission_type": 4,
+      "internet_speed": 1,
+      "percentage_scored": 76,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 73",
+      "semester": 3,
+      "total_timespent": null,
+      "submission_type": null,
+      "internet_speed": null,
+      "percentage_scored": null,
+      "attempted": 0
+    },
+    {
+      "subject": "Subject 74",
+      "semester": 1,
+      "total_timespent": 4,
+      "submission_type": 3,
+      "internet_speed": 1,
+      "percentage_scored": 54,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 75",
+      "semester": 1,
+      "total_timespent": null,
+      "submission_type": null,
+      "internet_speed": null,
+      "percentage_scored": null,
+      "attempted": 0
+    },
+    {
+      "subject": "Subject 76",
+      "semester": 3,
+      "total_timespent": 43,
+      "submission_type": 3,
+      "internet_speed": 8,
+      "percentage_scored": 16,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 77",
+      "semester": 1,
+      "total_timespent": null,
+      "submission_type": null,
+      "internet_speed": null,
+      "percentage_scored": null,
+      "attempted": 0
+    },
+    {
+      "subject": "Subject 78",
+      "semester": 2,
+      "total_timespent": 2,
+      "submission_type": 4,
+      "internet_speed": 3,
+      "percentage_scored": 60,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 79",
+      "semester": 3,
+      "total_timespent": null,
+      "submission_type": null,
+      "internet_speed": null,
+      "percentage_scored": null,
+      "attempted": 0
+    },
+    {
+      "subject": "Subject 80",
+      "semester": 2,
+      "total_timespent": 17,
+      "submission_type": 3,
+      "internet_speed": 9,
+      "percentage_scored": 9,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 81",
+      "semester": 2,
+      "total_timespent": 16,
+      "submission_type": 3,
+      "internet_speed": 6,
+      "percentage_scored": 39,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 82",
+      "semester": 1,
+      "total_timespent": null,
+      "submission_type": null,
+      "internet_speed": null,
+      "percentage_scored": null,
+      "attempted": 0
+    },
+    {
+      "subject": "Subject 83",
+      "semester": 2,
+      "total_timespent": 67,
+      "submission_type": 2,
+      "internet_speed": 5,
+      "percentage_scored": 34,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 84",
+      "semester": 1,
+      "total_timespent": 25,
+      "submission_type": 1,
+      "internet_speed": 5,
+      "percentage_scored": 3,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 85",
+      "semester": 2,
+      "total_timespent": null,
+      "submission_type": null,
+      "internet_speed": null,
+      "percentage_scored": null,
+      "attempted": 0
+    },
+    {
+      "subject": "Subject 86",
+      "semester": 3,
+      "total_timespent": 95,
+      "submission_type": 1,
+      "internet_speed": 6,
+      "percentage_scored": 92,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 87",
+      "semester": 3,
+      "total_timespent": null,
+      "submission_type": null,
+      "internet_speed": null,
+      "percentage_scored": null,
+      "attempted": 0
+    },
+    {
+      "subject": "Subject 88",
+      "semester": 3,
+      "total_timespent": 32,
+      "submission_type": 3,
+      "internet_speed": 7,
+      "percentage_scored": 90,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 89",
+      "semester": 3,
+      "total_timespent": 69,
+      "submission_type": 3,
+      "internet_speed": 4,
+      "percentage_scored": 78,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 90",
+      "semester": 3,
+      "total_timespent": 69,
+      "submission_type": 3,
+      "internet_speed": 2,
+      "percentage_scored": 18,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 91",
+      "semester": 1,
+      "total_timespent": 38,
+      "submission_type": 2,
+      "internet_speed": 3,
+      "percentage_scored": 21,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 92",
+      "semester": 2,
+      "total_timespent": 73,
+      "submission_type": 4,
+      "internet_speed": 1,
+      "percentage_scored": 65,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 93",
+      "semester": 3,
+      "total_timespent": 80,
+      "submission_type": 4,
+      "internet_speed": 2,
+      "percentage_scored": 53,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 94",
+      "semester": 3,
+      "total_timespent": null,
+      "submission_type": null,
+      "internet_speed": null,
+      "percentage_scored": null,
+      "attempted": 0
+    },
+    {
+      "subject": "Subject 95",
+      "semester": 3,
+      "total_timespent": 30,
+      "submission_type": 2,
+      "internet_speed": 4,
+      "percentage_scored": 49,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 96",
+      "semester": 3,
+      "total_timespent": 88,
+      "submission_type": 1,
+      "internet_speed": 6,
+      "percentage_scored": 28,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 97",
+      "semester": 1,
+      "total_timespent": 15,
+      "submission_type": 2,
+      "internet_speed": 6,
+      "percentage_scored": 83,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 98",
+      "semester": 2,
+      "total_timespent": null,
+      "submission_type": null,
+      "internet_speed": null,
+      "percentage_scored": null,
+      "attempted": 0
+    },
+    {
+      "subject": "Subject 99",
+      "semester": 3,
+      "total_timespent": 16,
+      "submission_type": 1,
+      "internet_speed": 3,
+      "percentage_scored": 35,
+      "attempted": 1
+    },
+    {
+      "subject": "Subject 100",
+      "semester": 3,
+      "total_timespent": 92,
+      "submission_type": 1,
+      "internet_speed": 6,
+      "percentage_scored": 77,
+      "attempted": 1
+    }
+  ]
 }
