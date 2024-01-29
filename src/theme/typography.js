@@ -35,6 +35,7 @@ const FONT_PRIMARY = [
 const FONT_PRIMARY_REGULAR = ['Axiforma-Book', 'Arial', 'sans-serif'].join(',')
 const FONT_PRIMARY_MEDIUM = ['Axiforma-Medium', 'Arial', 'sans-serif'].join(',')
 const FONT_PRIMARY_BOLD = ['Axiforma-SemiBold', 'Arial', 'sans-serif'].join(',')
+
 export const poppinsFont = {
   fontFamily: 'Poppins',
 }
@@ -43,7 +44,7 @@ const fontWeightRegular = 300,
   fontWeightMedium = 500,
   fontWeightBold = 600
 const typography = {
-  fontFamily: FONT_PRIMARY,
+  fontFamily: FONT_PRIMARY_REGULAR,
   fontWeightRegular: 300,
   fontWeightMedium: 500,
   fontWeightBold: 600,

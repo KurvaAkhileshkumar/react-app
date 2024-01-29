@@ -3,12 +3,14 @@ import { MyDiv } from '../../components/myStyledComponents/styledComponents';
 import ContinueReadingCard from './ContinueReadingCard';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Typography from '@mui/material/Typography';
-import { continueReadingStyles, titleStyles, whatYouWillLearnStyles } from './CourseLayoutStyles';
+import { avgStyles, continueReadingStyles, sliderStyles, titleStyles, whatYouWillLearnStyles } from './CourseLayoutStyles';
 import AccordianTopics from './AccordianTopics';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import palette from '../../theme/palette';
+import Slider from "@mui/material/Slider";
+import typography, { poppinsFont, pxToRem } from '../../theme/typography';
 
 // const description = "Learn the fundamental principles of user interface (UI) design, including layout, color, and typography, to create visually appealing and effective designs.\nUnderstand the basics of user experience (UX) design, focusing on enhancing user satisfaction by improving the usability and accessibility of digital products.\nExplore the importance of user research and usability testing in the UI/UX design process, gaining insights into user behavior and preferences.\nDive into the principles of interaction design, mastering the art of creating intuitive and engaging user interactions through navigation, feedback, and animation.\nGain hands-on experience with industry-standard design tools and software, honing your skills in wireframing, prototyping, and mockup creation for web and mobile applications."
 export default function CourseLayout() {
@@ -52,7 +54,27 @@ export default function CourseLayout() {
                         {courseName}
                     </Typography>
                 </Stack>
-                <Stack direction={'column'} marginTop={'62px'} alignItems={'flex-start'}>
+                <MyDiv sx={sliderStyles}>
+                    <Slider
+                        size="medium"
+                        defaultValue={completionStatus}
+                        valueLabelDisplay="auto"
+                        max={100}
+                        min={0}
+                        sx={{
+                            marginLeft: '45px',
+                            width: '300px',
+                            "& .MuiSlider-thumb": {
+                                width: 0,
+                                height: 0,
+                            },
+                        }}
+                    />
+                    <MyDiv sx={avgStyles} style={{ color: palette.primary[700] }}>
+                        {completionStatus}%
+                    </MyDiv>
+                </MyDiv>
+                <Stack direction={'column'} marginTop={'31px'} alignItems={'flex-start'}>
                     <Typography
                         sx={whatYouWillLearnStyles}
                     >What you will learn</Typography>
@@ -61,7 +83,8 @@ export default function CourseLayout() {
                             // marginTop: '8px',
                             marginLeft: '165px',
                             color: '#000',
-                            fontSize: '14px',
+                            fontFamily: poppinsFont.fontFamily,
+                            fontSize: pxToRem(14),
                             fontStyle: 'normal',
                             fontWeight: '300',
                             lineHeight: 'normal'

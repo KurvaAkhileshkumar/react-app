@@ -6,6 +6,7 @@ export const dashBoardStack = {
   margin: '0px',
   marginTop: '20px',
   marginLeft: '100px',
+  alignItems: 'center',
 }
 export const dashBoardCard = {
   margin: '0px',

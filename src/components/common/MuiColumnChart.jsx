@@ -1,7 +1,7 @@
 import React from 'react'
 import Chart from 'react-apexcharts'
 import { useTheme } from '@mui/material/styles'
-import typography, { pxToRem } from '../../theme/typography'
+import { poppinsFont, pxToRem } from '../../theme/typography'
 
 const MuiColumnChart = ({
   series,
@@ -54,7 +54,7 @@ const MuiColumnChart = ({
         text: xaxisTitle,
         style: {
           color: '#637381',
-          fontFamily: typography.fontFamily,
+          fontFamily: poppinsFont.fontFamily,
           fontSize: pxToRem(14),
           fontStyle: 'normal',
           fontWeight: '400',
@@ -131,7 +131,7 @@ const MuiColumnChart = ({
     colors: [
       function ({ value, seriesIndex, w, dataPointIndex }) {
         // console.log(value, seriesIndex, w, dataPointIndex)
-        if (dataPointIndex % 2 === 0) {
+        if (value !== 0) {
           return primaryBarColor
         } else {
           return secondarybarColor

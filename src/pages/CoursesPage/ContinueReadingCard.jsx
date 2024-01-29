@@ -1,12 +1,13 @@
 import { MyDiv } from "../../components/myStyledComponents/styledComponents";
 import { Stack } from "@mui/material";
-import documentText from '../../assets/book.jpg'
+import document from '../../assets/document.svg'
+import presentationChart from '../../assets/presention-chart.svg'
 import Typography from '@mui/material/Typography';
 import palette from "../../theme/palette";
 import { continueReadingCardTestStyles } from './CourseLayoutStyles'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-const arr = [1, 2, 3]
+const icons = [document, presentationChart, presentationChart]
 export default function ContinueReadingCard({ continueReadingData }) {
     return (
         <>
@@ -39,7 +40,7 @@ export default function ContinueReadingCard({ continueReadingData }) {
                                         borderRadius: '5px',
                                         background: '#DFE3E8'
                                     }}>
-                                        <img src={documentText} alt="Broken" />
+                                        <img src={icons[index]} alt="Broken" />
                                     </MyDiv>
                                     <MyDiv
                                         sx={

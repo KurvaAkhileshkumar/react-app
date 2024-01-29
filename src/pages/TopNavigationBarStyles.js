@@ -1,4 +1,4 @@
-import typography, { poppinsFont } from '../theme/typography'
+import { poppinsFont } from '../theme/typography'
 
 export const navStyles = {
   marginLeft: '80px',

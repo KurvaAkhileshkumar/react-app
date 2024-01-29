@@ -2,11 +2,19 @@ import React from 'react'
 import { Box, Stack, Typography, Icon } from '@mui/material'
 import CountUp from 'react-countup'
 import typography, { poppinsFont, pxToRem } from '../../theme/typography'
+import assessmentLogo from '../../assets/assess.svg'
+import assignmentLogo from '../../assets/assisgnment.svg'
+import attendanceLogo from '../../assets/attendance.svg'
+import avgPerLogo from '../../assets/avgper.svg'
+import codignLogo from '../../assets/coding.svg'
+
+const icons = [attendanceLogo, avgPerLogo, assessmentLogo, assignmentLogo, codignLogo]
+const colors = ["#E7EEFE", "#E6F2FD", "#FFF8EC", "#FEECEB", "#EDFAEE"];
 
 const AssessmentDetailCard = ({
   icon,
   iconBgColor,
-  iconSize,
+  iconSize = 'medium',
   title,
   contentMagnitude,
   contentType,
@@ -39,15 +47,16 @@ const AssessmentDetailCard = ({
         <Stack
           direction='row'
           alignItems='center'
+          gap={'15px'}
           sx={{
             width: '44px',
             height: '44px',
-            background: `${iconBgColor}`,
+            background: `${colors[icon]}`,
             borderRadius: '5px',
             padding: '10px',
           }}
         >
-          <Icon children={icon} fontSize={iconSize} />
+          <img src={icons[icon]} alt="" />
         </Stack>
 
         <Stack direction='column' justifyContent='center'>
@@ -55,10 +64,11 @@ const AssessmentDetailCard = ({
             sx={{
               fontFamily: poppinsFont.fontFamily,
               fontSize: pxToRem(14),
-              fontWeight: typography.fontWeightMedium
+              fontWeight: typography.fontWeightMedium,
+              textAlign: 'start'
             }}
           >{title}</Typography>
-          <Typography variant='h5'>
+          <Typography variant='h5' sx={{ textAlign: 'start' }}>
             {showCountingAnimation ? (
               <CountUp
                 start={0}

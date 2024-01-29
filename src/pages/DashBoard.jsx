@@ -14,8 +14,8 @@ export default function DashBoard({ data }) {
                     return (
                         <MyDiv sx={dashBoardCard} key={index}>
                             <AssessmentDetailCard
-                                icon={<CalendarMonthIcon />}
-                                iconBgColor={blue}
+                                icon={index}
+                                iconBgColor={index}
                                 title={dashBoardKeys[index].charAt(0).toUpperCase() + dashBoardKeys[index].slice(1)}
                                 contentMagnitude={item}
                             />

@@ -14,7 +14,7 @@ export const whatYouWillLearnStyles = {
     fontFamily: poppinsFont.fontFamily,
     fontSize: pxToRem(16),
     fontStyle: 'normal',
-    fontWeight: typography.fontWeightMedium,
+    fontWeight: '500',
     lineHeight: 'normal',
     marginLeft: '135px'
 }
@@ -39,4 +39,23 @@ export const continueReadingCardTestStyles = {
     fontHeight: 'normal',
     textAlign: 'start',
     paddingTop: '15px'
+}
+
+
+export const sliderStyles = {
+    width: '350px',
+    height: '21px',
+    marginTop: '18px',
+    marginLeft: '85px',
+    alignItems: 'center',
+    display: 'flex'
+}
+
+export const avgStyles = {
+    width: '50px',
+    fontSize: '14px',
+    fontstyle: 'normal',
+    fontWeight: '400',
+    lineHeight: 'normal',
+    marginLeft: '12px'
 }
