@@ -13,7 +13,7 @@ MuiCustomChipCount.defaultProps = {
   height: '16px'
 }
 
-export default function MuiCustomChipCount({ width, height, label, selected, padding, ...props }) {
+export default function MuiCustomChipCount({ width, fontSize, height, label, selected, padding, ...props }) {
   return (
     <Chip sx={{
       fontFamily: poppinsFont.fontFamily,
@@ -22,7 +22,7 @@ export default function MuiCustomChipCount({ width, height, label, selected, pad
       mb: '2px',
       background: palette.primary[100],
       color: '#0B58F5',
-      fontSize: '12px',
+      fontSize: fontSize,
       ml: '14px',
       ...props,
       '& .MuiChip-label': {

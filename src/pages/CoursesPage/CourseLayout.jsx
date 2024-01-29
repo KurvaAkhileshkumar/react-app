@@ -10,7 +10,9 @@ import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import palette from '../../theme/palette';
 import Slider from "@mui/material/Slider";
-import typography, { poppinsFont, pxToRem } from '../../theme/typography';
+import { poppinsFont, pxToRem } from '../../theme/typography';
+import vector from '../../assets/Vector.svg'
+import MuiCustomChipCount from '../../components/common/MuiCustomChipCount'
 
 // const description = "Learn the fundamental principles of user interface (UI) design, including layout, color, and typography, to create visually appealing and effective designs.\nUnderstand the basics of user experience (UX) design, focusing on enhancing user satisfaction by improving the usability and accessibility of digital products.\nExplore the importance of user research and usability testing in the UI/UX design process, gaining insights into user behavior and preferences.\nDive into the principles of interaction design, mastering the art of creating intuitive and engaging user interactions through navigation, feedback, and animation.\nGain hands-on experience with industry-standard design tools and software, honing your skills in wireframing, prototyping, and mockup creation for web and mobile applications."
 export default function CourseLayout() {
@@ -39,30 +41,40 @@ export default function CourseLayout() {
     let listArray = description?.split("\n").map((text) => text)
     return (
         <>
-            <Stack direction={'column'} marginTop={'35px'}>
+            <Stack direction={'column'} marginTop={'35px'} sx={{
+                marginLeft: '80px',
+            }}>
                 <Stack direction={'row'}>
-                    <Link to='/'> <ArrowBackIcon
-                        sx={{
+                    <Link to='/'>
+                        <img style={{
                             cursor: 'pointer',
                             fontSize: '24px',
-                            marginRight: '15px',
-                            marginLeft: '95px',
-                            color: palette.grey[900]
-                        }}
-                    /></Link>
+                            marginRight: '29.5px',
+                            marginLeft: '33.5px',
+                            color: '#252525'
+                        }} src={vector} alt="Arrow backIcon" />
+                    </Link>
                     <Typography sx={titleStyles}>
                         {courseName}
                     </Typography>
+                    <MuiCustomChipCount
+                        width={'max-content'}
+                        height={'20px'}
+                        label={courseTag}
+                        fontSize={'14px'}
+                    />
                 </Stack>
-                <MyDiv sx={sliderStyles}>
+                <Stack direction={'row'} marginLeft={'85px'} marginTop={'18px'}>
                     <Slider
+                        // disabled={true}
                         size="medium"
                         defaultValue={completionStatus}
                         valueLabelDisplay="auto"
                         max={100}
                         min={0}
                         sx={{
-                            marginLeft: '45px',
+                            padding: '8px 0px 8px 0px',
+                            color: '#0B58F5',
                             width: '300px',
                             "& .MuiSlider-thumb": {
                                 width: 0,
@@ -70,47 +82,49 @@ export default function CourseLayout() {
                             },
                         }}
                     />
-                    <MyDiv sx={avgStyles} style={{ color: palette.primary[700] }}>
-                        {completionStatus}%
+                    <MyDiv sx={{
+                        marginLeft: '12px',
+                        color: palette.primary[700],
+                        fontSize: pxToRem(14),
+                        fontFamily: poppinsFont.fontFamily,
+                        fontStyle: 'normal',
+                        fontWeight: '400',
+                        lineHeight: 'normal'
+                    }}>
+                        Avg. {completionStatus}%
                     </MyDiv>
-                </MyDiv>
-                <Stack direction={'column'} marginTop={'31px'} alignItems={'flex-start'}>
+                </Stack>
+                <Stack direction={'column'} marginTop={'23px'} alignItems={'flex-start'} marginLeft={'85px'}>
                     <Typography
                         sx={whatYouWillLearnStyles}
                     >What you will learn</Typography>
                     <MyDiv sx={
                         {
-                            // marginTop: '8px',
-                            marginLeft: '165px',
+                            width: '1095px',
                             color: '#000',
                             fontFamily: poppinsFont.fontFamily,
                             fontSize: pxToRem(14),
                             fontStyle: 'normal',
                             fontWeight: '300',
-                            lineHeight: 'normal'
+                            lineHeight: 'normal',
+                            alignItems: 'start'
                         }
                     }>
-                        <ul style={
-                            {
-                                listStyleType: 'disc',
-                                listStylePosition: 'inside',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                justifyContent: 'space-between'
-                            }
+                        <Stack sx={
+                            {}
                         }>
                             {listArray?.map((item, index) => <li key={index} style={{
-                                marginTop: '8px'
+                                marginTop: '8px',
+                                textAlign: 'start',
                             }}>{item}</li>)}
-                        </ul>
+                        </Stack>
                     </MyDiv>
                 </Stack>
                 <Stack direction={'column'} marginTop={'40px'} alignItems={'flex-start'} gap={'10px'}>
                     <Typography
                         sx={continueReadingStyles}
                     >Continue reading</Typography>
-                    <Stack marginLeft={'136px'}>
+                    <Stack marginLeft={'56px'}>
                         <Stack direction={'row'} gap={'22px'}>
                             <ContinueReadingCard continueReadingData={continueReadingData} />
                         </Stack>

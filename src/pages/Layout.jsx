@@ -158,7 +158,7 @@ export default function Layout() {
                 <Typography sx={yourCoursesText} marginLeft={'100px'}>
                     Your courses
                 </Typography>
-                <Stack direction={'row'}
+                <Stack height={'281px'} direction={'row'}
                     gap={'22px'}
                     sx={courses}>
                     <Courses coursesData={coursesData} />

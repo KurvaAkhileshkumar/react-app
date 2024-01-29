@@ -13,6 +13,7 @@ export const navStyles = {
 export const goodMorningStyles = {
   width: '313px',
   height: '32px',
+  marginLeft: '18px',
   fontFamily: poppinsFont.fontFamily,
   fontSize: '24px',
   fontStyle: 'normal',

@@ -5,7 +5,7 @@ export const titleStyles = {
     color: palette.grey[900],
     fontFamily: poppinsFont.fontFamily,
     fontSize: pxToRem(25),
-    fontWeight: typography.fontWeightMedium,
+    fontWeight: 500,
     lineHeight: '20px',
     letterSpacing: '-0.25px'
 }
@@ -14,9 +14,9 @@ export const whatYouWillLearnStyles = {
     fontFamily: poppinsFont.fontFamily,
     fontSize: pxToRem(16),
     fontStyle: 'normal',
-    fontWeight: '500',
+    fontWeight: 500,
     lineHeight: 'normal',
-    marginLeft: '135px'
+    opacity: 1
 }
 
 export const continueReadingStyles = {
@@ -26,7 +26,7 @@ export const continueReadingStyles = {
     fontStyle: 'normal',
     fontWeight: typography.fontWeightMedium,
     lineHeight: 'normal',
-    marginLeft: '120px'
+    marginLeft: '56px'
 }
 
 export const continueReadingCardTestStyles = {
@@ -43,19 +43,19 @@ export const continueReadingCardTestStyles = {
 
 
 export const sliderStyles = {
-    width: '350px',
-    height: '21px',
-    marginTop: '18px',
-    marginLeft: '85px',
-    alignItems: 'center',
-    display: 'flex'
+    // width: '350px',
+    // height: '21px',
+    // marginTop: '18px',
+    // marginLeft: '85px',
+    // alignItems: 'center',
+    // display: 'flex'
 }
 
 export const avgStyles = {
-    width: '50px',
-    fontSize: '14px',
-    fontstyle: 'normal',
-    fontWeight: '400',
-    lineHeight: 'normal',
-    marginLeft: '12px'
+    // width: '50px',
+    // fontSize: '14px',
+    // fontstyle: 'normal',
+    // fontWeight: '400',
+    // lineHeight: 'normal',
+    // marginLeft: '12px'
 }

@@ -10,7 +10,7 @@ export default function Login() {
     const ariaLabel = { 'aria-label': 'description' };
     return (
         <>
-            <Grid container sx={{ maxHeight: '100%', height: "768px" }}>
+            <Grid container sx={{ height: '100vh' }}>
                 <Grid
                     md={6}
                     item

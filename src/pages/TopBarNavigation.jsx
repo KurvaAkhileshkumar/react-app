@@ -33,34 +33,34 @@ export default function TopBarNavigation({ name, email }) {
                         style={{ borderRadius: "50%" }}
                         onClick={handleLogout}
                     />
-                </MyDiv>
-                {profileClick && (
-                    <Menu
-                        open={profileClick}
-                        onClose={handleClose}
-                        anchorOrigin={{
-                            vertical: "top",
-                            horizontal: "right",
-                        }}
-                        transformOrigin={{
-                            vertical: "top",
-                            horizontal: "right",
-                        }}
+                    {profileClick && (
+                        <Menu
+                            open={profileClick}
+                            onClose={handleClose}
+                            anchorOrigin={{
+                                vertical: "top",
+                                horizontal: "right",
+                            }}
+                            transformOrigin={{
+                                vertical: "top",
+                                horizontal: "right",
+                            }}
 
-                    >
-                        <MenuItem>
-                            <img
-                                src={profileImg}
-                                width="50px"
-                                height="50px"
-                                style={{ borderRadius: "50%" }}
-                            />
-                        </MenuItem>
-                        <MenuItem>{name}</MenuItem>
-                        <MenuItem>{email}</MenuItem>
-                        <MenuItem>Logout</MenuItem>
-                    </Menu>
-                )}
+                        >
+                            <MenuItem>
+                                <img
+                                    src={profileImg}
+                                    width="50px"
+                                    height="50px"
+                                    style={{ borderRadius: "50%" }}
+                                />
+                            </MenuItem>
+                            <MenuItem>{name}</MenuItem>
+                            <MenuItem>{email}</MenuItem>
+                            <MenuItem>Logout</MenuItem>
+                        </Menu>
+                    )}
+                </MyDiv>
             </Stack>
         </>
     );

@@ -6,8 +6,6 @@ import typography, { poppinsFont, pxToRem } from "../theme/typography";
 import palette from "../theme/palette";
 import { Link } from 'react-router-dom'
 
-const textColor = []
-const chipColor = []
 
 export default function Courses({ coursesData }) {
     return (
@@ -43,9 +41,12 @@ export default function Courses({ coursesData }) {
                                     width={'max-content'}
                                     height={'20px'}
                                     label={item.tag}
+                                    fontSize={'12px'}
                                 />
                                 <Typography
                                     sx={{
+                                        width: '216px',
+                                        height: '50px',
                                         color: palette.grey[900],
                                         textAlign: 'start',
                                         fontFamily: poppinsFont.fontFamily,
@@ -54,6 +55,10 @@ export default function Courses({ coursesData }) {
                                         lineHeight: '20px',
                                         letterSpacing: '-0.14px',
                                         marginLeft: '20px',
+                                        padding: '0px 14px  14px',
+                                        whiteSpace: 'nowrap',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis'
                                     }}
                                 >{item.name}</Typography>
                             </Stack>
