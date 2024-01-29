@@ -7,6 +7,8 @@ import { continueReadingStyles, titleStyles, whatYouWillLearnStyles } from './Co
 import AccordianTopics from './AccordianTopics';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
+import palette from '../../theme/palette';
 
 // const description = "Learn the fundamental principles of user interface (UI) design, including layout, color, and typography, to create visually appealing and effective designs.\nUnderstand the basics of user experience (UX) design, focusing on enhancing user satisfaction by improving the usability and accessibility of digital products.\nExplore the importance of user research and usability testing in the UI/UX design process, gaining insights into user behavior and preferences.\nDive into the principles of interaction design, mastering the art of creating intuitive and engaging user interactions through navigation, feedback, and animation.\nGain hands-on experience with industry-standard design tools and software, honing your skills in wireframing, prototyping, and mockup creation for web and mobile applications."
 export default function CourseLayout() {
@@ -37,14 +39,15 @@ export default function CourseLayout() {
         <>
             <Stack direction={'column'} marginTop={'35px'}>
                 <Stack direction={'row'}>
-                    <ArrowBackIcon
+                    <Link to='/'> <ArrowBackIcon
                         sx={{
                             cursor: 'pointer',
                             fontSize: '24px',
                             marginRight: '15px',
-                            marginLeft: '95px'
+                            marginLeft: '95px',
+                            color: palette.grey[900]
                         }}
-                    />
+                    /></Link>
                     <Typography sx={titleStyles}>
                         {courseName}
                     </Typography>

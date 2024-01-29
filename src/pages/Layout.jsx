@@ -21,10 +21,13 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import TemporaryDrawer from './Drawer';
 import Courses from './courses.jsx';
 import { poppinsFont, pxToRem } from '../theme/typography.js';
+import { useRef } from 'react';
 
 const checkSkeleton = true;
+let coursesCardRef
 export default function Layout() {
 
+    coursesCardRef = useRef()
     const [recnetAssessmentsData, setRecentAssessmentsData] = useState([])
     const [categoriesData, setCategoriesData] = useState([])
     const [dashBoardData, setDashBoardData] = useState([])
@@ -148,7 +151,7 @@ export default function Layout() {
 
             {/* Courses Section */}
 
-            <Stack direction={'column'} gap={'15px'}>
+            <Stack ref={coursesCardRef} direction={'column'} gap={'15px'}>
                 <Typography sx={yourCoursesText} marginLeft={'100px'}>
                     Your courses
                 </Typography>
@@ -184,3 +187,5 @@ const SkeletonLayout = () => {
         </Stack>
     )
 }
+
+export { coursesCardRef }

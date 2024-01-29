@@ -7,6 +7,7 @@ import book from '../assets/book.jpg'
 import logout from '../assets/logout.jpg'
 import { MyDiv } from '../components/myStyledComponents/styledComponents'
 export default function SibeBarNavigation() {
+
     return (
         <>
             <Stack width={'80px'} height={'100%'}
@@ -72,7 +73,7 @@ export default function SibeBarNavigation() {
                                 padding: '8px'
                             }}
                         >
-                            <NavLink to='/courses'>
+                            <NavLink to='/'>
                                 <img src={book} alt="Courses Icon" />
                             </NavLink>
                         </MyDiv>

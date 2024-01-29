@@ -14,7 +14,7 @@ export default function Courses({ coursesData }) {
         <>
             {coursesData.map((item, index) => {
                 return (
-                    <Link to={`/courses/${index + 1}`} style={{ textDecoration: 'none' }}>
+                    <Link key={index} to={`/courses/${index + 1}`} style={{ textDecoration: 'none' }}>
                         <Stack direction={'column'} gap={'14px'}
                             sx={
                                 {

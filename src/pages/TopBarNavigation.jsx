@@ -1,35 +1,67 @@
+import React, { useState } from "react";
+import { navStyles, goodMorningStyles, avatarStyles } from "./TopNavigationBarStyles.js";
+import { useNavigate } from "react-router-dom";
+import { Menu, MenuItem, Typography } from "@mui/material";
+import profileImg from '../assets/profile.jpeg'
 import { Stack } from "@mui/material";
-import Typography from '@mui/material/Typography';
-import { MyDiv } from "../components/myStyledComponents/styledComponents";
-import { poppinsFont, pxToRem } from "../theme/typography";
-import profilePic from '../assets/profile.jpeg'
-import Divider from '@mui/material/Divider';
-export default function TopBarNavigation() {
+import { MyDiv } from "../components/myStyledComponents/styledComponents.jsx";
+
+export default function TopBarNavigation({ name, email }) {
+    // const profileName = name.split(" ")
+    const navigate = useNavigate();
+    const [profileClick, setProfileClick] = useState(false);
+
+    const handleLogout = () => {
+        // navigate('/');
+        setProfileClick(true);
+    };
+
+    const handleClose = () => {
+        setProfileClick(false);
+    };
+
     return (
         <>
-            <Stack
-                sx={{
-                    position: 'relative',
-                    left: '80px',
-                    height: '80px',
-                }}
-            >
-                <Stack direction={'row'}>
-                    <Typography
-                        sx={{
-                            marginTop: '27px',
-                            fontFamily: poppinsFont.fontFamily,
-                            fontSize: pxToRem(24),
-                            fontStyle: 'normal',
-                            fontWeight: '400',
-                            lineHeight: '32px'
+            <Stack direction={'row'} sx={navStyles}>
+                <Typography sx={goodMorningStyles}>Good morning, Maharram</Typography>
+
+                <MyDiv sx={avatarStyles}>
+                    <img
+                        src={profileImg}
+                        width="50px"
+                        height="50px"
+                        style={{ borderRadius: "50%" }}
+                        onClick={handleLogout}
+                    />
+                </MyDiv>
+                {profileClick && (
+                    <Menu
+                        open={profileClick}
+                        onClose={handleClose}
+                        anchorOrigin={{
+                            vertical: "top",
+                            horizontal: "right",
                         }}
+                        transformOrigin={{
+                            vertical: "top",
+                            horizontal: "right",
+                        }}
+
                     >
-                        Good morning, Maharram
-                    </Typography>
-                </Stack>
+                        <MenuItem>
+                            <img
+                                src={profileImg}
+                                width="50px"
+                                height="50px"
+                                style={{ borderRadius: "50%" }}
+                            />
+                        </MenuItem>
+                        <MenuItem>{name}</MenuItem>
+                        <MenuItem>{email}</MenuItem>
+                        <MenuItem>Logout</MenuItem>
+                    </Menu>
+                )}
             </Stack>
-            <Divider />
         </>
     );
 }
