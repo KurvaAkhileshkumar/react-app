@@ -1,10 +1,5 @@
 {
   "homepage": "https://kurvaakhileshkumar.github.io/react-app",
-  "change": "hello world",
-  "new change": "hello world 2",
-  "new change 3": "hello world 2",
-  "new change 4": "hello world 2",
-  "new change 5": "hello world 2",
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
