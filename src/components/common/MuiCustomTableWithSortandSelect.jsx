@@ -76,7 +76,7 @@ const MuiCustomTableWithSortandSelect = () => {
           sx={{ marginTop: '1rem' }}
         >
           <Pagination
-            count={noOfItemsPerPage}
+            count={Math.ceil(totalAssessmentsData?.length / noOfItemsPerPage)}
             onChange={(event, page) => handleChange(event, page)}
             color='primary'
             sx={{
