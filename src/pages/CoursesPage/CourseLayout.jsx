@@ -14,7 +14,8 @@ import { poppinsFont, pxToRem } from '../../theme/typography';
 import vector from '../../assets/Vector.svg'
 import MuiCustomChipCount from '../../components/common/MuiCustomChipCount'
 
-// const description = "Learn the fundamental principles of user interface (UI) design, including layout, color, and typography, to create visually appealing and effective designs.\nUnderstand the basics of user experience (UX) design, focusing on enhancing user satisfaction by improving the usability and accessibility of digital products.\nExplore the importance of user research and usability testing in the UI/UX design process, gaining insights into user behavior and preferences.\nDive into the principles of interaction design, mastering the art of creating intuitive and engaging user interactions through navigation, feedback, and animation.\nGain hands-on experience with industry-standard design tools and software, honing your skills in wireframing, prototyping, and mockup creation for web and mobile applications."
+const chipColors = ['#E7EEFE', '#FFF0D8', '#EDFAEE', '#FFF0D8']
+const chipTextColor = ['#0B58F5', '#D89932', '#4ECD56', '#D89932']
 export default function CourseLayout() {
     const params = useParams();
     const fetchUrl = 'https://stagingstudentpython.edwisely.com/reactProject/courseData?course_id=' + params.id
@@ -62,6 +63,8 @@ export default function CourseLayout() {
                         height={'20px'}
                         label={courseTag}
                         fontSize={'14px'}
+                        background={chipColors[params.id - 1]}
+                        color={chipTextColor[params.id - 1]}
                     />
                 </Stack>
                 <Stack direction={'row'} marginLeft={'85px'} marginTop={'18px'}>

@@ -4,7 +4,7 @@ import typography, { poppinsFont, pxToRem } from '../../theme/typography'
 import palette from '../../theme/palette'
 // import StarSvg from '../../assets/LeaderBoardProfile.jpeg'
 
-const LeaderRanking = ({ data, index, value, percentage }) => {
+const LeaderRanking = ({ data, index, value, percentage, isDrawer }) => {
   return (
     <Stack
       direction={'row'}
@@ -66,7 +66,7 @@ const LeaderRanking = ({ data, index, value, percentage }) => {
             width: '26px',
             height: '26px',
             margin: '20px 20px 20px 0px',
-            paddingLeft: () => value < 10 ? '8px' : '6px',
+            paddingLeft: () => value < 10 ? '6px' : '4px',
             fontFamily: poppinsFont.fontFamily,
             fontSize: pxToRem(16),
             lineHeight: '24px',

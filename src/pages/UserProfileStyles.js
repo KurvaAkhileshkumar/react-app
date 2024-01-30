@@ -31,4 +31,5 @@ export const yourCoursesText = {
   fontStyle: 'normal',
   lineHeight: pxToRem(28),
   textAlign: 'start',
+  fontWeight: 600,
 }

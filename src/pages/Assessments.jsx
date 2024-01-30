@@ -12,7 +12,7 @@ export default function Assessments() {
                     <Typography sx={{
                         color: '#161C24',
                         fontFamily: poppinsFont.fontFamily,
-                        fontStyle: pxToRem(28),
+                        fontStyle: '48px',
                         fontStyle: 'normal',
                         fontWeight: 600,
                         lineHeight: '28px',
