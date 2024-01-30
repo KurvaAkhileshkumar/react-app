@@ -6,19 +6,16 @@ import { poppinsFont, pxToRem } from "../theme/typography";
 import palette from "../theme/palette";
 import typography from "../theme/typography";
 
-export default function UserProfile({ name, email }) {
+export default function UserProfile({ name, email, profilePicLink }) {
     return (
         <>
             <Stack direction={'row'}>
-                <MyDiv
+                <img
                     style={{
-                        width: '38px',
                         height: '38px',
-                        borderRadius: '4px',
+                        borderRadius: '4px'
                     }}
-                >
-                    <img src={profile} alt="IMAGE BROKEN" />
-                </MyDiv>
+                    src={profilePicLink} alt="IMAGE BROKEN" />
                 <Stack direction={'column'} height={'28px'}>
                     <MyDiv>
                         <Typography
@@ -31,6 +28,7 @@ export default function UserProfile({ name, email }) {
                                     fontWeight: typography.fontWeightMedium,
                                     lineHeight: '24px',
                                     marginLeft: '10px',
+                                    textAlign: 'start',
                                     alignItems: 'start',
                                 }
                             }

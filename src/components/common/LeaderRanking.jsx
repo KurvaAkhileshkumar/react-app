@@ -4,89 +4,82 @@ import typography, { poppinsFont, pxToRem } from '../../theme/typography'
 import palette from '../../theme/palette'
 // import StarSvg from '../../assets/LeaderBoardProfile.jpeg'
 
-
-const LeaderRanking = ({ data, index, value }) => {
+const LeaderRanking = ({ data, index, value, percentage }) => {
   return (
-    <Stack direction={'row'} alignItems={'center'} justifyContent={'space-between'}
+    <Stack
+      direction={'row'}
+      alignItems={'center'}
+      justifyContent={'space-between'}
       sx={{
         margin: '0px',
         padding: '0px',
         width: '298px',
         height: '65px',
-        borderRadius: () => index == 1 ? '5px' : '0px',
-        bgcolor: () => index == 1 ? palette.grey[100] : '#FFF',
+        borderRadius: () => (index == 1 ? '5px' : '0px'),
+        bgcolor: () => (index == 1 ? palette.grey[100] : '#FFF'),
       }}
     >
-      <Stack direction={'row'} alignItems={'center'} gap={'27px'}>
-        {/* <Typography component={'p'} sx={{
-          fontFamily: 'Poppins-Medium',
-          fontSize: '14px',
-          color: (theme) => theme.palette.grey[900]
-        }}>{index}</Typography> */}
-        <Stack direction={'row'} alignItems={'center'} gap={'16px'}>
-          <Avatar alt="Avatar" sx={{ width: 30, height: 30, margin: '8px 0px 7px 8px' }} src={data.profile_pic} />
-          <Typography component={'p'} sx={{
+      <Stack position={'relative'} direction={'row'} alignItems={'center'} gap={'15px'}>
+        <Avatar
+          alt="Avatar"
+          sx={{
+            width: '50px',
+            height: '50px',
+            margin: '8px 0px 7px 8px',
+            borderRadius: '50px',
+          }}
+          src={data.profile_pic}
+        />
+        <Stack direction={'column'} gap={'10px'}>
+          <Typography
+            component={'p'}
+            sx={{
+              width: '180px',
+              height: '11px',
+              textAlign: 'start',
+              fontFamily: poppinsFont.fontFamily,
+              fontSize: pxToRem(16),
+              fontWeight: typography.fontWeightMedium,
+              color: (theme) => theme.palette.grey[900],
+            }}
+          >
+            {data.name}
+          </Typography>
+          <Typography
+            sx={{
+              margin: '0px',
+              padding: '0px',
+              textAlign: 'start',
+              fontFamily: poppinsFont.fontFamily,
+              fontSize: pxToRem(12),
+              fontWeight: typography.fontWeightMedium,
+              color: (theme) => theme.palette.grey[800],
+            }}
+          >
+            Avg: {percentage}%
+          </Typography>
+        </Stack>
+
+        <Typography
+          component={'p'}
+          sx={{
+            width: '26px',
+            height: '26px',
+            margin: '20px 20px 20px 0px',
             fontFamily: poppinsFont.fontFamily,
             fontSize: pxToRem(16),
+            lineHeight: '24px',
             fontWeight: typography.fontWeightMedium,
-            color: (theme) => theme.palette.grey[900]
-          }}>{data.name}</Typography>
-        </Stack>
+            color: () =>
+              value < 4 ? palette.success.main : palette.primary.main,
+            bgcolor: () =>
+              value < 4 ? palette.success[100] : palette.primary[100],
+            borderRadius: '27px',
+          }}
+        >
+          {value}
+        </Typography>
       </Stack>
-
-      {/* ratings */}
-
-      <Stack direction={'row'} alignItems={'center'} gap={'8px'}>
-        <Stack direction={'row'} alignItems={'center'} gap={0}>
-          <Box sx={{
-            width: 20,
-            height: 20,
-            svg: {
-              path: {
-                fill: (theme) => theme.palette.warning.main
-              }
-            }
-          }}>
-            {/* <StarSvg /> */}
-          </Box>
-          <Box sx={{
-            width: 20,
-            height: 20,
-            svg: {
-              path: {
-                fill: (theme) => value >= 80 ? theme.palette.warning.main : theme.palette.warning[300]
-              }
-            }
-          }}>
-            {/* <StarSvg /> */}
-          </Box>
-          <Box sx={{
-            width: 20,
-            height: 20,
-            svg: {
-              path: {
-                fill: (theme) => (value >= 90 && value <= 100) ? theme.palette.warning.main : theme.palette.warning[300]
-              }
-            }
-          }}>
-            {/* <StarSvg /> */}
-          </Box>
-        </Stack>
-        <Typography component={'p'} sx={{
-          width: '26px',
-          height: '26px',
-          margin: '20px 19px 20px 0px',
-          paddingLeft: '6px',
-          fontFamily: poppinsFont.fontFamily,
-          fontSize: pxToRem(16),
-          lineHeight: '24px',
-          fontWeight: typography.fontWeightMedium,
-          color: () => value < 4 ? palette.success.main : palette.primary.main,
-          bgcolor: () => value < 4 ? palette.success[100] : palette.primary[100],
-          borderRadius: '50%'
-        }}>{value}</Typography>
-      </Stack>
-
     </Stack>
   )
 }

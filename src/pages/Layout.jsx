@@ -34,6 +34,7 @@ export default function Layout() {
     const [leaderBoardData, setLeaderBoardData] = useState([])
     const [name, setName] = useState()
     const [email, setEmail] = useState()
+    const [profilePicLink, setProfilePicLink] = useState()
     const [state, setState] = useState({
         right: false,
     });
@@ -62,6 +63,7 @@ export default function Layout() {
             setEmail(resData.email)
             setName(resData.name)
             setCoursesData(resData.courses)
+            setProfilePicLink(resData.profile_picture)
         })
     }, [])
 
@@ -112,7 +114,7 @@ export default function Layout() {
 
                             {/* UserProfileCard */}
                             <MyDiv sx={rightItem1}>
-                                <UserProfile name={name} email={email} />
+                                <UserProfile name={name} email={email} profilePicLink={profilePicLink} />
                             </MyDiv>
                         </Stack>
 

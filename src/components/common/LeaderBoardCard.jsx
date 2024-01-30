@@ -5,24 +5,14 @@ import LeaderRanking from './LeaderRanking'
 
 const LeaderBoardCard = ({ data, width = '100%', height = '100%', isDrawer }) => {
 
-    // console.log(data, '--> LeaderBoardCard')
-
     return (
         <CustomCard width={width} height={height}>
-            {/* <Stack direction={'row'} alignItems={'center'} gap={'8px'}>
-                    <img src={crownSvg} width={20} height={20} alt='crownSvg'></img>
-                    <Typography component={'p'} sx={{
-                        fontFamily: 'Poppins-SemiBold',
-                        fontSize: '16px',
-                        color: 'grey.900'
-                    }}>Leader Board</Typography>
-                </Stack> */}
             {data ? <Stack
                 gap={'10px'}>
                 {data?.map((item, index) => {
                     const noOfItemInTheLeaderBoard = isDrawer ? data.length : 6
                     if (index < noOfItemInTheLeaderBoard) {
-                        return <LeaderRanking key={index + 1} data={item} value={item.rank} index={index + 1} />
+                        return <LeaderRanking key={index + 1} data={item} percentage={item.percentage} value={item.rank} index={index + 1} />
                     }
                 }
                 )}
