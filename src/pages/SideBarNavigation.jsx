@@ -4,10 +4,21 @@ import palette from '../theme/palette';
 import logo from '../assets/Group.jpg'
 import elementEqual from '../assets/element-equal.jpg'
 import book from '../assets/book.jpg'
-import logout from '../assets/logout.jpg'
+import logoutImg from '../assets/logout.jpg'
 import { MyDiv } from '../components/myStyledComponents/styledComponents'
+import { logout } from '../Store/authSlice';
+import { useNavigate } from 'react-router'
+import { useDispatch, useSelector } from 'react-redux'
 export default function SibeBarNavigation() {
 
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
+
+    const logoutHandler = () => {
+        dispatch(logout())
+        navigate('/')
+    }
     return (
         <>
             <Stack width={'80px'} height={'100%'}
@@ -31,7 +42,7 @@ export default function SibeBarNavigation() {
                     }}
                 >
                     <NavLink
-                        to='/'
+                        to=''
                     >
                         <img src={logo} alt="Logo Icon" />
                     </NavLink>
@@ -53,7 +64,7 @@ export default function SibeBarNavigation() {
                                 padding: '8px'
                             }}
                         >
-                            <NavLink to='/'>
+                            <NavLink to=''>
                                 <img src={elementEqual} alt="Home page icon" />
                             </NavLink>
                         </MyDiv>
@@ -73,7 +84,7 @@ export default function SibeBarNavigation() {
                                 padding: '8px'
                             }}
                         >
-                            <NavLink to='/'>
+                            <NavLink to=''>
                                 <img src={book} alt="Courses Icon" />
                             </NavLink>
                         </MyDiv>
@@ -93,12 +104,11 @@ export default function SibeBarNavigation() {
                                 borderRadius: '8px',
                                 width: '40px',
                                 height: '40px',
-                                padding: '8px'
+                                padding: '8px',
+                                cursor: 'pointer'
                             }}
                         >
-                            <NavLink to='/'>
-                                <img src={logout} alt="Home page icon" />
-                            </NavLink>
+                            <img src={logoutImg} alt="Log out Icon" onClick={logoutHandler} />
                         </MyDiv>
                     </MyDiv>
                 </Stack>

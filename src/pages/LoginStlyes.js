@@ -27,6 +27,7 @@ export const welcome = {
   fontStyle: 'normal',
   fontWeight: '700',
   lineHeight: '50.094px',
+  textAlign: 'start',
 }
 
 export const studentPortal = {
@@ -54,6 +55,7 @@ export const loginHelper = {
   fontStyle: 'normal',
   fontWeight: 500,
   lineHeight: 'normal',
+  textAlign: 'start',
 }
 
 export const loginImg = {
