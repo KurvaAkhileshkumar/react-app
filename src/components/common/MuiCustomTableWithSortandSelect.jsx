@@ -40,7 +40,7 @@ const MuiCustomTableWithSortandSelect = () => {
   }, [])
   return (
     <>
-      {!isError ? <MyDiv>
+      {isError ? <MyDiv>
         <Paper
           sx={{
             boxShadow: 'none',

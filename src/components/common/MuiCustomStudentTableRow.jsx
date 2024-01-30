@@ -29,21 +29,17 @@ const MuiCustomStudentTableRow = ({ stu, viewStudentResult }) => {
   // const { currentSectionTab } = useSelector((state) => state.assessment)
   return (
     <TableRow
-      onClick={() => {
-        viewStudentResult(stu)
-      }}
       sx={{
-        cursor: 'pointer',
         background:
           stu.submission_type === 'not attempted'
             ? theme.palette.error[200]
             : '',
-        '&:hover': {
-          background:
-            stu.submission_type === 'not attempted'
-              ? theme.palette.error[300]
-              : theme.palette.grey[100], // Set your desired background color
-        },
+        // '&:hover': {
+        //   background:
+        //     stu.submission_type === 'not attempted'
+        //       ? theme.palette.error[300]
+        //       : theme.palette.grey[100], // Set your desired background color
+        // },
       }}
     >
       <TableCell
