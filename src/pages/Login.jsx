@@ -43,17 +43,19 @@ export default function Login() {
     }, [])
 
     const handleLogin = () => {
-        const validUsername = 'demo'
-        const validPassword = 'demo'
-        console.log(password)
-        if (username === validUsername && password === validPassword) {
-            navigate('/dashboard')
-            setHelper(prevState => !prevState)
-            dispatch(login())
-        } else {
-            alert("Invalid Credentials")
-            setHelper(prevState => !prevState)
-        }
+        fetch(`https://stagingstudentpython.edwisely.com/reactProject/loginUser?username=${username}&password=${password}`).
+            then((resposne) => resposne.json()).
+            then((res) => {
+                if (res.status === 200) {
+                    navigate('/dashboard')
+                    setHelper(prevState => !prevState)
+                    dispatch(login())
+                } else {
+                    alert(res.message)
+                    setHelper(prevState => !prevState)
+                }
+            })
+
     }
     const handleCheckboxChange = () => {
         setRememberMe(!rememberMe)

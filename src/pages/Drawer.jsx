@@ -14,7 +14,8 @@ export default function TemporaryDrawer({ state, toggleDrawer, data }) {
         <Box
             sx={
                 {
-
+                    padding: '0px',
+                    margin: '0px',
                     width: '364px',
                     height: '100%',
                 }

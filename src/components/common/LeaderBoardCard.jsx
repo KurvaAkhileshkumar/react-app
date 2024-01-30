@@ -4,13 +4,13 @@ import { Skeleton, Stack, Typography } from '@mui/material'
 import LeaderRanking from './LeaderRanking'
 
 const LeaderBoardCard = ({ data, width = '100%', height = '100%', isDrawer }) => {
-
     return (
         <CustomCard width={width} height={height}>
             {data ? <Stack
                 gap={'10px'}>
                 {data?.map((item, index) => {
-                    const noOfItemInTheLeaderBoard = isDrawer ? data.length : 6
+                    const noOfItemsWhenDrawerClosed = 6
+                    const noOfItemInTheLeaderBoard = isDrawer ? data.length : noOfItemsWhenDrawerClosed
                     if (index < noOfItemInTheLeaderBoard) {
                         return <LeaderRanking key={index + 1} data={item} percentage={item.percentage} value={item.rank} index={index + 1} />
                     }

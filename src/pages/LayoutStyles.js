@@ -97,7 +97,7 @@ export const rightItem3 = {
 export const drawerStyles = {
   padding: '0px',
   margin: '20px 33px 0px 33px',
-  width: '319px',
+  width: '298px',
   height: '100%',
   borderRadius: '10px',
   background: '#FFF',

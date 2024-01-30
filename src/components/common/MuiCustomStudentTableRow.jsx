@@ -7,9 +7,16 @@ import {
   Stack,
 } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
-import ArrowDownward from '@mui/icons-material/ArrowDownward';
-import ArrowUpward from '@mui/icons-material/ArrowUpward';
+import { poppinsFont, pxToRem } from '../../theme/typography';
 
+const dataStyling = {
+  fontFamily: poppinsFont.fontFamily,
+  fontSize: pxToRem(14),
+  fontWeight: 400,
+  fontStyle: 'normal',
+  lineHeight: 'normal',
+  textTransform: 'capitalize',
+}
 function secondsToMinutes(seconds) {
   const minutes = Math.floor(seconds / 60)
   const remainingSeconds = seconds % 60
@@ -31,29 +38,29 @@ const MuiCustomStudentTableRow = ({ stu, viewStudentResult }) => {
     <TableRow
       sx={{
         background:
-          stu.submission_type === 'not attempted'
+          stu.submission_type === 0
             ? theme.palette.error[200]
             : '',
-        // '&:hover': {
-        //   background:
-        //     stu.submission_type === 'not attempted'
-        //       ? theme.palette.error[300]
-        //       : theme.palette.grey[100], // Set your desired background color
-        // },
+        '&:hover': {
+          background:
+            stu.submission_type === 0
+              ? theme.palette.error[300]
+              : theme.palette.grey[100], // Set your desired background color
+        },
       }}
     >
       <TableCell
         scope='row'
         sx={{ border: 'none', borderRadius: '6px 0 0 6px' }}
       >
-        <Typography variant='body1' sx={{ color: theme.palette.grey[900] }}>
+        <Typography variant='body1' sx={{ ...dataStyling, color: theme.palette.grey[900] }}>
           {stu.subject}
         </Typography>
       </TableCell>
       {(
         <TableCell scope='row' sx={{ border: 'none' }}>
-          <Typography variant='body1' sx={{ color: theme.palette.grey[900] }}>
-            {stu.semester}
+          <Typography variant='body1' sx={{ ...dataStyling, color: theme.palette.grey[900] }}>
+            {stu.total_timespent ? stu.total_timespent + ' Mins' : '--'}
           </Typography>
         </TableCell>
       )}
@@ -61,6 +68,7 @@ const MuiCustomStudentTableRow = ({ stu, viewStudentResult }) => {
         <Typography
           variant='body1'
           sx={{
+            ...dataStyling,
             color:
               stu.submission_type === 3
                 ? theme.palette.success[700]
@@ -83,13 +91,13 @@ const MuiCustomStudentTableRow = ({ stu, viewStudentResult }) => {
         </Typography>
       </TableCell>
       <TableCell scope='row' sx={{ border: 'none' }}>
-        <Typography variant='body1' sx={{ color: theme.palette.grey[900] }}>
-          {stu.total_timespent} Min
+        <Typography variant='body1' sx={{ ...dataStyling, color: theme.palette.grey[900] }}>
+          {getInternetQuality(stu.internet_speed)}
         </Typography>
       </TableCell>
       <TableCell scope='row' sx={{ border: 'none' }}>
-        <Typography variant='body1' sx={{ color: theme.palette.grey[900] }}>
-          {getInternetQuality(stu.internet_speed)}
+        <Typography variant='body1' sx={{ ...dataStyling, color: theme.palette.grey[900], textAlign: 'center' }}>
+          {stu.percentage_scored ? stu.percentage_scored + ' %' : '--'}
         </Typography>
       </TableCell>
       <TableCell
@@ -101,8 +109,8 @@ const MuiCustomStudentTableRow = ({ stu, viewStudentResult }) => {
           justifyContent='space-between'
           alignItems='center'
         >
-          <Typography variant='body3' sx={{ color: theme.palette.grey[900] }}>
-            {stu.percentage_scored}%
+          <Typography variant='body3' sx={{ ...dataStyling, color: theme.palette.grey[900] }}>
+            {stu.attempted ? 'Attempted' : 'Unattempted'}
           </Typography>
         </Stack>
       </TableCell>

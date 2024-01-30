@@ -12,6 +12,8 @@ import {
 import { useTheme } from '@mui/material/styles';
 import ArrowDownward from '@mui/icons-material/ArrowDownward';
 import ArrowUpward from '@mui/icons-material/ArrowUpward';
+import { poppinsFont, pxToRem } from '../../theme/typography';
+import palette from '../../theme/palette';
 
 const options = [
   { id: 1, value: 'Timeout' },
@@ -31,24 +33,41 @@ const MuiCustomTableHeaderCellWithSortandSelect = ({
     <>
       <TableCell
         sx={{
+          padding: '0px',
+          margin: '0px',
           height: '30px',
+          padding: '12px',
+          background: theme.palette.grey[100]
         }}
       >
         <Stack
           direction='row'
           alignItems='center'
           gap={'0.5rem'}
-          sx={{ height: '20px' }}
+          sx={{ height: '10px' }}
         >
           <Typography
             variant='body2'
             sx={{
+              fontFamily: poppinsFont.fontFamily,
+              fontSize: pxToRem(14),
+              fontStyle: 'normal',
+              fontWeight: 500,
               color: theme.palette.grey[500],
-              lineHeight: '1rem',
+              lineHeight: 'normal',
             }}
           >
             {itemData}
           </Typography>
+          <ArrowUpward
+            sx={{
+              margin: '0px',
+              padding: '0px',
+              height: '15px',
+              width: '14.931px',
+              color: palette.grey[400]
+            }}
+          />
         </Stack>
       </TableCell>
     </>

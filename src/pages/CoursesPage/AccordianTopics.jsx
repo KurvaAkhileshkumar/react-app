@@ -12,11 +12,11 @@ import document from '../../assets/document.svg'
 import { MyDiv } from '../../components/myStyledComponents/styledComponents';
 import VectorBlue from '../../assets/VectorBlue.svg'
 import searchStatus from '../../assets/searchstatus.svg'
+import { Link } from 'react-router-dom';
 
 const arr = [1, 2, 3, 4, 5]
 export default function AccordianTopics({ unitsData }) {
     console.log('executing')
-    // unitsData?.filter((item) => item.unit_id == unitId ? item.topics : '')    
     const [topicIndex, setTopicIndex] = useState(0)
     let intialTopicState = ''
     if (unitsData !== undefined) {
@@ -142,27 +142,29 @@ export default function AccordianTopics({ unitsData }) {
                                         >
                                             {item.topic_name}
                                         </Typography>
-                                        <Stack direction={'row'} position={'absolute'} right={'10px'}>
-                                            <Typography
-                                                color={palette.primary.main}
-                                                fontFamily={poppinsFont.fontFamily}
-                                                fontSize={pxToRem(14)}
-                                                fontWeight={400}
-                                                fontStyle={'normal'}
-                                                lineHeight={'normal'}
-                                            >
-                                                Start
-                                            </Typography>
-                                            <MyDiv sx={{
-                                                width: '14px',
-                                                height: '14px',
-                                                borderRadius: '5px',
-                                                marginTop: '4px',
-                                                marginLeft: '8px'
-                                            }}>
-                                                <img src={VectorBlue} alt="Broken" />
-                                            </MyDiv>
-                                        </Stack>
+                                        <Link to={`/viewpdf/${item.url}`}>
+                                            <Stack direction={'row'} position={'absolute'} right={'10px'}>
+                                                <Typography
+                                                    color={palette.primary.main}
+                                                    fontFamily={poppinsFont.fontFamily}
+                                                    fontSize={pxToRem(14)}
+                                                    fontWeight={400}
+                                                    fontStyle={'normal'}
+                                                    lineHeight={'normal'}
+                                                >
+                                                    Start
+                                                </Typography>
+                                                <MyDiv sx={{
+                                                    width: '14px',
+                                                    height: '14px',
+                                                    borderRadius: '5px',
+                                                    marginTop: '4px',
+                                                    marginLeft: '8px'
+                                                }}>
+                                                    <img src={VectorBlue} alt="Broken" />
+                                                </MyDiv>
+                                            </Stack>
+                                        </Link>
                                     </Stack>
                                 </AccordionDetails>
                             </Accordion>

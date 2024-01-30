@@ -8,8 +8,9 @@ import CourseLayout from './pages/CoursesPage/CourseLayout'
 import Login from './pages/Login'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
-
 import { store, persistor } from '../src/Store/Store'
+import PdfViewer from './pages/CoursesPage/PdfViewer'
+
 const router = createBrowserRouter([
   {
     path: '/dashboard',

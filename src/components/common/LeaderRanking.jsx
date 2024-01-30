@@ -66,6 +66,7 @@ const LeaderRanking = ({ data, index, value, percentage }) => {
             width: '26px',
             height: '26px',
             margin: '20px 20px 20px 0px',
+            paddingLeft: () => value < 10 ? '8px' : '6px',
             fontFamily: poppinsFont.fontFamily,
             fontSize: pxToRem(16),
             lineHeight: '24px',

@@ -21,7 +21,7 @@ const HeaderArr = ['Subject', 'TimeSpent', 'Submission', 'Internet speed', 'Perc
 
 
 const MuiCustomTableWithSortandSelect = () => {
-  const noOfItemsPerPage = 8
+  const noOfItemsPerPage = 7
   const [totalAssessmentsData, setTotalAssessmentsData] = useState([])
   const [assessmentsTableData, setAssessmentsTableData] = useState([])
   const [isError, setIsError] = useState(true)
@@ -43,15 +43,17 @@ const MuiCustomTableWithSortandSelect = () => {
       {isError ? <MyDiv>
         <Paper
           sx={{
+            margin: '0px',
+            padding: '0px',
+            border: '0px',
             boxShadow: 'none',
           }}
         >
-          <Table sx={{ width: '100%' }} aria-label='sticky table'>
+          <Table sx={{ width: '861px', margin: '0px', padding: '0px' }} aria-label='sticky table'>
             <TableHead
               sx={{
-                height: '30px',
-                zIndex: 100,
-                background: 'white',
+                height: '31px',
+                background: palette.grey[100],
               }}
             >
               <MuiCustomTableHeaderRowWithSortandSelect
@@ -76,10 +78,13 @@ const MuiCustomTableWithSortandSelect = () => {
           sx={{ marginTop: '1rem' }}
         >
           <Pagination
-            count={Math.ceil(totalAssessmentsData?.length / noOfItemsPerPage)}
+            count={parseInt(Math.ceil(totalAssessmentsData?.length / noOfItemsPerPage))}
             onChange={(event, page) => handleChange(event, page)}
             color='primary'
             sx={{
+              '& .MuiPaginationItem-previousNext': {
+                background: palette.grey[200]
+              },
               fontFamily: poppinsFont.fontFamily
             }}
           />
