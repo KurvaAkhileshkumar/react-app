@@ -5,10 +5,30 @@ const recentAssessmentsData = []
 const categories = []
 const name = ''
 const email = ''
+const profile = {
+    name: '',
+    email: '',
+    profilePic: ''
+
+}
 const profilePicLink = ''
 const analyticsData = []
 const leaderBoardData = []
-const intialAsessmentsSliceData = { ...assessmentsSliceData, ass: '', profilePicLink, coursesData: [], name, email, recentAssessmentsData, categories, analyticsData, leaderBoardData }
+
+const intialAsessmentsSliceData = {
+    profile,
+    ...assessmentsSliceData,
+    ass: '',
+    profilePicLink,
+    coursesData: [],
+    name,
+    email,
+    recentAssessmentsData,
+    categories,
+    analyticsData,
+    leaderBoardData
+}
+
 console.log(intialAsessmentsSliceData)
 const assessmentsSlice = createSlice({
     name: 'sliceOfAssessment',
@@ -46,6 +66,11 @@ const assessmentsSlice = createSlice({
         },
         setLeaderBoardData(state, action) {
             state.leaderBoardData = action.payload.leaderBoardData
+        },
+        setProfile(state, action) {
+            state.profile.name = action.payload.name
+            state.profile.email = action.payload.email
+            state.profile.propfilePic = action.payload.profilePic
         }
     }
 })

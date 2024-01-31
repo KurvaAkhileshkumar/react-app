@@ -44,6 +44,7 @@ export default function Layout() {
         setState({ ...state, [anchor]: open });
     };
     useEffect(() => {
+
         fetch('https://stagingstudentpython.edwisely.com/reactProject/dashboardData').
             then((response) => response.json()).
             then((resData) => {
@@ -51,8 +52,6 @@ export default function Layout() {
                 const data = []
                 const categories = []
 
-                dispatch(assessmentsSliceActions.setRecentAssessmentsData({ data }))
-                dispatch(assessmentsSliceActions.setCategoriesData({ categories }))
 
 
                 resData.recent_assessments.analysis.forEach((item) => {
@@ -61,24 +60,36 @@ export default function Layout() {
                 })
 
 
+                //Dispatching the Data of 5 Cards of Dashboard into Store.
                 const analyticsData = resData.analytics
                 dispatch(assessmentsSliceActions.setAnalyticsData({ analyticsData }))
 
+                //Dispatching the Data Recent Assessments into Store.
+                dispatch(assessmentsSliceActions.setRecentAssessmentsData({ data }))
+                dispatch(assessmentsSliceActions.setCategoriesData({ categories }))
+
+                //Dispatching the Data of Leader Board into Store.
                 const leaderBoardData = resData.leaderboard
                 dispatch(assessmentsSliceActions.setLeaderBoardData({ leaderBoardData }))
 
-                //Setting the mail of the user in the store
+                //Dispatching the mail into Store
                 const email = resData.email
                 dispatch(assessmentsSliceActions.setEmail({ email }))
-                //Setting the name of the user in the store
+
+                //Dispatching the name into Store
                 const name = resData.name
                 dispatch(assessmentsSliceActions.setCoursesData({ name }))
-                //Setting the Courses Data
+
+                //Dispatching the Courses Data into Store
                 const coursesData = resData.courses
                 dispatch(assessmentsSliceActions.setCoursesData({ coursesData }))
-                //Setting the Profile Pic Link in the store
+
+                //Dispatching the Profile Pic into Store
                 const profilePicture = resData.profile_picture
                 dispatch(assessmentsSliceActions.setProfile({ profilePicture }))
+
+                //Dispatching the Profile(name email pic) into Store
+                dispatch(assessmentsSliceActions.setProfile({ email, name, profilePicture }))
 
             })
 

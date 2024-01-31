@@ -7,9 +7,9 @@ import typography from "../theme/typography";
 import { useSelector } from "react-redux";
 
 export default function UserProfile() {
-    const profilePicLink = useSelector((state) => state.assessmentsReducer.profilePicLink)
-    const name = useSelector((state) => state.assessmentsReducer.name)
-    const email = useSelector((state) => state.assessmentsReducer.email)
+    const profilePic = useSelector((state) => state.assessmentsReducer.profile.profilePic)
+    const name = useSelector((state) => state.assessmentsReducer.profile.name)
+    const email = useSelector((state) => state.assessmentsReducer.profile.email)
     return (
         <>
             <Stack direction={'row'}>
@@ -18,7 +18,7 @@ export default function UserProfile() {
                         height: '38px',
                         borderRadius: '4px'
                     }}
-                    src={profilePicLink} alt="" />
+                    src={profilePic} alt="" />
                 <Stack direction={'column'} height={'28px'}>
                     <MyDiv>
                         <Typography
