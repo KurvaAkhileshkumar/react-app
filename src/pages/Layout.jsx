@@ -153,27 +153,29 @@ export default function Layout() {
                         </Box>
 
                         {/* LeaderBoardText */}
-                        <Stack direction={'row'} width={'319px'} position={'relative'}>
-                            <Typography sx={calendarText}>
-                                LeaderBoard
-                            </Typography>
-                            <ChevronRightIcon
-                                sx={{
-                                    position: 'absolute',
-                                    right: '20px',
-                                    cursor: 'pointer',
-                                    fontSize: '24px',
-                                    marginTop: '4px',
+                        <Stack>
+                            <Stack direction={'row'} width={'319px'} position={'relative'}>
+                                <Typography sx={calendarText}>
+                                    LeaderBoard
+                                </Typography>
+                                <ChevronRightIcon
+                                    sx={{
+                                        position: 'absolute',
+                                        right: '20px',
+                                        cursor: 'pointer',
+                                        fontSize: '24px',
+                                        marginTop: '4px',
 
-                                }}
-                                onClick={toggleDrawer('right', true)}
-                            />
-                            <TemporaryDrawer state={state} toggleDrawer={toggleDrawer} />
+                                    }}
+                                    onClick={toggleDrawer('right', true)}
+                                />
+                                <TemporaryDrawer state={state} toggleDrawer={toggleDrawer} />
+                            </Stack>
+                            {/* LeaderBoardCard */}
+                            <Box sx={rightItem3}>
+                                <LeaderBoardCard isDrawer={false} />
+                            </Box>
                         </Stack>
-                        {/* LeaderBoardCard */}
-                        <Box sx={rightItem3}>
-                            <LeaderBoardCard isDrawer={false} />
-                        </Box>
                     </Stack>
                 </Stack >
             }
