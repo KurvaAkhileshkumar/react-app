@@ -23,7 +23,12 @@ import Courses from './courses.jsx';
 import { poppinsFont, pxToRem } from '../theme/typography.js';
 import { useRef } from 'react';
 
-const checkSkeleton = true;
+import AssessmentDetailsSkeleton from '../Skeletons/AssessmentDetailsSkeleton.jsx'
+import AssessmentSkeleton from '../Skeletons/AssessmentSkeleton.jsx'
+import CourseSkeleton from '../Skeletons/CourseSkeleton.jsx'
+import LeaderBoardSkeleton from '../Skeletons/LeaderBoardSkeleton.jsx'
+
+
 let coursesCardRef
 export default function Layout() {
 
@@ -71,23 +76,25 @@ export default function Layout() {
         <>
 
             {/* DashBoardLayout */}
-            <Typography
-                sx={{
-                    fontFamily: poppinsFont.fontFamily,
-                    fontSize: pxToRem(20),
-                    fontWeight: '600',
-                    lineHeight: '28px',
-                    textAlign: 'start',
-                    marginLeft: '98px',
-                    marginTop: '12px'
-                }}
-            >Dashboard</Typography>
-            <Stack direction={'row'} sx={dashBoardStack}>
-                <DashBoard data={dashBoardData} />
-            </Stack>
+            {dashBoardData == undefined ? <AssessmentDetailsSkeleton /> :
+                <MyDiv>
+                    <Typography
+                        sx={{
+                            fontFamily: poppinsFont.fontFamily,
+                            fontSize: pxToRem(20),
+                            fontWeight: '600',
+                            lineHeight: '28px',
+                            textAlign: 'start',
+                            marginLeft: '98px',
+                            marginTop: '12px'
+                        }}
+                    >Dashboard</Typography>
+                    <Stack direction={'row'} sx={dashBoardStack}>
+                        <DashBoard data={dashBoardData} />
+                    </Stack></MyDiv>}
 
             {/* MiddleLayout */}
-            {checkSkeleton ?
+            {
                 <Stack direction={'row'} sx={parentStack}>
 
                     {/* LeftColumn */}
@@ -98,9 +105,10 @@ export default function Layout() {
                                 categories={categoriesData}
                             />
                         </MyDiv>
-                        <MyDiv sx={leftItem2}>
-                            <Assessments />
-                        </MyDiv>
+                        {dashBoardData == undefined ? <AssessmentSkeleton /> :
+                            <MyDiv sx={leftItem2}>
+                                <Assessments />
+                            </MyDiv>}
                     </Stack>
 
                     {/* RightColumn */}
@@ -152,20 +160,26 @@ export default function Layout() {
                         </MyDiv>
                     </Stack>
                 </Stack >
-                : <SkeletonLayout />}
+            }
 
             {/* Courses Section */}
-
-            <Stack ref={coursesCardRef} direction={'column'} gap={'15px'}>
-                <Typography sx={yourCoursesText} marginLeft={'100px'}>
-                    Your courses
-                </Typography>
-                <Stack height={'281px'} direction={'row'}
-                    gap={'22px'}
-                    sx={courses}>
-                    <Courses coursesData={coursesData} />
-                </Stack>
-            </Stack>
+            {dashBoardData === undefined ? (
+                <CourseSkeleton />
+            ) : (
+                <>
+                    <Stack ref={coursesCardRef} direction={'column'} gap={'15px'}>
+                        <Typography sx={yourCoursesText} marginLeft={'100px'}>
+                            Your courses
+                        </Typography>
+                        <Stack height={'281px'} direction={'row'}
+                            gap={'22px'}
+                            sx={courses}>
+                            <Courses coursesData={coursesData} />
+                        </Stack>
+                    </Stack>
+                </>
+            )
+            }
         </>
     )
 }

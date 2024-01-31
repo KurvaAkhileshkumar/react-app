@@ -6,9 +6,10 @@ import elementEqual from '../assets/element-equal.jpg'
 import book from '../assets/book.jpg'
 import logoutImg from '../assets/logout.jpg'
 import { MyDiv } from '../components/myStyledComponents/styledComponents'
-import { logout } from '../Store/authSlice';
+import { authSliceActions } from '../Store/Store';
 import { useNavigate } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
+
 export default function SibeBarNavigation() {
 
     const navigate = useNavigate()
@@ -16,7 +17,7 @@ export default function SibeBarNavigation() {
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
 
     const logoutHandler = () => {
-        dispatch(logout())
+        dispatch(authSliceActions.logout())
         navigate('/')
     }
     return (

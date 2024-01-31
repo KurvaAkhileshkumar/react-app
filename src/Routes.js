@@ -27,6 +27,10 @@ const router = createBrowserRouter([
     ],
   },
   {
+    path: '/viewpdf/:url',
+    element: <PdfViewer />,
+  },
+  {
     path: '/',
     element: <Login />,
   },

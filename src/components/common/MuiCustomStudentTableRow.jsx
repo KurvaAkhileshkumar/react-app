@@ -33,7 +33,7 @@ function getInternetQuality(speed) {
 
 const MuiCustomStudentTableRow = ({ stu, viewStudentResult }) => {
   const theme = useTheme()
-  // const { currentSectionTab } = useSelector((state) => state.assessment)
+
   return (
     <TableRow
       sx={{

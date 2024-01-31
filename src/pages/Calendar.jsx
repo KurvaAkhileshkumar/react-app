@@ -27,10 +27,12 @@ export default function Calendar() {
                             margin: '0px',
                             padding: '0px',
                             width: '273px',
+                            marginTop: '2px',
                         },
                         '& .MuiPickersCalendarHeader-labelContainer': {
-                            margin: '0px',
-                            padding: '0px'
+                            marginLeft: '20px',
+                            padding: '0px',
+                            gap: '20px'
                         },
                         '& .MuiPickersCalendarHeader-label': {
                             margin: '0px',

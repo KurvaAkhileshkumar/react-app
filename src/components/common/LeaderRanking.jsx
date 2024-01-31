@@ -65,8 +65,8 @@ const LeaderRanking = ({ data, index, value, percentage, isDrawer }) => {
           sx={{
             width: '26px',
             height: '26px',
-            margin: '20px 20px 20px 0px',
-            paddingLeft: () => value < 10 ? '6px' : '4px',
+            margin: '20px 0px 20px 0px',
+            paddingLeft: () => value < 10 ? '0px' : '2px',
             fontFamily: poppinsFont.fontFamily,
             fontSize: pxToRem(16),
             lineHeight: '24px',

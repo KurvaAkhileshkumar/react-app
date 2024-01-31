@@ -92,12 +92,15 @@ export default function AccordianTopics({ unitsData }) {
                                 sx={{
                                     border: '0px',
                                     background: '#FFF',
+                                    boxShadow: 'none'
                                 }}
                             >
                                 <AccordionSummary
                                     sx={
                                         {
                                             padding: '0px',
+                                            background: '#FFF',
+                                            boxShadow: 'none',
                                             fontFamily: poppinsFont.fontFamily,
                                             fontSize: pxToRem(16),
                                             color: palette.grey[400],
@@ -142,7 +145,7 @@ export default function AccordianTopics({ unitsData }) {
                                         >
                                             {item.topic_name}
                                         </Typography>
-                                        <Link to={`/viewpdf/${item.url}`}>
+                                        <Link to={`/viewpdf/${encodeURIComponent(item.url)}`}>
                                             <Stack direction={'row'} position={'absolute'} right={'10px'}>
                                                 <Typography
                                                     color={palette.primary.main}
@@ -168,7 +171,7 @@ export default function AccordianTopics({ unitsData }) {
                                     </Stack>
                                 </AccordionDetails>
                             </Accordion>
-                            <Divider />
+                            <Divider hard />
                         </Stack >
                     );
                 })}

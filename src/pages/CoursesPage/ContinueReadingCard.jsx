@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import palette from "../../theme/palette";
 import { continueReadingCardTestStyles } from './CourseLayoutStyles'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Link } from "react-router-dom";
 
 const icons = [document, presentationChart, presentationChart]
 export default function ContinueReadingCard({ continueReadingData }) {
@@ -56,16 +57,17 @@ export default function ContinueReadingCard({ continueReadingData }) {
                                             {item.name}
                                         </Typography>
                                     </MyDiv>
-                                    <ArrowForwardIcon
-                                        sx={{
-                                            width: '13.5px',
-                                            height: '12px',
-                                            marginTop: '25px',
-                                            alignContent: 'flex-start',
-                                            strokeWidth: '2px',
+                                    <Link to={`/viewpdf/${encodeURIComponent(item.url)}`}>
+                                        <ArrowForwardIcon
+                                            sx={{
+                                                width: '20px',
+                                                height: '15px',
+                                                marginTop: '25px',
+                                                alignContent: 'flex-start',
+                                                strokeWidth: '2px',
 
-                                        }}
-                                    />
+                                            }}
+                                        /></Link>
                                 </Stack>
                             </MyDiv>
                         </MyDiv>

@@ -19,7 +19,8 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
-import { login } from '../Store/authSlice.jsx'
+import { authSliceActions } from "../Store/Store.jsx";
+
 
 export default function Login() {
     const [username, setUsername] = useState('')
@@ -49,7 +50,7 @@ export default function Login() {
                 if (res.status === 200) {
                     navigate('/dashboard')
                     setHelper(prevState => !prevState)
-                    dispatch(login())
+                    dispatch(authSliceActions.login())
                 } else {
                     alert(res.message)
                     setHelper(prevState => !prevState)

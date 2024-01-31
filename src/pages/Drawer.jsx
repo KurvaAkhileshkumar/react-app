@@ -16,7 +16,8 @@ export default function TemporaryDrawer({ state, toggleDrawer, data }) {
                 {
                     padding: '0px',
                     margin: '0px',
-                    width: '364px',
+                    maxWidth: '364px',
+                    width: '100%px',
                     height: '100%',
                 }
             }

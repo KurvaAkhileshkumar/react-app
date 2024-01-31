@@ -71,6 +71,9 @@ export default function AttemptedUnattempted() {
                     aria-labelledby="demo-radio-buttons-group-label"
                     defaultValue="female"
                     name="radio-buttons-group"
+                    sx={{
+                        background: '#FFF',
+                    }}
                 >
                     {subjectsArray.map((index) => {
                         return <FormControlLabel sx={{

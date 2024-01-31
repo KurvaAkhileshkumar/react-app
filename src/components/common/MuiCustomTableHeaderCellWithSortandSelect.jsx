@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { assessmentsSliceActions } from '../../Store/Store';
 import { useSelector } from 'react-redux'
 import {
   TableCell,
@@ -14,6 +15,8 @@ import ArrowDownward from '@mui/icons-material/ArrowDownward';
 import ArrowUpward from '@mui/icons-material/ArrowUpward';
 import { poppinsFont, pxToRem } from '../../theme/typography';
 import palette from '../../theme/palette';
+import { useDispatch } from 'react-redux'
+import assessmentsSlice from '../../Store/AssessmentsReduxSlice';
 
 const options = [
   { id: 1, value: 'Timeout' },
@@ -29,6 +32,12 @@ const MuiCustomTableHeaderCellWithSortandSelect = ({
   index,
 }) => {
   const theme = useTheme()
+
+  // const category=useSelector((state)=>state.assessmentsReducer.category)
+  const dispatch = useDispatch()
+  function sortingTheData(itemData) {
+    dispatch(assessmentsSliceActions.isClickedForSorting({ itemData }))
+  }
   return (
     <>
       <TableCell
@@ -47,6 +56,7 @@ const MuiCustomTableHeaderCellWithSortandSelect = ({
           sx={{ height: '10px' }}
         >
           <Typography
+            onClick={() => sortingTheData({ itemData })}
             variant='body2'
             sx={{
               fontFamily: poppinsFont.fontFamily,
@@ -59,7 +69,7 @@ const MuiCustomTableHeaderCellWithSortandSelect = ({
           >
             {itemData}
           </Typography>
-          <ArrowUpward
+          {itemData === 'Percentage' ? <ArrowUpward
             sx={{
               margin: '0px',
               padding: '0px',
@@ -67,7 +77,7 @@ const MuiCustomTableHeaderCellWithSortandSelect = ({
               width: '14.931px',
               color: palette.grey[400]
             }}
-          />
+          /> : ''}
         </Stack>
       </TableCell>
     </>

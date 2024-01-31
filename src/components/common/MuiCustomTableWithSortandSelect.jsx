@@ -16,17 +16,38 @@ import {
 } from '@mui/material'
 import MuiCustomTableHeaderRowWithSortandSelect from './MuiCustomTableHeaderRowWithSortandSelect'
 import MuiCustomStudentTableRow from './MuiCustomStudentTableRow'
+import { useDispatch, useSelector } from 'react-redux'
+import { assessmentsSliceActions } from '../../Store/Store'
+
+
 
 const HeaderArr = ['Subject', 'TimeSpent', 'Submission', 'Internet speed', 'Percentage', 'Attempted']
 
 
 const MuiCustomTableWithSortandSelect = () => {
   const noOfItemsPerPage = 7
-  const [totalAssessmentsData, setTotalAssessmentsData] = useState([])
   const [assessmentsTableData, setAssessmentsTableData] = useState([])
   const [isError, setIsError] = useState(true)
+  const dispatch = useDispatch()
+
+  const assessmentsSliceData = useSelector((state) => state.assessmentsReducer.assessmentsSliceData)
+  const category = useSelector((state) => state.assessmentsReducer.category)
+  const asscendingOrDescending = useSelector((state) => state.assessmentsReducer.asseOrDesc)
   function handleChange(event, page) {
-    setAssessmentsTableData(totalAssessmentsData.slice(noOfItemsPerPage * (page - 1), noOfItemsPerPage * (page)))
+    setAssessmentsTableData(assessmentsSliceData.slice(noOfItemsPerPage * (page - 1), noOfItemsPerPage * (page)))
+  }
+  console.log(category)
+  console.log(asscendingOrDescending)
+  if (category !== '' && asscendingOrDescending !== '') {
+    console.log('entered')
+    const dummyData = [...assessmentsSliceData]
+    console.log(dummyData)
+    if (asscendingOrDescending == 'ass')
+      dummyData.sort((a, b) => a.cat - b.cat)
+    else if (asscendingOrDescending == 'desc')
+      dummyData.sort((a, b) => b.cat - a.cat)
+    dispatch(assessmentsSliceActions.isClickedForSorting(category))
+    dispatch(assessmentsSliceActions.setAssessmentSliceData(dummyData))
   }
   useEffect(() => {
     fetch('https://stagingstudentpython.edwisely.com/reactProject/assessments').then((response) => {
@@ -34,8 +55,8 @@ const MuiCustomTableWithSortandSelect = () => {
     }).then((resData) => {
       if (resData.status !== 200)
         console.log('Error Occured')
-      setTotalAssessmentsData(resData.assessments)
       setAssessmentsTableData(resData.assessments?.slice(0, noOfItemsPerPage))
+      dispatch(assessmentsSliceActions.setAssessmentSliceData(resData.assessments))
     })
   }, [])
   return (
@@ -78,7 +99,7 @@ const MuiCustomTableWithSortandSelect = () => {
           sx={{ marginTop: '1rem' }}
         >
           <Pagination
-            count={parseInt(Math.ceil(totalAssessmentsData?.length / noOfItemsPerPage))}
+            count={parseInt(Math.ceil(assessmentsSliceData?.length / noOfItemsPerPage))}
             onChange={(event, page) => handleChange(event, page)}
             color='primary'
             sx={{
