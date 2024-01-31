@@ -3,15 +3,12 @@ import { createSlice } from '@reduxjs/toolkit'
 const assessmentsSliceData = {}
 const recentAssessmentsData = []
 const categories = []
-const name = ''
-const email = ''
 const profile = {
     name: '',
     email: '',
     profilePic: ''
 
 }
-const profilePicLink = ''
 const analyticsData = []
 const leaderBoardData = []
 
@@ -19,10 +16,7 @@ const intialAsessmentsSliceData = {
     profile,
     ...assessmentsSliceData,
     ass: '',
-    profilePicLink,
     coursesData: [],
-    name,
-    email,
     recentAssessmentsData,
     categories,
     analyticsData,
@@ -43,17 +37,8 @@ const assessmentsSlice = createSlice({
             else if (state.ass === 'ass')
                 state.ass = ' '
         },
-        setProfile(state, action) {
-            state.profilePicLink = action.payload.profilePicture
-        },
         setCoursesData(state, action) {
             state.coursesData = action.payload.coursesData
-        },
-        setName(state, action) {
-            state.name = action.payload.name
-        },
-        setEmail(state, action) {
-            state.email = action.payload.email
         },
         setRecentAssessmentsData(state, action) {
             state.recentAssessmentsData = action.payload.data
@@ -70,7 +55,7 @@ const assessmentsSlice = createSlice({
         setProfile(state, action) {
             state.profile.name = action.payload.name
             state.profile.email = action.payload.email
-            state.profile.propfilePic = action.payload.profilePic
+            state.profile.profilePic = action.payload.profilePic
         }
     }
 })

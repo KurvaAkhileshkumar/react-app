@@ -32,68 +32,64 @@ import { assessmentsSliceActions } from '../Store/Store.jsx';
 export default function Layout() {
 
 
+    //Toggling the Drawer Should be handled in the store.
     const [state, setState] = useState({
         right: false,
     });
-    const dispatch = useDispatch()
-    const analyticsData = useSelector((state) => state.assessmentsReducer.analyticsData)
     const toggleDrawer = (anchor, open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
         setState({ ...state, [anchor]: open });
     };
+
+    //Accessing the data before assignment for Skeleton Loading
+    const analyticsData = useSelector((state) => state.assessmentsReducer.analyticsData)
+
+    //Fetching and Dispatching the Data into Store
+    const dispatch = useDispatch()
     useEffect(() => {
 
         fetch('https://stagingstudentpython.edwisely.com/reactProject/dashboardData').
             then((response) => response.json()).
             then((resData) => {
-
                 const data = []
                 const categories = []
-
-
-
                 resData.recent_assessments.analysis.forEach((item) => {
                     data.push(item.percentage)
                     categories.push(item.name)
                 })
 
+                //Dispatching the Profile(name email pic) into Store
+                const email = resData.email
+                const name = resData.name
+                const profilePic = resData.profile_picture
+                dispatch(assessmentsSliceActions.setProfile({ email, name, profilePic }))
 
                 //Dispatching the Data of 5 Cards of Dashboard into Store.
                 const analyticsData = resData.analytics
                 dispatch(assessmentsSliceActions.setAnalyticsData({ analyticsData }))
 
+
                 //Dispatching the Data Recent Assessments into Store.
                 dispatch(assessmentsSliceActions.setRecentAssessmentsData({ data }))
                 dispatch(assessmentsSliceActions.setCategoriesData({ categories }))
+
 
                 //Dispatching the Data of Leader Board into Store.
                 const leaderBoardData = resData.leaderboard
                 dispatch(assessmentsSliceActions.setLeaderBoardData({ leaderBoardData }))
 
-                //Dispatching the mail into Store
-                const email = resData.email
-                dispatch(assessmentsSliceActions.setEmail({ email }))
-
-                //Dispatching the name into Store
-                const name = resData.name
-                dispatch(assessmentsSliceActions.setCoursesData({ name }))
 
                 //Dispatching the Courses Data into Store
                 const coursesData = resData.courses
                 dispatch(assessmentsSliceActions.setCoursesData({ coursesData }))
 
-                //Dispatching the Profile Pic into Store
-                const profilePicture = resData.profile_picture
-                dispatch(assessmentsSliceActions.setProfile({ profilePicture }))
-
-                //Dispatching the Profile(name email pic) into Store
-                dispatch(assessmentsSliceActions.setProfile({ email, name, profilePicture }))
-
             })
 
     }, [])
+
+
 
     return (
         <>

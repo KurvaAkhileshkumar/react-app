@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 
 export default function TopBarNavigation({ name, email }) {
-    const profilePicLink = useSelector((state) => state.assessmentsReducer.profilePicLink)
+    const profilePicLink = useSelector((state) => state.assessmentsReducer.profile.profilePic)
     const [profileClick, setProfileClick] = useState(false);
 
     const handleLogout = () => {
