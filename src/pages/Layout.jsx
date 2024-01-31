@@ -51,6 +51,10 @@ export default function Layout() {
                 const data = []
                 const categories = []
 
+                dispatch(assessmentsSliceActions.setRecentAssessmentsData({ data }))
+                dispatch(assessmentsSliceActions.setCategoriesData({ categories }))
+
+
                 resData.recent_assessments.analysis.forEach((item) => {
                     data.push(item.percentage)
                     categories.push(item.name)
@@ -62,8 +66,7 @@ export default function Layout() {
 
                 const leaderBoardData = resData.leaderboard
                 dispatch(assessmentsSliceActions.setLeaderBoardData({ leaderBoardData }))
-                dispatch(assessmentsSliceActions.setCategoriesData({ categories }))
-                dispatch(assessmentsSliceActions.setRecentAssessmentsData({ data }))
+
                 //Setting the mail of the user in the store
                 const email = resData.email
                 dispatch(assessmentsSliceActions.setEmail({ email }))
