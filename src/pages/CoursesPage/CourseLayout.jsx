@@ -46,7 +46,7 @@ export default function CourseLayout() {
                 marginLeft: '80px',
             }}>
                 <Stack direction={'row'}>
-                    <Link to='/'>
+                    <Link to='/dashboard'>
                         <img style={{
                             cursor: 'pointer',
                             fontSize: '24px',

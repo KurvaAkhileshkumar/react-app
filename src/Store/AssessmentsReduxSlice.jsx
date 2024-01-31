@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
-const intialAsessmentsSliceData = { assessmentsSliceData: {}, asseOrDesc: '', category: '' }
 
+const assessmentsSliceData = {}
+const intialAsessmentsSliceData = { ...assessmentsSliceData, ass: '', profilePicLink: '' }
+console.log(intialAsessmentsSliceData)
 const assessmentsSlice = createSlice({
     name: 'sliceOfAssessment',
     initialState: intialAsessmentsSliceData,
@@ -9,17 +11,13 @@ const assessmentsSlice = createSlice({
             state.assessmentsSliceData = action.payload
         },
         isClickedForSorting(state, action) {
-            if (state.asseOrDesc === '')
-                state.asseOrDesc = 'ass'
-            else if (state.asseOrDesc === 'ass')
-                state.asseOrDesc = 'desc'
-            else if (state.asseOrDesc === 'desc')
-                state.asseOrDesc = 'ass'
-            console.log(state.category)
-            if (state.category == '')
-                state.category = action.payload
-            else
-                state.category = ''
+            if (state.ass === '')
+                state.ass = action.payload
+            else if (state.ass === 'ass')
+                state.ass = ' '
+        },
+        setProfile(state, action) {
+            state.profilePicLink = action.payload.profilePicture
         }
     }
 })

@@ -27,30 +27,32 @@ import AssessmentDetailsSkeleton from '../Skeletons/AssessmentDetailsSkeleton.js
 import AssessmentSkeleton from '../Skeletons/AssessmentSkeleton.jsx'
 import CourseSkeleton from '../Skeletons/CourseSkeleton.jsx'
 import LeaderBoardSkeleton from '../Skeletons/LeaderBoardSkeleton.jsx'
+import { useSelector, useDispatch } from 'react-redux';
+import { assessmentsSliceActions } from '../Store/Store.jsx';
 
 
-let coursesCardRef
+
+
 export default function Layout() {
 
-    coursesCardRef = useRef()
     const [recnetAssessmentsData, setRecentAssessmentsData] = useState([])
     const [categoriesData, setCategoriesData] = useState([])
     const [dashBoardData, setDashBoardData] = useState([])
     const [leaderBoardData, setLeaderBoardData] = useState([])
     const [name, setName] = useState()
     const [email, setEmail] = useState()
-    const [profilePicLink, setProfilePicLink] = useState()
     const [state, setState] = useState({
         right: false,
     });
     const [coursesData, setCoursesData] = useState([])
+    const dispatch = useDispatch()
     const toggleDrawer = (anchor, open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
         setState({ ...state, [anchor]: open });
     };
-
+    const profilePicLink = useSelector((state) => state.assessmentsReducer.profilePicLink)
     useEffect(() => {
         fetch('https://stagingstudentpython.edwisely.com/reactProject/dashboardData').then((response) => {
             return response.json()
@@ -68,7 +70,8 @@ export default function Layout() {
             setEmail(resData.email)
             setName(resData.name)
             setCoursesData(resData.courses)
-            setProfilePicLink(resData.profile_picture)
+            const profilePicture = resData.profile_picture
+            dispatch(assessmentsSliceActions.setProfile({ profilePicture }))
         })
     }, [])
 
@@ -77,7 +80,7 @@ export default function Layout() {
 
             {/* DashBoardLayout */}
             {dashBoardData == undefined ? <AssessmentDetailsSkeleton /> :
-                <MyDiv>
+                <Box>
                     <Typography
                         sx={{
                             fontFamily: poppinsFont.fontFamily,
@@ -91,7 +94,7 @@ export default function Layout() {
                     >Dashboard</Typography>
                     <Stack direction={'row'} sx={dashBoardStack}>
                         <DashBoard data={dashBoardData} />
-                    </Stack></MyDiv>}
+                    </Stack></Box>}
 
             {/* MiddleLayout */}
             {
@@ -99,16 +102,16 @@ export default function Layout() {
 
                     {/* LeftColumn */}
                     <Stack direction={'column'} sx={leftStack} gap={'21px'}>
-                        <MyDiv sx={leftItem1}>
+                        <Box sx={leftItem1}>
                             <RecenetAssessmentsChart
                                 data={recnetAssessmentsData}
                                 categories={categoriesData}
                             />
-                        </MyDiv>
+                        </Box>
                         {dashBoardData == undefined ? <AssessmentSkeleton /> :
-                            <MyDiv sx={leftItem2}>
+                            <Box sx={leftItem2}>
                                 <Assessments />
-                            </MyDiv>}
+                            </Box>}
                     </Stack>
 
                     {/* RightColumn */}
@@ -121,9 +124,9 @@ export default function Layout() {
                             </Typography>
 
                             {/* UserProfileCard */}
-                            <MyDiv sx={rightItem1}>
-                                <UserProfile name={name} email={email} profilePicLink={profilePicLink} />
-                            </MyDiv>
+                            <Box sx={rightItem1}>
+                                <UserProfile name={name} email={email} />
+                            </Box>
                         </Stack>
 
                         {/* CalenderText */}
@@ -132,9 +135,9 @@ export default function Layout() {
                         </Typography>
 
                         {/* CalenderCard */}
-                        <MyDiv sx={rightItem2}>
+                        <Box sx={rightItem2}>
                             <Calendar />
-                        </MyDiv>
+                        </Box>
 
                         {/* LeaderBoardText */}
                         <Stack direction={'row'} width={'319px'} position={'relative'}>
@@ -155,9 +158,9 @@ export default function Layout() {
                             <TemporaryDrawer state={state} toggleDrawer={toggleDrawer} data={leaderBoardData} />
                         </Stack>
                         {/* LeaderBoardCard */}
-                        <MyDiv sx={rightItem3}>
+                        <Box sx={rightItem3}>
                             <LeaderBoardCard data={leaderBoardData} isDrawer={false} />
-                        </MyDiv>
+                        </Box>
                     </Stack>
                 </Stack >
             }
@@ -167,7 +170,7 @@ export default function Layout() {
                 <CourseSkeleton />
             ) : (
                 <>
-                    <Stack ref={coursesCardRef} direction={'column'} gap={'15px'}>
+                    <Stack direction={'column'} gap={'15px'}>
                         <Typography sx={yourCoursesText} marginLeft={'100px'}>
                             Your courses
                         </Typography>
@@ -207,4 +210,3 @@ const SkeletonLayout = () => {
     )
 }
 
-export { coursesCardRef }

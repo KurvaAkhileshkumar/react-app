@@ -33,10 +33,11 @@ const MuiCustomTableHeaderCellWithSortandSelect = ({
 }) => {
   const theme = useTheme()
 
-  // const category=useSelector((state)=>state.assessmentsReducer.category)
+  const ass = useSelector((state) => state.assessmentsReducer.ass)
   const dispatch = useDispatch()
-  function sortingTheData(itemData) {
-    dispatch(assessmentsSliceActions.isClickedForSorting({ itemData }))
+  function sortingTheData() {
+    if (ass == ' ')
+      dispatch(assessmentsSliceActions.isClickedForSorting('ass'))
   }
   return (
     <>
@@ -56,7 +57,7 @@ const MuiCustomTableHeaderCellWithSortandSelect = ({
           sx={{ height: '10px' }}
         >
           <Typography
-            onClick={() => sortingTheData({ itemData })}
+            onClick={sortingTheData}
             variant='body2'
             sx={{
               fontFamily: poppinsFont.fontFamily,
@@ -65,6 +66,7 @@ const MuiCustomTableHeaderCellWithSortandSelect = ({
               fontWeight: 500,
               color: theme.palette.grey[500],
               lineHeight: 'normal',
+              cursor: () => itemData === 'Percentage' ? 'pointer' : ''
             }}
           >
             {itemData}

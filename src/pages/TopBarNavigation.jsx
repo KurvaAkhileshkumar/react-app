@@ -5,14 +5,15 @@ import { Menu, MenuItem, Typography } from "@mui/material";
 import profileImg from '../assets/profile.jpeg'
 import { Stack } from "@mui/material";
 import { MyDiv } from "../components/myStyledComponents/styledComponents.jsx";
+import { useSelector } from "react-redux";
+
 
 export default function TopBarNavigation({ name, email }) {
-    // const profileName = name.split(" ")
     const navigate = useNavigate();
+    const profilePicLink = useSelector((state) => state.assessmentsReducer.profilePicLink)
     const [profileClick, setProfileClick] = useState(false);
 
     const handleLogout = () => {
-        // navigate('/');
         setProfileClick(true);
     };
 
@@ -25,9 +26,9 @@ export default function TopBarNavigation({ name, email }) {
             <Stack direction={'row'} sx={navStyles}>
                 <Typography sx={goodMorningStyles}>Good morning, Maharram</Typography>
 
-                <MyDiv sx={avatarStyles}>
+                <Box sx={avatarStyles}>
                     <img
-                        src={profileImg}
+                        src={profilePicLink}
                         width="50px"
                         height="50px"
                         style={{ borderRadius: "50%" }}
@@ -60,7 +61,7 @@ export default function TopBarNavigation({ name, email }) {
                             <MenuItem>Logout</MenuItem>
                         </Menu>
                     )}
-                </MyDiv>
+                </Box>
             </Stack>
         </>
     );

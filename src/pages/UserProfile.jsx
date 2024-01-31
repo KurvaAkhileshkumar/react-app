@@ -1,12 +1,13 @@
 import { MyDiv } from "../components/myStyledComponents/styledComponents";
 import Stack from '@mui/material/Stack'
-import profile from '../assets/profile.jpeg'
 import Typography from '@mui/material/Typography';
 import { poppinsFont, pxToRem } from "../theme/typography";
 import palette from "../theme/palette";
 import typography from "../theme/typography";
+import { useSelector } from "react-redux";
 
-export default function UserProfile({ name, email, profilePicLink }) {
+export default function UserProfile({ name, email }) {
+    const profilePicLink = useSelector((state) => state.assessmentsReducer.profilePicLink)
     return (
         <>
             <Stack direction={'row'}>

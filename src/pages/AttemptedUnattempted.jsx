@@ -1,5 +1,5 @@
 import { MyDiv } from "../components/myStyledComponents/styledComponents";
-import { Stack } from '@mui/material';
+import { Stack, Box } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
 import { attemptedUnattemptedText, circleIcon } from "./RecentAssessmentsStyles";
 import InputLabel from '@mui/material/InputLabel';
@@ -30,16 +30,16 @@ export default function AttemptedUnattempted() {
                 sx={attemptedUnattemptedText}
             >
                 <Stack>
-                    <MyDiv>
+                    <Box>
                         <CircleIcon sx={{ ...circleIcon, color: 'blue', }} />
                         Attempted
-                    </MyDiv>
+                    </Box>
                 </Stack>
                 <Stack>
-                    <MyDiv>
+                    <Box>
                         <CircleIcon sx={{ ...circleIcon, color: 'red', }} />
                         Unattempted
-                    </MyDiv>
+                    </Box>
                 </Stack>
                 <InputLabel sx={
                     {

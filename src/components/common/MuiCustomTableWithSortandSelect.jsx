@@ -5,12 +5,10 @@ import errorMark from '../../assets/errorMark.svg'
 import palette from '../../theme/palette'
 import {
   Typography,
-  TableContainer,
   Table,
   TableBody,
   TableHead,
   Paper,
-  Skeleton,
   Stack,
   Pagination,
 } from '@mui/material'
@@ -31,22 +29,18 @@ const MuiCustomTableWithSortandSelect = () => {
   const dispatch = useDispatch()
 
   const assessmentsSliceData = useSelector((state) => state.assessmentsReducer.assessmentsSliceData)
-  const category = useSelector((state) => state.assessmentsReducer.category)
-  const asscendingOrDescending = useSelector((state) => state.assessmentsReducer.asseOrDesc)
+  const sorting = useSelector((state) => state.assessmentsReducer.ass)
   function handleChange(event, page) {
     setAssessmentsTableData(assessmentsSliceData.slice(noOfItemsPerPage * (page - 1), noOfItemsPerPage * (page)))
   }
-  console.log(category)
-  console.log(asscendingOrDescending)
-  if (category !== '' && asscendingOrDescending !== '') {
+  console.log(sorting)
+  if (sorting !== '') {
     console.log('entered')
     const dummyData = [...assessmentsSliceData]
+    console.log(sorting)
+    if (sorting == 'ass')
+      dummyData.sort((a, b) => a.percentage_scored - b.percentage_scored)
     console.log(dummyData)
-    if (asscendingOrDescending == 'ass')
-      dummyData.sort((a, b) => a.cat - b.cat)
-    else if (asscendingOrDescending == 'desc')
-      dummyData.sort((a, b) => b.cat - a.cat)
-    dispatch(assessmentsSliceActions.isClickedForSorting(category))
     dispatch(assessmentsSliceActions.setAssessmentSliceData(dummyData))
   }
   useEffect(() => {

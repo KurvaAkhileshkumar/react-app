@@ -22,7 +22,7 @@ export default function Courses({ coursesData }) {
                                 }
                             }
                         >
-                            <MyDiv
+                            <Box
                                 sx={{
                                     width: '244px',
                                     height: '183px',
@@ -36,7 +36,7 @@ export default function Courses({ coursesData }) {
 
                                     }}
                                     src={item.image} alt="" />
-                            </MyDiv>
+                            </Box>
                             <Stack direction={'column'} gap={'10px'}>
                                 <MuiCustomChipCount
                                     width={'max-content'}
@@ -87,25 +87,25 @@ export default function Courses({ coursesData }) {
 //     return (
 //         <div>
 //             <Stack direction="row" spacing={2}>
-//                 <MyDiv sx={{
+//                 <Box sx={{
 //                     width: '244px',
 //                 }}>
 //                     <Item>Item 1</Item>
-//                 </MyDiv>
-//                 <MyDiv
+//                 </Box>>
+//                 <Box
 //                     sx={{
 //                         width: '244px',
 //                     }}
 //                 >
 //                     <Item>Item 1</Item>
-//                 </MyDiv>
-//                 <MyDiv
+//                 </Box>>
+//                 <Box
 //                     sx={{
 //                         width: '244px',
 //                     }}
 //                 >
 //                     <Item>Item 1</Item>
-//                 </MyDiv>
+//                 </Box>>
 //             </Stack>
 //         </div>
 //     );

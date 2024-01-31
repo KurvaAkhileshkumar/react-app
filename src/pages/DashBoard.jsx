@@ -12,14 +12,14 @@ export default function DashBoard({ data }) {
             {
                 dashBoardValues.map((item, index) => {
                     return (
-                        <MyDiv sx={dashBoardCard} key={index}>
+                        <Box sx={dashBoardCard} key={index}>
                             <AssessmentDetailCard
                                 icon={index}
                                 iconBgColor={index}
                                 title={dashBoardKeys[index].charAt(0).toUpperCase() + dashBoardKeys[index].slice(1)}
                                 contentMagnitude={item}
                             />
-                        </MyDiv>
+                        </Box>
                     );
                 })
             }

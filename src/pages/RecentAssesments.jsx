@@ -1,8 +1,8 @@
 import MuiColumnChart from "../components/common/MuiColumnChart";
 import palette from "../theme/palette";
 import Typography from '@mui/material/Typography';
-import { recentAssessmentsText, avgPerformanceText } from "./RecentAssessmentsStyles";
 import AttemptedUnattempted from "./AttemptedUnattempted";
+import typography from "../theme/typography";
 
 
 export default function RecenetAssessmentsChart(props) {
@@ -14,11 +14,23 @@ export default function RecenetAssessmentsChart(props) {
     ]
     return (
         <>
-            <Typography sx={recentAssessmentsText}>
+            <Typography sx={{
+                ...typography.h5, marginTop: '16px',
+                marginBottom: '13px',
+                marginLeft: '23px',
+                textAlign: 'start',
+                color: palette.grey[900],
+            }}>
                 Recent Assessments
             </Typography>
             <AttemptedUnattempted />
-            <Typography sx={avgPerformanceText}>
+            <Typography sx={{
+                textAlign: 'start',
+                marginLeft: '23px',
+                color: palette.grey[600],
+                ...typography.subtitle2,
+                fontWeight: typography.fontWeightMedium
+            }}>
                 Avg.performance
             </Typography>
             <MuiColumnChart

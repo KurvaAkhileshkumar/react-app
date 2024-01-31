@@ -1,13 +1,12 @@
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
-import { MyDiv } from '../components/myStyledComponents/styledComponents';
-import { calenderSx } from './CalendarStyles';
+import { Box } from '@mui/material';
 import { poppinsFont, pxToRem } from '../theme/typography';
 
 export default function Calendar() {
     return (
-        <MyDiv >
+        <Box>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DateCalendar
                     views={['day']}
@@ -86,6 +85,6 @@ export default function Calendar() {
                     }}
                 />
             </LocalizationProvider>
-        </MyDiv>
+        </Box>
     );
 }

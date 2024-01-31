@@ -96,7 +96,7 @@ const MuiCustomStudentTableRow = ({ stu, viewStudentResult }) => {
         </Typography>
       </TableCell>
       <TableCell scope='row' sx={{ border: 'none' }}>
-        <Typography variant='body1' sx={{ ...dataStyling, color: theme.palette.grey[900], textAlign: 'center' }}>
+        <Typography variant='body1' sx={{ ...dataStyling, color: theme.palette.grey[900], textAlign: 'center', }}>
           {stu.percentage_scored ? stu.percentage_scored + ' %' : '--'}
         </Typography>
       </TableCell>

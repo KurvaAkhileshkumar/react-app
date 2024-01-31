@@ -3,21 +3,21 @@ export default function SkeletonLayout() {
         <>
             <Stack direction={'row'} sx={dashBoardStack}>
 
-                <MyDiv sx={dashBoardCard}>
+                <Box sx={dashBoardCard}>
                     <AssessmentDetailCard />
-                </MyDiv>
-                <MyDiv sx={dashBoardCard}>
+                </Box>
+                <Box sx={dashBoardCard}>
                     <AssessmentDetailCard />
-                </MyDiv>
-                <MyDiv sx={dashBoardCard}>
+                </Box>
+                <Box sx={dashBoardCard}>
                     <AssessmentDetailCard />
-                </MyDiv>
-                <MyDiv sx={dashBoardCard}>
+                </Box>
+                <Box sx={dashBoardCard}>
                     <AssessmentDetailCard />
-                </MyDiv>
-                <MyDiv sx={dashBoardCard}>
+                </Box>
+                <Box sx={dashBoardCard}>
                     <AssessmentDetailCard />
-                </MyDiv>
+                </Box>
             </Stack>
         </>
     );

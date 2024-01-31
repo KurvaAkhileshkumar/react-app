@@ -31,7 +31,7 @@ export default function SibeBarNavigation() {
                     }
                 }
             >
-                <MyDiv
+                <Box
                     sx={{
                         maxHeight: '100%',
                         maxWidth: '100%',
@@ -47,16 +47,16 @@ export default function SibeBarNavigation() {
                     >
                         <img src={logo} alt="Logo Icon" />
                     </NavLink>
-                </MyDiv>
+                </Box>
                 <Stack gap={'16px'}>
-                    <MyDiv
+                    <Box
                         sx={{
                             width: '80px',
                             height: '50px',
                             padding: '8px 18px 8px 19px'
                         }}
                     >
-                        <MyDiv
+                        <Box
                             sx={{
                                 background: palette.primary[200],
                                 borderRadius: '8px',
@@ -68,16 +68,16 @@ export default function SibeBarNavigation() {
                             <NavLink to=''>
                                 <img src={elementEqual} alt="Home page icon" />
                             </NavLink>
-                        </MyDiv>
-                    </MyDiv>
-                    <MyDiv
+                        </Box>
+                    </Box>
+                    <Box
                         sx={{
                             width: '80px',
                             height: '50px',
                             padding: '8px 18px 8px 19px'
                         }}
                     >
-                        <MyDiv
+                        <Box
                             sx={{
                                 borderRadius: '8px',
                                 width: '40px',
@@ -88,10 +88,10 @@ export default function SibeBarNavigation() {
                             <NavLink to=''>
                                 <img src={book} alt="Courses Icon" />
                             </NavLink>
-                        </MyDiv>
-                    </MyDiv>
+                        </Box>
+                    </Box>
 
-                    <MyDiv
+                    <Box
                         sx={{
                             position: 'absolute',
                             bottom: '0',
@@ -100,7 +100,7 @@ export default function SibeBarNavigation() {
                             padding: '8px 18px 8px 19px'
                         }}
                     >
-                        <MyDiv
+                        <Box
                             sx={{
                                 borderRadius: '8px',
                                 width: '40px',
@@ -110,8 +110,8 @@ export default function SibeBarNavigation() {
                             }}
                         >
                             <img src={logoutImg} alt="Log out Icon" onClick={logoutHandler} />
-                        </MyDiv>
-                    </MyDiv>
+                        </Box>
+                    </Box>
                 </Stack>
             </Stack>
         </>

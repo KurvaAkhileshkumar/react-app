@@ -86,15 +86,15 @@ export default function Login() {
                     backgroundColor="#0B58F5"
                 >
                     <Stack gap={'71.41px'} sx={leftContent}>
-                        <MyDiv sx={leftHeader}>
-                            <MyDiv sx={welcome}>Welcome to</MyDiv>
-                            <MyDiv sx={studentPortal}>Student Portal</MyDiv>
-                            <MyDiv sx={loginHelper}>Login to access your account</MyDiv>
-                        </MyDiv>
-                        <MyDiv>
+                        <Box sx={leftHeader}>
+                            <Box sx={welcome}>Welcome to</Box>
+                            <Box sx={studentPortal}>Student Portal</Box>
+                            <Box sx={loginHelper}>Login to access your account</Box>
+                        </Box>
+                        <Box>
                             <img sx={{
                             }} src={loginImage} alt="" />
-                        </MyDiv>
+                        </Box>
                     </Stack>
                 </Grid>
                 <Stack
