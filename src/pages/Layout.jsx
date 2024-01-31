@@ -1,5 +1,4 @@
-import { MyDiv } from '../components/myStyledComponents/styledComponents'
-import Stack from '@mui/material/Stack'
+import { Stack, Box } from '@mui/material'
 import RecenetAssessmentsChart from './RecentAssesments';
 import UserProfile from './UserProfile';
 import {
@@ -13,7 +12,6 @@ import { userProfileText, calendarText, yourCoursesText } from "./UserProfileSty
 import Typography from '@mui/material/Typography';
 import Calendar from './Calendar';
 import LeaderBoardCard from '../components/common/LeaderBoardCard';
-import { Skeleton } from '@mui/material';
 import { useEffect, useState } from 'react';
 import DashBoard from './DashBoard';
 import Assessments from './Assessments';
@@ -21,13 +19,11 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import TemporaryDrawer from './Drawer';
 import Courses from './courses.jsx';
 import { poppinsFont, pxToRem } from '../theme/typography.js';
-import { useRef } from 'react';
 
 import AssessmentDetailsSkeleton from '../Skeletons/AssessmentDetailsSkeleton.jsx'
 import AssessmentSkeleton from '../Skeletons/AssessmentSkeleton.jsx'
 import CourseSkeleton from '../Skeletons/CourseSkeleton.jsx'
-import LeaderBoardSkeleton from '../Skeletons/LeaderBoardSkeleton.jsx'
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { assessmentsSliceActions } from '../Store/Store.jsx';
 
 
@@ -35,51 +31,61 @@ import { assessmentsSliceActions } from '../Store/Store.jsx';
 
 export default function Layout() {
 
-    const [recnetAssessmentsData, setRecentAssessmentsData] = useState([])
-    const [categoriesData, setCategoriesData] = useState([])
-    const [dashBoardData, setDashBoardData] = useState([])
-    const [leaderBoardData, setLeaderBoardData] = useState([])
-    const [name, setName] = useState()
-    const [email, setEmail] = useState()
+
     const [state, setState] = useState({
         right: false,
     });
-    const [coursesData, setCoursesData] = useState([])
     const dispatch = useDispatch()
+    const analyticsData = useSelector((state) => state.assessmentsReducer.analyticsData)
     const toggleDrawer = (anchor, open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
         setState({ ...state, [anchor]: open });
     };
-    const profilePicLink = useSelector((state) => state.assessmentsReducer.profilePicLink)
     useEffect(() => {
-        fetch('https://stagingstudentpython.edwisely.com/reactProject/dashboardData').then((response) => {
-            return response.json()
-        }).then((resData) => {
-            const data = []
-            const categories = []
-            resData.recent_assessments.analysis.map((item) => {
-                data.push(item.percentage)
-                categories.push(item.name)
+        fetch('https://stagingstudentpython.edwisely.com/reactProject/dashboardData').
+            then((response) => response.json()).
+            then((resData) => {
+
+                const data = []
+                const categories = []
+
+                resData.recent_assessments.analysis.forEach((item) => {
+                    data.push(item.percentage)
+                    categories.push(item.name)
+                })
+
+
+                const analyticsData = resData.analytics
+                dispatch(assessmentsSliceActions.setAnalyticsData({ analyticsData }))
+
+                const leaderBoardData = resData.leaderboard
+                dispatch(assessmentsSliceActions.setLeaderBoardData({ leaderBoardData }))
+                dispatch(assessmentsSliceActions.setCategoriesData({ categories }))
+                dispatch(assessmentsSliceActions.setRecentAssessmentsData({ data }))
+                //Setting the mail of the user in the store
+                const email = resData.email
+                dispatch(assessmentsSliceActions.setEmail({ email }))
+                //Setting the name of the user in the store
+                const name = resData.name
+                dispatch(assessmentsSliceActions.setCoursesData({ name }))
+                //Setting the Courses Data
+                const coursesData = resData.courses
+                dispatch(assessmentsSliceActions.setCoursesData({ coursesData }))
+                //Setting the Profile Pic Link in the store
+                const profilePicture = resData.profile_picture
+                dispatch(assessmentsSliceActions.setProfile({ profilePicture }))
+
             })
-            setLeaderBoardData(resData.leaderboard)
-            setDashBoardData(resData.analytics)
-            setCategoriesData(categories)
-            setRecentAssessmentsData(data)
-            setEmail(resData.email)
-            setName(resData.name)
-            setCoursesData(resData.courses)
-            const profilePicture = resData.profile_picture
-            dispatch(assessmentsSliceActions.setProfile({ profilePicture }))
-        })
+
     }, [])
 
     return (
         <>
 
             {/* DashBoardLayout */}
-            {dashBoardData == undefined ? <AssessmentDetailsSkeleton /> :
+            {analyticsData === undefined ? <AssessmentDetailsSkeleton /> :
                 <Box>
                     <Typography
                         sx={{
@@ -93,7 +99,7 @@ export default function Layout() {
                         }}
                     >Dashboard</Typography>
                     <Stack direction={'row'} sx={dashBoardStack}>
-                        <DashBoard data={dashBoardData} />
+                        <DashBoard />
                     </Stack></Box>}
 
             {/* MiddleLayout */}
@@ -103,12 +109,9 @@ export default function Layout() {
                     {/* LeftColumn */}
                     <Stack direction={'column'} sx={leftStack} gap={'21px'}>
                         <Box sx={leftItem1}>
-                            <RecenetAssessmentsChart
-                                data={recnetAssessmentsData}
-                                categories={categoriesData}
-                            />
+                            <RecenetAssessmentsChart />
                         </Box>
-                        {dashBoardData == undefined ? <AssessmentSkeleton /> :
+                        {analyticsData === undefined ? <AssessmentSkeleton /> :
                             <Box sx={leftItem2}>
                                 <Assessments />
                             </Box>}
@@ -125,7 +128,7 @@ export default function Layout() {
 
                             {/* UserProfileCard */}
                             <Box sx={rightItem1}>
-                                <UserProfile name={name} email={email} />
+                                <UserProfile />
                             </Box>
                         </Stack>
 
@@ -155,18 +158,18 @@ export default function Layout() {
                                 }}
                                 onClick={toggleDrawer('right', true)}
                             />
-                            <TemporaryDrawer state={state} toggleDrawer={toggleDrawer} data={leaderBoardData} />
+                            <TemporaryDrawer state={state} toggleDrawer={toggleDrawer} />
                         </Stack>
                         {/* LeaderBoardCard */}
                         <Box sx={rightItem3}>
-                            <LeaderBoardCard data={leaderBoardData} isDrawer={false} />
+                            <LeaderBoardCard isDrawer={false} />
                         </Box>
                     </Stack>
                 </Stack >
             }
 
             {/* Courses Section */}
-            {dashBoardData === undefined ? (
+            {analyticsData === undefined ? (
                 <CourseSkeleton />
             ) : (
                 <>
@@ -177,7 +180,7 @@ export default function Layout() {
                         <Stack height={'281px'} direction={'row'}
                             gap={'22px'}
                             sx={courses}>
-                            <Courses coursesData={coursesData} />
+                            <Courses />
                         </Stack>
                     </Stack>
                 </>
@@ -188,25 +191,25 @@ export default function Layout() {
 }
 
 
-const SkeletonLayout = () => {
-    return (
-        <Stack spacing={1}>
-            <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
-        </Stack>
-    )
-}
+// const SkeletonLayout = () => {
+//     return (
+//         <Stack spacing={1}>
+//             <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
+//             <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
+//             <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
+//             <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
+//             <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
+//             <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
+//             <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
+//             <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
+//             <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
+//             <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
+//             <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
+//             <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
+//             <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
+//             <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
+//             <Skeleton variant="text" sx={{ fontSize: '1rem', background: theme => theme.palette.grey[200] }} />
+//         </Stack>
+//     )
+// }
 

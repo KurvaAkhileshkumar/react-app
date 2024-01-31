@@ -20,7 +20,8 @@ export default function Calendar() {
                         '& .MuiDayCalendar-header': {
                             margin: '0px',
                             padding: '0px',
-                            width: '273px'
+                            width: '273px',
+                            fontSize: '0px'
                         },
                         '& .MuiPickersCalendarHeader-root': {
                             margin: '0px',
@@ -52,9 +53,6 @@ export default function Calendar() {
                         '& .MuiPickersArrowSwitcher-spacer': {
                             width: '0px',
                             height: '0px'
-                        },
-                        '& .MuiDayCalendar-header': {
-                            fontSize: '0px'
                         },
                         '& .MuiDayCalendar-weekDayLabel': {
                             margin: '0px',

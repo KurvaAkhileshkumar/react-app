@@ -1,20 +1,18 @@
 import { NavLink } from 'react-router-dom'
-import { Stack } from '@mui/material'
+import { Stack, Box } from '@mui/material'
 import palette from '../theme/palette';
 import logo from '../assets/Group.jpg'
 import elementEqual from '../assets/element-equal.jpg'
 import book from '../assets/book.jpg'
 import logoutImg from '../assets/logout.jpg'
-import { MyDiv } from '../components/myStyledComponents/styledComponents'
 import { authSliceActions } from '../Store/Store';
 import { useNavigate } from 'react-router'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 export default function SibeBarNavigation() {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
 
     const logoutHandler = () => {
         dispatch(authSliceActions.logout())

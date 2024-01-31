@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import { navStyles, goodMorningStyles, avatarStyles } from "./TopNavigationBarStyles.js";
-import { useNavigate } from "react-router-dom";
 import { Menu, MenuItem, Typography } from "@mui/material";
 import profileImg from '../assets/profile.jpeg'
-import { Stack } from "@mui/material";
-import { MyDiv } from "../components/myStyledComponents/styledComponents.jsx";
+import { Stack, Box } from "@mui/material";
 import { useSelector } from "react-redux";
 
 
 export default function TopBarNavigation({ name, email }) {
-    const navigate = useNavigate();
     const profilePicLink = useSelector((state) => state.assessmentsReducer.profilePicLink)
     const [profileClick, setProfileClick] = useState(false);
 
@@ -33,6 +30,7 @@ export default function TopBarNavigation({ name, email }) {
                         height="50px"
                         style={{ borderRadius: "50%" }}
                         onClick={handleLogout}
+                        alt=""
                     />
                     {profileClick && (
                         <Menu
@@ -54,6 +52,7 @@ export default function TopBarNavigation({ name, email }) {
                                     width="50px"
                                     height="50px"
                                     style={{ borderRadius: "50%" }}
+                                    alt=""
                                 />
                             </MenuItem>
                             <MenuItem>{name}</MenuItem>

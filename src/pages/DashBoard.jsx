@@ -1,12 +1,11 @@
 import AssessmentDetailCard from "../components/common/AssessmentDetailCard";
-import { MyDiv } from '../components/myStyledComponents/styledComponents'
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import { blue } from '@mui/material/colors';
+import { Box } from "@mui/material";
 import { dashBoardCard } from "./LayoutStyles";
-
-export default function DashBoard({ data }) {
-    const dashBoardKeys = Object.keys(data)
-    const dashBoardValues = Object.values(data)
+import { useSelector } from "react-redux";
+export default function DashBoard() {
+    const analyticsData = useSelector((state) => state.assessmentsReducer.analyticsData)
+    const dashBoardKeys = Object.keys(analyticsData)
+    const dashBoardValues = Object.values(analyticsData)
     return (
         <>
             {

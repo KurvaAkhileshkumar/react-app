@@ -8,8 +8,9 @@ import { calendarText } from "./UserProfileStyles";
 import LeaderBoardCard from '../components/common/LeaderBoardCard';
 import { drawerStyles, rightItem3 } from './LayoutStyles';
 import { MyDiv } from '../components/myStyledComponents/styledComponents';
-
+import { useSelector } from 'react-redux';
 export default function TemporaryDrawer({ state, toggleDrawer, data }) {
+    const leaderBoardData = useSelector((state) => state.assessmentsReducer.leaderBoardData)
     const list = (anchor) => (
         <Box
             sx={

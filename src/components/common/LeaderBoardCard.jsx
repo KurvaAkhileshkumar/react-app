@@ -2,13 +2,15 @@ import React from 'react'
 import CustomCard from './CustomCard'
 import { Skeleton, Stack, Typography } from '@mui/material'
 import LeaderRanking from './LeaderRanking'
+import { useSelector } from 'react-redux'
 
 const LeaderBoardCard = ({ data, width = '100%', height = '100%', isDrawer }) => {
+    const leaderBoardData = useSelector((state) => state.assessmentsReducer.leaderBoardData)
     return (
         <CustomCard width={width} height={height}>
-            {data ? <Stack
+            {leaderBoardData ? <Stack
                 gap={'10px'}>
-                {data?.map((item, index) => {
+                {leaderBoardData?.map((item, index) => {
                     const noOfItemsWhenDrawerClosed = 6
                     const noOfItemInTheLeaderBoard = isDrawer ? data.length : noOfItemsWhenDrawerClosed
                     if (index < noOfItemInTheLeaderBoard) {

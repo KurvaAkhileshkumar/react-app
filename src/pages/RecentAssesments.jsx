@@ -3,13 +3,16 @@ import palette from "../theme/palette";
 import Typography from '@mui/material/Typography';
 import AttemptedUnattempted from "./AttemptedUnattempted";
 import typography from "../theme/typography";
+import { useSelector } from "react-redux";
 
 
-export default function RecenetAssessmentsChart(props) {
-    const categories = props.categories
+
+export default function RecenetAssessmentsChart() {
+    const categories = useSelector((state) => state.assessmentsReducer.categories)
+    const helperSeriesData = useSelector((state) => state.assessmentsReducer.recentAssessmentsData)
     const series = [
         {
-            data: props.data
+            data: [...helperSeriesData]
         }
     ]
     return (

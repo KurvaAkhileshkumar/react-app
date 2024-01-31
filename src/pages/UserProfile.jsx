@@ -1,13 +1,15 @@
 import { MyDiv } from "../components/myStyledComponents/styledComponents";
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography';
-import { poppinsFont, pxToRem } from "../theme/typography";
+import { poppinsFont } from "../theme/typography";
 import palette from "../theme/palette";
 import typography from "../theme/typography";
 import { useSelector } from "react-redux";
 
-export default function UserProfile({ name, email }) {
+export default function UserProfile() {
     const profilePicLink = useSelector((state) => state.assessmentsReducer.profilePicLink)
+    const name = useSelector((state) => state.assessmentsReducer.name)
+    const email = useSelector((state) => state.assessmentsReducer.email)
     return (
         <>
             <Stack direction={'row'}>
@@ -16,7 +18,7 @@ export default function UserProfile({ name, email }) {
                         height: '38px',
                         borderRadius: '4px'
                     }}
-                    src={profilePicLink} alt="IMAGE BROKEN" />
+                    src={profilePicLink} alt="" />
                 <Stack direction={'column'} height={'28px'}>
                     <MyDiv>
                         <Typography

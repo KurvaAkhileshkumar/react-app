@@ -1,14 +1,17 @@
-import { Stack } from "@mui/material";
+import { Stack, Box } from "@mui/material";
 import MuiCustomChipCount from "../components/common/MuiCustomChipCount";
 import Typography from '@mui/material/Typography';
-import { MyDiv } from "../components/myStyledComponents/styledComponents";
-import typography, { poppinsFont, pxToRem } from "../theme/typography";
+
+import { poppinsFont, pxToRem } from "../theme/typography";
 import palette from "../theme/palette";
 import { Link } from 'react-router-dom'
+import { useSelector } from "react-redux";
 
 const chipColors = ['#E7EEFE', '#FFF0D8', '#EDFAEE', '#FFF0D8']
 const chipTextColor = ['#0B58F5', '#D89932', '#4ECD56', '#D89932']
-export default function Courses({ coursesData }) {
+export default function Courses() {
+
+    const coursesData = useSelector((state) => state.assessmentsReducer.coursesData)
     return (
         <>
             {coursesData.map((item, index) => {

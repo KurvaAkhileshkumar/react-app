@@ -9,15 +9,13 @@ import {
     Button,
     Stack,
     Typography,
+    Box
 } from "@mui/material";
-import { poppinsFont, pxToRem } from "../theme/typography";
-import palette from "../theme/palette";
 import loginImage from "../assets/loginimg.svg";
-import { MyDiv } from "../components/myStyledComponents/styledComponents.jsx";
 import { leftContent, leftHeader, loginHelper, studentPortal, welcome } from "./LoginStlyes.js";
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
 import { authSliceActions } from "../Store/Store.jsx";
 
@@ -30,7 +28,6 @@ export default function Login() {
     const [helper, setHelper] = useState(false)
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
 
     useEffect(() => {
         const storedUsername = localStorage.getItem('rememberMeUsername')
@@ -130,7 +127,7 @@ export default function Login() {
                     </Typography>
                     <FormControl>
                         <InputLabel htmlFor="name"></InputLabel>
-                        <h1 style={{ display: 'none' }}></h1>
+                        {/* <Typography sx={{ display: 'none' }}></Typography> */}
                         <Input
                             placeholder="Username"
                             type="Username"
@@ -140,7 +137,7 @@ export default function Login() {
                         />
 
                         <InputLabel htmlFor="password" />
-                        <h1 style={{ display: 'none' }}></h1>
+                        {/* <Typography sx={{ display: 'none' }}></Typography> */}
                         <Input
                             sx={{
                                 marginTop: '20px'
