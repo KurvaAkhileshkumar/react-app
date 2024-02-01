@@ -30,11 +30,12 @@ const assessmentsSlice = createSlice({
     initialState: intialAsessmentsSliceData,
     reducers: {
 
-        isClickedForSorting(state) {
-            state.isSorting = !state.isSorting
+        isClickedForSorting(state, action) {
+            state.isSorting = action.payload
         },
         setAssessmentSliceData(state, action) {
             state.assessmentsSliceData = action.payload
+            console.log(state.assessmentsSliceData)
         },
         setCoursesData(state, action) {
             state.coursesData = action.payload.coursesData

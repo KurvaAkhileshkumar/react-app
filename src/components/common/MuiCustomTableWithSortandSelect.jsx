@@ -23,20 +23,33 @@ const HeaderArr = ['Subject', 'TimeSpent', 'Submission', 'Internet speed', 'Perc
 
 
 const MuiCustomTableWithSortandSelect = () => {
+
+  //Variable for displaying the no of items per page
   const noOfItemsPerPage = 7
   const [assessmentsTableData, setAssessmentsTableData] = useState([])
   const [isError, setIsError] = useState(true)
   const dispatch = useDispatch()
 
+  //Retrieving the data from store of Assessments
   const assessmentsSliceData = useSelector((state) => state.assessmentsReducer.assessmentsSliceData)
+
+  //IsSorting is retrieved from the store to check if clicked for sorting.
   const isSorting = useSelector((state) => state.assessmentsReducer.isSorting)
-  if (isSorting) {
-    console.log('enterd of isSortingblock')
-    dispatch(assessmentsSliceActions.setAssessmentSliceData(assessmentsSliceData))
-  }
+
+  setTimeout(() => {
+    if (isSorting) {
+      //Setting the table data for updating the table with sorted data            
+      setAssessmentsTableData(assessmentsSliceData?.slice(0, noOfItemsPerPage))
+      dispatch(assessmentsSliceActions.isClickedForSorting(false))
+    }
+  }, 1000)
+
+  //Setting the data when the page is Changed
   function handleChange(event, page) {
     setAssessmentsTableData(assessmentsSliceData.slice(noOfItemsPerPage * (page - 1), noOfItemsPerPage * (page)))
   }
+
+  //Fetching the data from api and setting the data in the store.
   useEffect(() => {
     fetch('https://stagingstudentpython.edwisely.com/reactProject/assessments').then((response) => {
       return response.json()
@@ -47,6 +60,8 @@ const MuiCustomTableWithSortandSelect = () => {
       dispatch(assessmentsSliceActions.setAssessmentSliceData(resData.assessments))
     })
   }, [])
+
+  //Rendering the component
   return (
     <>
       {isError ? <MyDiv>

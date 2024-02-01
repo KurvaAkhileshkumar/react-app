@@ -34,7 +34,6 @@ const MuiCustomTableHeaderCellWithSortandSelect = ({
   const theme = useTheme()
 
   const assessmentsData = useSelector((state) => state.assessmentsReducer.assessmentsSliceData)
-  console.log(assessmentsData)
   const isSorting = useSelector((state) => state.assessmentsReducer.isSorting)
   const dispatch = useDispatch()
   function sortingTheData() {
@@ -42,13 +41,11 @@ const MuiCustomTableHeaderCellWithSortandSelect = ({
     console.log('Entered')
     if (!isSorting) {
       console.log(isSorting)
-      console.log('entered')
-
+      console.log('Enter the sorting cell')
       const dummyData = [...assessmentsData]
-      console.log(dummyData)
+      dispatch(assessmentsSliceActions.isClickedForSorting(true))
       dummyData.sort((a, b) => b.percentage_scored - a.percentage_scored)
-      console.log(dummyData)
-      dispatch(assessmentsSliceActions.setAssessmentSliceData([...dummyData]))
+      dispatch(assessmentsSliceActions.setAssessmentSliceData(dummyData))
     }
   }
   return (
