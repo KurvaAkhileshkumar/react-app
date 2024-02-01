@@ -10,6 +10,7 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 import { store, persistor } from '../src/Store/Store'
 import PdfViewer from './pages/CoursesPage/PdfViewer'
+import PageLayout from './pages/PageLayout'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Login />,
+  },
+  {
+    path: 'pagelayout',
+    element: <PageLayout />,
   },
 ])
 
