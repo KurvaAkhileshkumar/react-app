@@ -12,6 +12,7 @@ const profile = {
 }
 const analyticsData = []
 const leaderBoardData = []
+const semester = 1
 
 const intialAsessmentsSliceData = {
     profile,
@@ -21,7 +22,8 @@ const intialAsessmentsSliceData = {
     categories,
     analyticsData,
     leaderBoardData,
-    isSorting
+    isSorting,
+    semester
 }
 
 console.log(intialAsessmentsSliceData)
@@ -56,6 +58,9 @@ const assessmentsSlice = createSlice({
             state.profile.name = action.payload.name
             state.profile.email = action.payload.email
             state.profile.profilePic = action.payload.profilePic
+        },
+        setSemester(state, action) {
+            state.semester = action.payload
         }
     }
 })

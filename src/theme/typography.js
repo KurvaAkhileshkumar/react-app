@@ -32,9 +32,24 @@ const FONT_PRIMARY = [
   'Arial',
   'sans-serif',
 ].join(',')
-const FONT_PRIMARY_REGULAR = ['Axiforma-Book', 'Arial', 'sans-serif'].join(',')
-const FONT_PRIMARY_MEDIUM = ['Axiforma-Medium', 'Arial', 'sans-serif'].join(',')
-const FONT_PRIMARY_BOLD = ['Axiforma-SemiBold', 'Arial', 'sans-serif'].join(',')
+const FONT_PRIMARY_REGULAR = [
+  'Poppins-Italic',
+  'Axiforma-Book',
+  'Arial',
+  'sans-serif',
+].join(',')
+const FONT_PRIMARY_MEDIUM = [
+  'Poppins-Italic',
+  'Axiforma-Medium',
+  'Arial',
+  'sans-serif',
+].join(',')
+const FONT_PRIMARY_BOLD = [
+  'Poppins-Italic',
+  'Axiforma-SemiBold',
+  'Arial',
+  'sans-serif',
+].join(',')
 
 export const poppinsFont = {
   fontFamily: 'Poppins',
