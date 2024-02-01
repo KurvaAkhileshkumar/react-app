@@ -5,6 +5,7 @@ import { poppinsFont } from "../theme/typography";
 import palette from "../theme/palette";
 import typography from "../theme/typography";
 import { useSelector } from "react-redux";
+import { Box } from "@mui/material";
 
 export default function UserProfile() {
     const profilePicLink = useSelector((state) => state.assessmentsReducer.profile.profilePic)
@@ -12,15 +13,23 @@ export default function UserProfile() {
     const email = useSelector((state) => state.assessmentsReducer.profile.email)
     return (
         <>
-            <Stack direction={'row'}>
+            <Box
+                sx={{
+                    display: 'flex',
+                    direction: 'row',
+                    marginTop: '10px',
+                    marginLeft: '15px'
+                }}
+            >
                 <img
                     style={{
-                        height: '38px',
+                        width: 'auto',
+                        height: '48px',
                         borderRadius: '4px'
                     }}
                     src={profilePicLink} alt="" />
-                <Stack direction={'column'} height={'28px'}>
-                    <MyDiv>
+                <Box direction={'column'}>
+                    <Box>
                         <Typography
                             sx={
                                 {
@@ -36,8 +45,8 @@ export default function UserProfile() {
                                 }
                             }
                         >{name}</Typography>
-                    </MyDiv>
-                    <MyDiv>
+                    </Box>
+                    <Box>
                         <Typography
                             sx={
                                 {
@@ -51,9 +60,9 @@ export default function UserProfile() {
                                 }
                             }
                         >{email}</Typography>
-                    </MyDiv>
-                </Stack>
-            </Stack>
+                    </Box>
+                </Box>
+            </Box>
         </>
     );
 }

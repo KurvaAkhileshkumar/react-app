@@ -1,6 +1,7 @@
 import { poppinsFont } from '../theme/typography'
 
 export const navStyles = {
+  width: '100%',
   marginLeft: '80px',
   marginTop: '27px',
   fontFamily: poppinsFont.fontFamily,
@@ -11,7 +12,6 @@ export const navStyles = {
 }
 
 export const goodMorningStyles = {
-  width: '313px',
   height: '32px',
   marginLeft: '18px',
   fontFamily: poppinsFont.fontFamily,

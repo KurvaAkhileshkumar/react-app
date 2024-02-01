@@ -1,13 +1,7 @@
 import { Stack, Box } from '@mui/material'
 import RecenetAssessmentsChart from './RecentAssesments';
 import UserProfile from './UserProfile';
-import {
-    parentStack, dashBoardStack,
-    leftStack, leftItem1, leftItem2,
-    rightStack, rightItem1, rightItem2, rightItem3,
-    courses,
-    rightItemStack1
-} from './LayoutStyles';
+import { dashBoardStack } from './LayoutStyles';
 import { userProfileText, calendarText, yourCoursesText } from "./UserProfileStyles";
 import Typography from '@mui/material/Typography';
 import Calendar from './Calendar';
@@ -19,14 +13,12 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import TemporaryDrawer from './Drawer';
 import Courses from './courses.jsx';
 import { poppinsFont, pxToRem } from '../theme/typography.js';
-
+import { Grid, Paper } from '@mui/material';
 import AssessmentDetailsSkeleton from '../Skeletons/AssessmentDetailsSkeleton.jsx'
 import AssessmentSkeleton from '../Skeletons/AssessmentSkeleton.jsx'
 import CourseSkeleton from '../Skeletons/CourseSkeleton.jsx'
 import { useDispatch, useSelector } from 'react-redux';
 import { assessmentsSliceActions } from '../Store/Store.jsx';
-
-
 
 
 export default function Layout() {
@@ -114,74 +106,129 @@ export default function Layout() {
 
             {/* MiddleLayout */}
             {
-                <Stack direction={'row'} sx={parentStack}>
+                <Box marginRight={'28px'} marginLeft={'108px'} marginTop={'28px'} height={'907px'}>
+                    <Grid container columnSpacing={3.75} height={'907px'}>
 
-                    {/* LeftColumn */}
-                    <Stack direction={'column'} sx={leftStack} gap={'21px'}>
-                        <Box sx={leftItem1}>
-                            <RecenetAssessmentsChart />
-                        </Box>
-                        {analyticsData === undefined ? <AssessmentSkeleton /> :
-                            <Box sx={leftItem2}>
-                                <Assessments />
-                            </Box>}
-                    </Stack>
-
-                    {/* RightColumn */}
-                    <Stack direction={'column'} sx={rightStack}>
-
-                        <Stack sx={rightItemStack1}>
-                            {/* UserProfileText */}
-                            <Typography sx={userProfileText}>
-                                User profile
-                            </Typography>
-
-                            {/* UserProfileCard */}
-                            <Box sx={rightItem1}>
-                                <UserProfile />
+                        {/* LeftColumn */}
+                        <Grid item xs={8} md={8} lg={8} height={'100%'}>
+                            <Box sx={{
+                                padding: '0px',
+                                height: '352px',
+                                bgcolor: '#FFF',
+                                marginBottom: '20px',
+                                borderRadius: '10px',
+                                border: '1px solid #F4F6F8',
+                                boxShadow: '10px 10px 32px 0px rgba(22, 22, 22, 0.04)',
+                            }}>
+                                <RecenetAssessmentsChart />
                             </Box>
-                        </Stack>
+                            {analyticsData === undefined ? <AssessmentSkeleton /> :
+                                <Box sx={{
+                                    padding: '0px',
+                                    height: '535px',
+                                    bgcolor: '#FFF',
+                                    borderRadius: '10px',
+                                    border: '1px solid #F4F6F8',
+                                    boxShadow: '10px 10px 32px 0px rgba(22, 22, 22, 0.04)',
+                                }}>
+                                    <Assessments />
+                                </Box>}
+                        </Grid>
+                        {/* RightColumn */}
+                        <Grid item xs={4} md={4} lg={4} height={'100%'}>
 
-                        {/* CalenderText */}
-                        <Typography sx={calendarText}>
-                            Calendar
-                        </Typography>
-
-                        {/* CalenderCard */}
-                        <Box sx={rightItem2}>
-                            <Calendar />
-                        </Box>
-
-                        {/* LeaderBoardText */}
-                        <Stack>
-                            <Stack direction={'row'} width={'319px'} position={'relative'}>
-                                <Typography sx={calendarText}>
-                                    LeaderBoard
+                            <Box sx={{
+                                margin: '0px',
+                                padding: '0px',
+                                bgcolor: '#FFF'
+                            }}>
+                                {/* UserProfileText */}
+                                <Typography sx={userProfileText}>
+                                    User profile
                                 </Typography>
-                                <ChevronRightIcon
-                                    sx={{
-                                        position: 'absolute',
-                                        right: '20px',
-                                        cursor: 'pointer',
-                                        fontSize: '24px',
-                                        marginTop: '4px',
 
+                                {/* UserProfileCard */}
+                                <Box
+                                    sx={{
+                                        height: '70px',
+                                        bgcolor: '#FFF',
+                                        marginBottom: '20px',
+                                        borderRadius: '10px',
+                                        border: '1px solid #F4F6F8',
+                                        boxShadow: '10px 10px 32px 0px rgba(22, 22, 22, 0.04)',
                                     }}
-                                    onClick={toggleDrawer('right', true)}
-                                />
-                                <TemporaryDrawer state={state} toggleDrawer={toggleDrawer} />
-                            </Stack>
-                            {/* LeaderBoardCard */}
-                            <Box sx={rightItem3}>
-                                <LeaderBoardCard isDrawer={false} />
+                                >
+                                    <UserProfile />
+                                </Box>
                             </Box>
-                        </Stack>
-                    </Stack>
-                </Stack >
+
+                            <Box sx={{
+                                margin: '0px',
+                                padding: '0px',
+                                bgcolor: '#FFF',
+                            }}>
+                                {/* CalenderText */}
+                                <Typography sx={calendarText}>
+                                    Calendar
+                                </Typography>
+
+                                {/* CalenderCard */}
+                                <Box
+                                    sx={{
+                                        margin: '0px',
+                                        padding: '0px',
+                                        height: '236px',
+                                        borderRadius: '10px',
+                                        border: '1px solid #F4F6F8',
+                                        boxShadow: '10px 10px 32px 0px rgba(22, 22, 22, 0.04)',
+                                        marginBottom: '20px',
+                                    }}
+                                >
+                                    <Calendar />
+                                </Box>
+                            </Box>
+
+                            {/* LeaderBoardText */}
+                            {/* LeaderBoardCard */}
+                            <Box sx={{
+                                position: 'relative',
+                                padding: '0px',
+                            }}>
+                                <Box display={'flex'} direction={'row'} justifyContent={'space-between'}>
+                                    <Typography sx={calendarText}>
+                                        LeaderBoard
+                                    </Typography>
+                                    <ChevronRightIcon
+                                        sx={{
+                                            fontSize: '24px',
+                                        }}
+                                        onClick={toggleDrawer('right', true)}
+                                    />
+                                </Box>
+                                <TemporaryDrawer state={state} toggleDrawer={toggleDrawer} />
+
+                                <Box
+                                    sx={
+                                        {
+                                            height: '447px',
+                                            bgcolor: '#FFF',
+                                            borderRadius: '10px',
+                                            border: '1px solid #F4F6F8',
+                                            boxShadow: '10px 10px 32px 0px rgba(22, 22, 22, 0.04)',
+                                        }
+                                    }
+                                >
+                                    <LeaderBoardCard isDrawer={false} />
+                                </Box>
+                            </Box>
+                        </Grid>
+                    </Grid>
+                </Box>
+
             }
 
             {/* Courses Section */}
-            {analyticsData === undefined ? (
+            {/* {analyticsData === undefined ? (
                 <CourseSkeleton />
             ) : (
                 <>
@@ -197,7 +244,7 @@ export default function Layout() {
                     </Stack>
                 </>
             )
-            }
+            } */}
         </>
     )
 }

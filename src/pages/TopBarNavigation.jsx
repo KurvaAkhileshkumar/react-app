@@ -4,6 +4,7 @@ import { Menu, MenuItem, Typography } from "@mui/material";
 import profileImg from '../assets/profile.jpeg'
 import { Stack, Box } from "@mui/material";
 import { useSelector } from "react-redux";
+import { poppinsFont } from "../theme/typography.js";
 
 
 export default function TopBarNavigation({ name, email }) {
@@ -20,10 +21,30 @@ export default function TopBarNavigation({ name, email }) {
 
     return (
         <>
-            <Stack direction={'row'} sx={navStyles}>
-                <Typography sx={goodMorningStyles}>Good morning, Maharram</Typography>
+            <Box display={'flex'} flexDirection={'row'} justifyContent={'space-between'}
+                sx={{
+                    marginLeft: '80px',
+                    marginTop: '27px',
 
-                <Box sx={avatarStyles}>
+                }}
+            >
+                <Typography sx={
+                    {
+                        height: '32px',
+                        marginLeft: '18px',
+                        fontFamily: poppinsFont.fontFamily,
+                        fontSize: '24px',
+                        fontStyle: 'normal',
+                        fontWeight: '400',
+                        lineHeight: '32px',
+                    }
+                }>Good morning, Maharram</Typography>
+
+                <Box
+                    sx={{
+                        marginRight: '20px'
+                    }}
+                >
                     <img
                         src={profilePicLink}
                         width="50px"
@@ -61,7 +82,7 @@ export default function TopBarNavigation({ name, email }) {
                         </Menu>
                     )}
                 </Box>
-            </Stack>
+            </Box>
         </>
     );
 }

@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import AttemptedUnattempted from "./AttemptedUnattempted";
 import typography from "../theme/typography";
 import { useSelector } from "react-redux";
-
+import { Box } from "@mui/material";
 
 
 export default function RecenetAssessmentsChart() {
@@ -17,16 +17,27 @@ export default function RecenetAssessmentsChart() {
     ]
     return (
         <>
-            <Typography sx={{
-                ...typography.h5, marginTop: '16px',
-                marginBottom: '13px',
-                marginLeft: '23px',
-                textAlign: 'start',
-                color: palette.grey[900],
-            }}>
-                Recent Assessments
-            </Typography>
-            <AttemptedUnattempted />
+            <Box
+                sx={
+                    {
+                        display: 'flex',
+                        flexDirection: 'row',
+                        marginTop: '16px',
+                        marginBottom: '13px',
+                        justifyContent: 'space-between'
+                    }
+                }
+            >
+                <Typography sx={{
+                    ...typography.h5,
+                    marginLeft: '23px',
+                    textAlign: 'start',
+                    color: palette.grey[900],
+                }}>
+                    Recent Assessments
+                </Typography>
+                <AttemptedUnattempted />
+            </Box>
             <Typography sx={{
                 textAlign: 'start',
                 marginLeft: '23px',

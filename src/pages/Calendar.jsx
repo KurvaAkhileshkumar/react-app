@@ -11,22 +11,22 @@ export default function Calendar() {
                 <DateCalendar
                     views={['day']}
                     sx={{
-                        position: 'relative',
-                        '& .MuiDateCalendar-root': {
-                            width: '273px',
-                            height: '100px',
+                        // '&.MuiDateCalendar-root': {
+                        //     width: '100%',
+                        //     height: '100%',
+                        //     marginLeft: 0,
 
-                        },
-                        '& .MuiDayCalendar-header': {
+                        // },
+                        '&.MuiDayCalendar-header': {
                             margin: '0px',
                             padding: '0px',
-                            width: '273px',
+                            width: '100%',
                             fontSize: '0px'
                         },
                         '& .MuiPickersCalendarHeader-root': {
                             margin: '0px',
                             padding: '0px',
-                            width: '273px',
+                            width: '100%',
                             marginTop: '2px',
                         },
                         '& .MuiPickersCalendarHeader-labelContainer': {
@@ -79,7 +79,12 @@ export default function Calendar() {
                             fontSize: pxToRem(12),
                             fontWeight: 500,
                             lineHeight: 'normal'
+                        },
+                        '& .MuiDateCalendar-root': {
+                            margin: '0px',
+                            padding: '0px',
                         }
+
                     }}
                 />
             </LocalizationProvider>

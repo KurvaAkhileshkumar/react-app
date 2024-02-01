@@ -20,25 +20,19 @@ export default function AttemptedUnattempted() {
     }
     return (
         <>
-            <Stack
-                direction="row"
-                justifyContent="flex-end"
-                alignItems="flex-start"
-                spacing={2}
-                sx={attemptedUnattemptedText}
+            <Box
+                display={'flex'}
+                flexDirection={'row'}
+                justifyContent={'space-evenly'}
             >
-                <Stack>
-                    <Box>
-                        <CircleIcon sx={{ ...circleIcon, color: 'blue', }} />
-                        Attempted
-                    </Box>
-                </Stack>
-                <Stack>
-                    <Box>
-                        <CircleIcon sx={{ ...circleIcon, color: 'red', }} />
-                        Unattempted
-                    </Box>
-                </Stack>
+                <Box>
+                    <CircleIcon sx={{ ...circleIcon, color: 'blue', }} />
+                    Attempted
+                </Box>
+                <Box>
+                    <CircleIcon sx={{ ...circleIcon, color: 'red', }} />
+                    Unattempted
+                </Box>
                 <InputLabel sx={
                     {
                         fontFamily: poppinsFont.fontFamily,
@@ -49,17 +43,14 @@ export default function AttemptedUnattempted() {
                         lineHeight: 'normal',
                         textTransform: 'capitalize',
                         color: palette.grey[400],
-                        paddingTop: '2px'
                     }
                 }>subjects</InputLabel>
                 <KeyboardArrowDownIcon sx={{
                     cursor: 'pointer',
-                    position: 'relative',
-                    left: '-12px',
                     color: palette.grey[400],
-                    fontSize: '24px'
+                    fontSize: pxToRem(24)
                 }} onClick={subjectsHandler} />
-            </Stack>
+            </Box>
             {isClicked && <FormControl sx={{
                 position: 'absolute',
                 right: '30px',
