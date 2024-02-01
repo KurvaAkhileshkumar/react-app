@@ -12,7 +12,7 @@ const LeaderBoardCard = ({ data, width = '100%', height = '100%', isDrawer }) =>
                 gap={'10px'}>
                 {leaderBoardData?.map((item, index) => {
                     const noOfItemsWhenDrawerClosed = 6
-                    const noOfItemInTheLeaderBoard = isDrawer ? data.length : noOfItemsWhenDrawerClosed
+                    const noOfItemInTheLeaderBoard = isDrawer ? leaderBoardData.length : noOfItemsWhenDrawerClosed
                     if (index < noOfItemInTheLeaderBoard) {
                         return <LeaderRanking isDrawer={isDrawer} key={index + 1} data={item} percentage={item.percentage} value={item.rank} index={index + 1} />
                     }

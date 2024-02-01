@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const isSorting = false
 const assessmentsSliceData = {}
 const recentAssessmentsData = []
 const categories = []
@@ -15,12 +16,12 @@ const leaderBoardData = []
 const intialAsessmentsSliceData = {
     profile,
     ...assessmentsSliceData,
-    ass: '',
     coursesData: [],
     recentAssessmentsData,
     categories,
     analyticsData,
-    leaderBoardData
+    leaderBoardData,
+    isSorting
 }
 
 console.log(intialAsessmentsSliceData)
@@ -28,14 +29,12 @@ const assessmentsSlice = createSlice({
     name: 'sliceOfAssessment',
     initialState: intialAsessmentsSliceData,
     reducers: {
+
+        isClickedForSorting(state) {
+            state.isSorting = !state.isSorting
+        },
         setAssessmentSliceData(state, action) {
             state.assessmentsSliceData = action.payload
-        },
-        isClickedForSorting(state, action) {
-            if (state.ass === '')
-                state.ass = action.payload
-            else if (state.ass === 'ass')
-                state.ass = ' '
         },
         setCoursesData(state, action) {
             state.coursesData = action.payload.coursesData

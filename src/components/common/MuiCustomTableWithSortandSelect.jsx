@@ -29,19 +29,13 @@ const MuiCustomTableWithSortandSelect = () => {
   const dispatch = useDispatch()
 
   const assessmentsSliceData = useSelector((state) => state.assessmentsReducer.assessmentsSliceData)
-  const sorting = useSelector((state) => state.assessmentsReducer.ass)
+  const isSorting = useSelector((state) => state.assessmentsReducer.isSorting)
+  if (isSorting) {
+    console.log('enterd of isSortingblock')
+    dispatch(assessmentsSliceActions.setAssessmentSliceData(assessmentsSliceData))
+  }
   function handleChange(event, page) {
     setAssessmentsTableData(assessmentsSliceData.slice(noOfItemsPerPage * (page - 1), noOfItemsPerPage * (page)))
-  }
-  console.log(sorting)
-  if (sorting !== '') {
-    console.log('entered')
-    const dummyData = [...assessmentsSliceData]
-    console.log(sorting)
-    if (sorting == 'ass')
-      dummyData.sort((a, b) => a.percentage_scored - b.percentage_scored)
-    console.log(dummyData)
-    dispatch(assessmentsSliceActions.setAssessmentSliceData(dummyData))
   }
   useEffect(() => {
     fetch('https://stagingstudentpython.edwisely.com/reactProject/assessments').then((response) => {
@@ -93,7 +87,7 @@ const MuiCustomTableWithSortandSelect = () => {
           sx={{ marginTop: '1rem' }}
         >
           <Pagination
-            count={parseInt(Math.ceil(assessmentsSliceData?.length / noOfItemsPerPage))}
+            count={~~Math.ceil(assessmentsSliceData?.length / noOfItemsPerPage)}
             onChange={(event, page) => handleChange(event, page)}
             color='primary'
             sx={{
