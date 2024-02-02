@@ -1,9 +1,10 @@
-import AssessmentDetailCard from "../components/common/AssessmentDetailCard";
+import AssessmentDetailCard from "../../components/common/AssessmentDetailCard";
 import { Box } from "@mui/material";
-import { dashBoardCard } from "./LayoutStyles";
+import { dashBoardCard } from "../../pages/DummyStyles/LayoutStyles";
 import { useSelector } from "react-redux";
-export default function DashBoard() {
+export default function Analytics() {
     const analyticsData = useSelector((state) => state.assessmentsReducer.analyticsData)
+    console.log(analyticsData)
     const dashBoardKeys = Object.keys(analyticsData)
     const dashBoardValues = Object.values(analyticsData)
     return (

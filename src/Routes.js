@@ -1,16 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import React from 'react'
 import TestElement from './pages/TestElement'
-import Layout from './pages/Layout'
+import Layout from './pages/DashBoard/Layout.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import RootLayout from './pages/RootLayout'
+import RootLayout from './pages/RootLayout/RootLayout.jsx'
 import CourseLayout from './pages/CoursesPage/CourseLayout'
-import Login from './pages/Login'
+import Login from './components/common/Login.jsx'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 import { store, persistor } from '../src/Store/Store'
 import PdfViewer from './pages/CoursesPage/PdfViewer'
-import PageLayout from './pages/PageLayout'
 
 const router = createBrowserRouter([
   {
@@ -34,10 +33,6 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Login />,
-  },
-  {
-    path: 'pagelayout',
-    element: <PageLayout />,
   },
 ])
 

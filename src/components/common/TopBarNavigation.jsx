@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { navStyles, goodMorningStyles, avatarStyles } from "./TopNavigationBarStyles.js";
+
 import { Menu, MenuItem, Typography } from "@mui/material";
-import profileImg from '../assets/profile.jpeg'
-import { Stack, Box } from "@mui/material";
+import profileImg from '../../assets/profile.jpeg'
+import { Box } from "@mui/material";
 import { useSelector } from "react-redux";
-import { poppinsFont } from "../theme/typography.js";
+import { poppinsFont } from "../../theme/typography.js";
 
 
 export default function TopBarNavigation({ name, email }) {

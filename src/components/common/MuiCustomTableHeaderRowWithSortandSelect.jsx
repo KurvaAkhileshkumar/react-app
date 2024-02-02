@@ -17,7 +17,6 @@ const MuiCustomTableHeaderRowWithSortandSelect = ({
         margin: '0px',
         background: theme.palette.grey[100],
         borderRadius: '10px',
-        height: '31px',
       }}
     >
       {headerArray?.map((header, i) => {

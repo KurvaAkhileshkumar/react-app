@@ -1,6 +1,6 @@
-import palette from '../theme/palette'
-import { poppinsFont, pxToRem } from '../theme/typography'
-import typography from '../theme/typography'
+import palette from '../../theme/palette'
+import { poppinsFont, pxToRem } from '../../theme/typography'
+import typography from '../../theme/typography'
 
 export const recentAssessmentsText = {
   marginTop: '16px',

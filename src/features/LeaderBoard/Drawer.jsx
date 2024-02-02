@@ -4,10 +4,10 @@ import Box from '@mui/material/Box';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography';
-import { calendarText } from "./UserProfileStyles";
-import LeaderBoardCard from '../components/common/LeaderBoardCard';
-import { drawerStyles, rightItem3 } from './LayoutStyles';
-import { MyDiv } from '../components/myStyledComponents/styledComponents';
+import { calendarText } from "../../pages/DummyStyles/UserProfileStyles";
+import LeaderBoardCard from '../../components/common/LeaderBoardCard';
+import { drawerStyles, rightItem3 } from '../../pages/DummyStyles/LayoutStyles';
+import { MyDiv } from '../../components/myStyledComponents/styledComponents';
 import { useSelector } from 'react-redux';
 export default function TemporaryDrawer({ state, toggleDrawer, data }) {
     const leaderBoardData = useSelector((state) => state.assessmentsReducer.leaderBoardData)

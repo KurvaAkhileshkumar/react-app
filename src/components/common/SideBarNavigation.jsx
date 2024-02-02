@@ -1,11 +1,11 @@
 import { NavLink } from 'react-router-dom'
 import { Stack, Box } from '@mui/material'
-import palette from '../theme/palette';
-import logo from '../assets/Group.jpg'
-import elementEqual from '../assets/element-equal.jpg'
-import book from '../assets/book.jpg'
-import logoutImg from '../assets/logout.jpg'
-import { authSliceActions } from '../Store/Store';
+import palette from '../../theme/palette';
+import logo from '../../assets/Group.jpg'
+import elementEqual from '../../assets/element-equal.jpg'
+import book from '../../assets/book.jpg'
+import logoutImg from '../../assets/logout.jpg'
+import { authSliceActions } from '../../Store/Store';
 import { useNavigate } from 'react-router'
 import { useDispatch } from 'react-redux'
 

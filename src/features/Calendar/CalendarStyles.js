@@ -1,4 +1,4 @@
-import { poppinsFont, pxToRem } from '../theme/typography'
+import { poppinsFont, pxToRem } from '../../theme/typography'
 
 export const calenderSx = {
   top: '0px',

@@ -1,906 +1,205 @@
 {
   "status": 200,
   "message": "Successfully fetched the data",
-  "assessments": [
-    {
-      "subject": "Subject 01",
-      "semester": 1,
-      "total_timespent": null,
-      "submission_type": null,
-      "internet_speed": null,
-      "percentage_scored": null,
-      "attempted": 0
-    },
-    {
-      "subject": "Subject 02",
-      "semester": 2,
-      "total_timespent": 72,
-      "submission_type": 3,
-      "internet_speed": 2,
-      "percentage_scored": 77,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 03",
-      "semester": 2,
-      "total_timespent": 5,
-      "submission_type": 4,
-      "internet_speed": 5,
-      "percentage_scored": 82,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 04",
-      "semester": 1,
-      "total_timespent": 10,
-      "submission_type": 4,
-      "internet_speed": 6,
-      "percentage_scored": 56,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 05",
-      "semester": 2,
-      "total_timespent": 76,
-      "submission_type": 4,
-      "internet_speed": 3,
-      "percentage_scored": 36,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 06",
-      "semester": 3,
-      "total_timespent": 65,
-      "submission_type": 4,
-      "internet_speed": 3,
-      "percentage_scored": 83,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 07",
-      "semester": 2,
-      "total_timespent": 92,
-      "submission_type": 3,
-      "internet_speed": 2,
-      "percentage_scored": 33,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 08",
-      "semester": 3,
-      "total_timespent": 55,
-      "submission_type": 2,
-      "internet_speed": 10,
-      "percentage_scored": 72,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 09",
-      "semester": 1,
-      "total_timespent": 86,
-      "submission_type": 1,
-      "internet_speed": 6,
-      "percentage_scored": 13,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 10",
-      "semester": 2,
-      "total_timespent": 38,
-      "submission_type": 2,
-      "internet_speed": 9,
-      "percentage_scored": 15,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 11",
-      "semester": 2,
-      "total_timespent": 55,
-      "submission_type": 4,
-      "internet_speed": 4,
-      "percentage_scored": 88,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 12",
-      "semester": 1,
-      "total_timespent": 58,
-      "submission_type": 2,
-      "internet_speed": 4,
-      "percentage_scored": 85,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 13",
-      "semester": 3,
-      "total_timespent": null,
-      "submission_type": null,
-      "internet_speed": null,
-      "percentage_scored": null,
-      "attempted": 0
-    },
-    {
-      "subject": "Subject 14",
-      "semester": 1,
-      "total_timespent": 35,
-      "submission_type": 2,
-      "internet_speed": 2,
-      "percentage_scored": 28,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 15",
-      "semester": 2,
-      "total_timespent": 58,
-      "submission_type": 1,
-      "internet_speed": 5,
-      "percentage_scored": 55,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 16",
-      "semester": 3,
-      "total_timespent": 33,
-      "submission_type": 1,
-      "internet_speed": 6,
-      "percentage_scored": 93,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 17",
-      "semester": 2,
-      "total_timespent": 60,
-      "submission_type": 2,
-      "internet_speed": 5,
-      "percentage_scored": 14,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 18",
-      "semester": 3,
-      "total_timespent": 89,
-      "submission_type": 3,
-      "internet_speed": 2,
-      "percentage_scored": 87,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 19",
-      "semester": 3,
-      "total_timespent": 46,
-      "submission_type": 4,
-      "internet_speed": 7,
-      "percentage_scored": 38,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 20",
-      "semester": 3,
-      "total_timespent": 13,
-      "submission_type": 3,
-      "internet_speed": 1,
-      "percentage_scored": 100,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 21",
-      "semester": 3,
-      "total_timespent": 25,
-      "submission_type": 3,
-      "internet_speed": 5,
-      "percentage_scored": 90,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 22",
-      "semester": 1,
-      "total_timespent": 71,
-      "submission_type": 1,
-      "internet_speed": 3,
-      "percentage_scored": 88,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 23",
-      "semester": 3,
-      "total_timespent": 80,
-      "submission_type": 1,
-      "internet_speed": 10,
-      "percentage_scored": 31,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 24",
-      "semester": 3,
-      "total_timespent": 41,
-      "submission_type": 2,
-      "internet_speed": 9,
-      "percentage_scored": 58,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 25",
-      "semester": 2,
-      "total_timespent": 8,
-      "submission_type": 1,
-      "internet_speed": 1,
-      "percentage_scored": 5,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 26",
-      "semester": 1,
-      "total_timespent": 46,
-      "submission_type": 3,
-      "internet_speed": 10,
-      "percentage_scored": 25,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 27",
-      "semester": 1,
-      "total_timespent": 45,
-      "submission_type": 3,
-      "internet_speed": 9,
-      "percentage_scored": 7,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 28",
-      "semester": 2,
-      "total_timespent": 48,
-      "submission_type": 4,
-      "internet_speed": 7,
-      "percentage_scored": 61,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 29",
-      "semester": 2,
-      "total_timespent": 81,
-      "submission_type": 4,
-      "internet_speed": 2,
-      "percentage_scored": 89,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 30",
-      "semester": 3,
-      "total_timespent": 70,
-      "submission_type": 1,
-      "internet_speed": 8,
-      "percentage_scored": 45,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 31",
-      "semester": 3,
-      "total_timespent": 49,
-      "submission_type": 2,
-      "internet_speed": 7,
-      "percentage_scored": 28,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 32",
-      "semester": 1,
-      "total_timespent": 13,
-      "submission_type": 1,
-      "internet_speed": 10,
-      "percentage_scored": 21,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 33",
-      "semester": 1,
-      "total_timespent": 57,
-      "submission_type": 3,
-      "internet_speed": 3,
-      "percentage_scored": 3,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 34",
-      "semester": 2,
-      "total_timespent": 81,
-      "submission_type": 2,
-      "internet_speed": 2,
-      "percentage_scored": 84,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 35",
-      "semester": 2,
-      "total_timespent": 46,
-      "submission_type": 3,
-      "internet_speed": 4,
-      "percentage_scored": 19,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 36",
-      "semester": 2,
-      "total_timespent": 78,
-      "submission_type": 1,
-      "internet_speed": 8,
-      "percentage_scored": 93,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 37",
-      "semester": 2,
-      "total_timespent": 89,
-      "submission_type": 3,
-      "internet_speed": 7,
-      "percentage_scored": 39,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 38",
-      "semester": 3,
-      "total_timespent": 61,
-      "submission_type": 3,
-      "internet_speed": 4,
-      "percentage_scored": 60,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 39",
-      "semester": 3,
-      "total_timespent": 28,
-      "submission_type": 2,
-      "internet_speed": 9,
-      "percentage_scored": 9,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 40",
-      "semester": 1,
-      "total_timespent": 66,
-      "submission_type": 3,
-      "internet_speed": 5,
-      "percentage_scored": 65,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 41",
-      "semester": 1,
-      "total_timespent": 98,
-      "submission_type": 3,
-      "internet_speed": 7,
-      "percentage_scored": 45,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 42",
-      "semester": 2,
-      "total_timespent": 99,
-      "submission_type": 4,
-      "internet_speed": 2,
-      "percentage_scored": 54,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 43",
-      "semester": 1,
-      "total_timespent": 49,
-      "submission_type": 2,
-      "internet_speed": 6,
-      "percentage_scored": 5,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 44",
-      "semester": 2,
-      "total_timespent": 43,
-      "submission_type": 3,
-      "internet_speed": 8,
-      "percentage_scored": 91,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 45",
-      "semester": 1,
-      "total_timespent": 43,
-      "submission_type": 2,
-      "internet_speed": 7,
-      "percentage_scored": 5,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 46",
-      "semester": 3,
-      "total_timespent": 0,
-      "submission_type": 4,
-      "internet_speed": 2,
-      "percentage_scored": 61,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 47",
-      "semester": 1,
-      "total_timespent": null,
-      "submission_type": null,
-      "internet_speed": null,
-      "percentage_scored": null,
-      "attempted": 0
-    },
-    {
-      "subject": "Subject 48",
-      "semester": 3,
-      "total_timespent": 7,
-      "submission_type": 4,
-      "internet_speed": 9,
-      "percentage_scored": 40,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 49",
-      "semester": 3,
-      "total_timespent": 69,
-      "submission_type": 2,
-      "internet_speed": 8,
-      "percentage_scored": 10,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 50",
-      "semester": 1,
-      "total_timespent": 3,
-      "submission_type": 1,
-      "internet_speed": 1,
-      "percentage_scored": 69,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 51",
-      "semester": 3,
-      "total_timespent": 96,
-      "submission_type": 2,
-      "internet_speed": 4,
-      "percentage_scored": 99,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 52",
-      "semester": 3,
-      "total_timespent": 47,
-      "submission_type": 4,
-      "internet_speed": 4,
-      "percentage_scored": 67,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 53",
-      "semester": 1,
-      "total_timespent": 86,
-      "submission_type": 4,
-      "internet_speed": 5,
-      "percentage_scored": 85,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 54",
-      "semester": 2,
-      "total_timespent": 82,
-      "submission_type": 3,
-      "internet_speed": 6,
-      "percentage_scored": 80,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 55",
-      "semester": 2,
-      "total_timespent": 2,
-      "submission_type": 4,
-      "internet_speed": 6,
-      "percentage_scored": 36,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 56",
-      "semester": 3,
-      "total_timespent": 94,
-      "submission_type": 3,
-      "internet_speed": 5,
-      "percentage_scored": 29,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 57",
-      "semester": 1,
-      "total_timespent": null,
-      "submission_type": null,
-      "internet_speed": null,
-      "percentage_scored": null,
-      "attempted": 0
-    },
-    {
-      "subject": "Subject 58",
-      "semester": 3,
-      "total_timespent": 32,
-      "submission_type": 2,
-      "internet_speed": 7,
-      "percentage_scored": 34,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 59",
-      "semester": 2,
-      "total_timespent": null,
-      "submission_type": null,
-      "internet_speed": null,
-      "percentage_scored": null,
-      "attempted": 0
-    },
-    {
-      "subject": "Subject 60",
-      "semester": 1,
-      "total_timespent": 11,
-      "submission_type": 1,
-      "internet_speed": 8,
-      "percentage_scored": 34,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 61",
-      "semester": 2,
-      "total_timespent": 66,
-      "submission_type": 4,
-      "internet_speed": 4,
-      "percentage_scored": 37,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 62",
-      "semester": 1,
-      "total_timespent": 99,
-      "submission_type": 4,
-      "internet_speed": 9,
-      "percentage_scored": 85,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 63",
-      "semester": 1,
-      "total_timespent": 19,
-      "submission_type": 1,
-      "internet_speed": 5,
-      "percentage_scored": 18,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 64",
-      "semester": 2,
-      "total_timespent": 34,
-      "submission_type": 1,
-      "internet_speed": 8,
-      "percentage_scored": 88,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 65",
-      "semester": 3,
-      "total_timespent": 39,
-      "submission_type": 2,
-      "internet_speed": 2,
-      "percentage_scored": 39,
-      "attempted": 1
+  "name": "Maharram Hasanli",
+  "email": "maha.hasanli@gmail.com",
+  "profile_picture": "https://edwisely-profile-v2.s3.amazonaws.com/profile/EDS3/158746378221920200421092750.jpg",
+  "analytics": {
+    "attendance": "92%",
+    "avg_performance": "88%",
+    "assessment": "45%",
+    "assignment": "79%",
+    "coding": "65%"
+  },
+  "recent_assessments": {
+    "subjects": [
+      {
+        "id": 120,
+        "name": "Web Technologies",
+        "tests": [
+          { "name": "T1", "test_id": 1, "percentage": 53, "attempted": 1 },
+          { "name": "T2", "test_id": 2, "percentage": 72, "attempted": 1 },
+          { "name": "T3", "test_id": 3, "percentage": 78, "attempted": 1 },
+          { "name": "T4", "test_id": 4, "percentage": 89, "attempted": 1 },
+          { "name": "T5", "test_id": 5, "percentage": 0, "attempted": 0 },
+          { "name": "T6", "test_id": 6, "percentage": 0, "attempted": 0 },
+          { "name": "T7", "test_id": 7, "percentage": 15, "attempted": 1 },
+          { "name": "T8", "test_id": 8, "percentage": 48, "attempted": 1 },
+          { "name": "T9", "test_id": 9, "percentage": 19, "attempted": 1 },
+          { "name": "T10", "test_id": 10, "percentage": 0, "attempted": 0 },
+          { "name": "T11", "test_id": 11, "percentage": 60, "attempted": 1 },
+          { "name": "T12", "test_id": 12, "percentage": 27, "attempted": 1 }
+        ]
+      },
+      {
+        "id": 121,
+        "name": "Machine Learning",
+        "tests": [
+          { "name": "T1", "test_id": 13, "percentage": 41, "attempted": 1 },
+          { "name": "T2", "test_id": 14, "percentage": 28, "attempted": 1 },
+          { "name": "T3", "test_id": 15, "percentage": 0, "attempted": 0 },
+          { "name": "T4", "test_id": 16, "percentage": 75, "attempted": 1 },
+          { "name": "T5", "test_id": 17, "percentage": 90, "attempted": 1 },
+          { "name": "T6", "test_id": 18, "percentage": 20, "attempted": 1 },
+          { "name": "T7", "test_id": 19, "percentage": 78, "attempted": 1 },
+          { "name": "T8", "test_id": 20, "percentage": 0, "attempted": 0 },
+          { "name": "T9", "test_id": 21, "percentage": 30, "attempted": 1 },
+          { "name": "T10", "test_id": 22, "percentage": 12, "attempted": 1 },
+          { "name": "T11", "test_id": 23, "percentage": 0, "attempted": 0 },
+          { "name": "T12", "test_id": 24, "percentage": 99, "attempted": 1 }
+        ]
+      },
+      {
+        "id": 122,
+        "name": "Data Structures and Algorithms",
+        "tests": [
+          { "name": "T1", "test_id": 25, "percentage": 31, "attempted": 1 },
+          { "name": "T2", "test_id": 26, "percentage": 78, "attempted": 1 },
+          { "name": "T3", "test_id": 27, "percentage": 39, "attempted": 1 },
+          { "name": "T4", "test_id": 28, "percentage": 25, "attempted": 1 },
+          { "name": "T5", "test_id": 29, "percentage": 0, "attempted": 0 },
+          { "name": "T6", "test_id": 30, "percentage": 75, "attempted": 1 },
+          { "name": "T7", "test_id": 31, "percentage": 30, "attempted": 1 },
+          { "name": "T8", "test_id": 32, "percentage": 0, "attempted": 0 },
+          { "name": "T9", "test_id": 33, "percentage": 87, "attempted": 1 },
+          { "name": "T10", "test_id": 34, "percentage": 90, "attempted": 1 },
+          { "name": "T11", "test_id": 35, "percentage": 17, "attempted": 1 },
+          { "name": "T12", "test_id": 36, "percentage": 0, "attempted": 0 }
+        ]
+      },
+      {
+        "id": 123,
+        "name": "Database Management Systems",
+        "tests": [
+          { "name": "T1", "test_id": 37, "percentage": 81, "attempted": 1 },
+          { "name": "T2", "test_id": 38, "percentage": 0, "attempted": 0 },
+          { "name": "T3", "test_id": 39, "percentage": 39, "attempted": 1 },
+          { "name": "T4", "test_id": 40, "percentage": 88, "attempted": 1 },
+          { "name": "T5", "test_id": 41, "percentage": 29, "attempted": 1 },
+          { "name": "T6", "test_id": 42, "percentage": 0, "attempted": 0 },
+          { "name": "T7", "test_id": 43, "percentage": 48, "attempted": 1 },
+          { "name": "T8", "test_id": 44, "percentage": 54, "attempted": 1 },
+          { "name": "T9", "test_id": 45, "percentage": 55, "attempted": 1 },
+          { "name": "T10", "test_id": 46, "percentage": 0, "attempted": 0 },
+          { "name": "T11", "test_id": 47, "percentage": 40, "attempted": 1 },
+          { "name": "T12", "test_id": 48, "percentage": 69, "attempted": 1 }
+        ]
+      }
+    ],
+    "title": "Recent Assessments",
+    "x-axis": "Tests",
+    "y-axis": "Performance"
+  },
+  "leaderboard": [
+    {
+      "id": 1234,
+      "name": "Maharram Hasanli",
+      "percentage": 65.7,
+      "profile_pic": "https://edwisely-profile-v2.s3.amazonaws.com/profile/EDS3/158746378221920200421092750.jpg",
+      "rank": 12
+    },
+    {
+      "id": 1235,
+      "name": "Virat Kohli",
+      "percentage": 98,
+      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
+      "rank": 1
     },
     {
-      "subject": "Subject 66",
-      "semester": 3,
-      "total_timespent": 11,
-      "submission_type": 2,
-      "internet_speed": 3,
-      "percentage_scored": 50,
-      "attempted": 1
+      "id": 1236,
+      "name": "Rohit Sharma",
+      "percentage": 97.5,
+      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
+      "rank": 2
     },
     {
-      "subject": "Subject 67",
-      "semester": 1,
-      "total_timespent": null,
-      "submission_type": null,
-      "internet_speed": null,
-      "percentage_scored": null,
-      "attempted": 0
+      "id": 1237,
+      "name": "MS Dhoni",
+      "percentage": 95.8,
+      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
+      "rank": 3
     },
     {
-      "subject": "Subject 68",
-      "semester": 2,
-      "total_timespent": 93,
-      "submission_type": 1,
-      "internet_speed": 2,
-      "percentage_scored": 22,
-      "attempted": 1
+      "id": 1238,
+      "name": "Rahul Dravid",
+      "percentage": 94.2,
+      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
+      "rank": 4
     },
     {
-      "subject": "Subject 69",
-      "semester": 2,
-      "total_timespent": 89,
-      "submission_type": 2,
-      "internet_speed": 2,
-      "percentage_scored": 19,
-      "attempted": 1
+      "id": 1239,
+      "name": "Sachin Tendulkar",
+      "percentage": 93.6,
+      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
+      "rank": 5
     },
     {
-      "subject": "Subject 70",
-      "semester": 1,
-      "total_timespent": 31,
-      "submission_type": 3,
-      "internet_speed": 8,
-      "percentage_scored": 75,
-      "attempted": 1
+      "id": 1240,
+      "name": "Kapil Dev",
+      "percentage": 91.5,
+      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
+      "rank": 6
     },
     {
-      "subject": "Subject 71",
-      "semester": 1,
-      "total_timespent": 97,
-      "submission_type": 2,
-      "internet_speed": 5,
-      "percentage_scored": 9,
-      "attempted": 1
+      "id": 1241,
+      "name": "Sourav Ganguly",
+      "percentage": 90,
+      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
+      "rank": 7
     },
     {
-      "subject": "Subject 72",
-      "semester": 1,
-      "total_timespent": 37,
-      "submission_type": 4,
-      "internet_speed": 1,
-      "percentage_scored": 76,
-      "attempted": 1
+      "id": 1242,
+      "name": "AB De Villiers",
+      "percentage": 89.2,
+      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
+      "rank": 8
     },
     {
-      "subject": "Subject 73",
-      "semester": 3,
-      "total_timespent": null,
-      "submission_type": null,
-      "internet_speed": null,
-      "percentage_scored": null,
-      "attempted": 0
+      "id": 1243,
+      "name": "David Warner",
+      "percentage": 87.6,
+      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
+      "rank": 9
     },
     {
-      "subject": "Subject 74",
-      "semester": 1,
-      "total_timespent": 4,
-      "submission_type": 3,
-      "internet_speed": 1,
-      "percentage_scored": 54,
-      "attempted": 1
+      "id": 1244,
+      "name": "Chris Gayle",
+      "percentage": 79,
+      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
+      "rank": 10
     },
     {
-      "subject": "Subject 75",
-      "semester": 1,
-      "total_timespent": null,
-      "submission_type": null,
-      "internet_speed": null,
-      "percentage_scored": null,
-      "attempted": 0
-    },
-    {
-      "subject": "Subject 76",
-      "semester": 3,
-      "total_timespent": 43,
-      "submission_type": 3,
-      "internet_speed": 8,
-      "percentage_scored": 16,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 77",
-      "semester": 1,
-      "total_timespent": null,
-      "submission_type": null,
-      "internet_speed": null,
-      "percentage_scored": null,
-      "attempted": 0
-    },
-    {
-      "subject": "Subject 78",
-      "semester": 2,
-      "total_timespent": 2,
-      "submission_type": 4,
-      "internet_speed": 3,
-      "percentage_scored": 60,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 79",
-      "semester": 3,
-      "total_timespent": null,
-      "submission_type": null,
-      "internet_speed": null,
-      "percentage_scored": null,
-      "attempted": 0
-    },
-    {
-      "subject": "Subject 80",
-      "semester": 2,
-      "total_timespent": 17,
-      "submission_type": 3,
-      "internet_speed": 9,
-      "percentage_scored": 9,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 81",
-      "semester": 2,
-      "total_timespent": 16,
-      "submission_type": 3,
-      "internet_speed": 6,
-      "percentage_scored": 39,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 82",
-      "semester": 1,
-      "total_timespent": null,
-      "submission_type": null,
-      "internet_speed": null,
-      "percentage_scored": null,
-      "attempted": 0
-    },
-    {
-      "subject": "Subject 83",
-      "semester": 2,
-      "total_timespent": 67,
-      "submission_type": 2,
-      "internet_speed": 5,
-      "percentage_scored": 34,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 84",
-      "semester": 1,
-      "total_timespent": 25,
-      "submission_type": 1,
-      "internet_speed": 5,
-      "percentage_scored": 3,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 85",
-      "semester": 2,
-      "total_timespent": null,
-      "submission_type": null,
-      "internet_speed": null,
-      "percentage_scored": null,
-      "attempted": 0
-    },
-    {
-      "subject": "Subject 86",
-      "semester": 3,
-      "total_timespent": 95,
-      "submission_type": 1,
-      "internet_speed": 6,
-      "percentage_scored": 92,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 87",
-      "semester": 3,
-      "total_timespent": null,
-      "submission_type": null,
-      "internet_speed": null,
-      "percentage_scored": null,
-      "attempted": 0
-    },
-    {
-      "subject": "Subject 88",
-      "semester": 3,
-      "total_timespent": 32,
-      "submission_type": 3,
-      "internet_speed": 7,
-      "percentage_scored": 90,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 89",
-      "semester": 3,
-      "total_timespent": 69,
-      "submission_type": 3,
-      "internet_speed": 4,
-      "percentage_scored": 78,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 90",
-      "semester": 3,
-      "total_timespent": 69,
-      "submission_type": 3,
-      "internet_speed": 2,
-      "percentage_scored": 18,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 91",
-      "semester": 1,
-      "total_timespent": 38,
-      "submission_type": 2,
-      "internet_speed": 3,
-      "percentage_scored": 21,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 92",
-      "semester": 2,
-      "total_timespent": 73,
-      "submission_type": 4,
-      "internet_speed": 1,
-      "percentage_scored": 65,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 93",
-      "semester": 3,
-      "total_timespent": 80,
-      "submission_type": 4,
-      "internet_speed": 2,
-      "percentage_scored": 53,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 94",
-      "semester": 3,
-      "total_timespent": null,
-      "submission_type": null,
-      "internet_speed": null,
-      "percentage_scored": null,
-      "attempted": 0
-    },
-    {
-      "subject": "Subject 95",
-      "semester": 3,
-      "total_timespent": 30,
-      "submission_type": 2,
-      "internet_speed": 4,
-      "percentage_scored": 49,
-      "attempted": 1
-    },
-    {
-      "subject": "Subject 96",
-      "semester": 3,
-      "total_timespent": 88,
-      "submission_type": 1,
-      "internet_speed": 6,
-      "percentage_scored": 28,
-      "attempted": 1
-    },
+      "id": 1245,
+      "name": "Yuvraj Singh",
+      "percentage": 71.1,
+      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
+      "rank": 11
+    }
+  ],
+  "courses": [
     {
-      "subject": "Subject 97",
-      "semester": 1,
-      "total_timespent": 15,
-      "submission_type": 2,
-      "internet_speed": 6,
-      "percentage_scored": 83,
-      "attempted": 1
+      "id": 1,
+      "name": "Machine Learning A-Z: Hands on Python & R in Data Science",
+      "tag": "DEVELOPMENT",
+      "image": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/course+images/Course+Images+1.jpg"
     },
     {
-      "subject": "Subject 98",
-      "semester": 2,
-      "total_timespent": null,
-      "submission_type": null,
-      "internet_speed": null,
-      "percentage_scored": null,
-      "attempted": 0
+      "id": 2,
+      "name": "Basics of UI/UX",
+      "tag": "DESIGN",
+      "image": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/course+images/Course+Images+2.jpg"
     },
     {
-      "subject": "Subject 99",
-      "semester": 3,
-      "total_timespent": 16,
-      "submission_type": 1,
-      "internet_speed": 3,
-      "percentage_scored": 35,
-      "attempted": 1
+      "id": 3,
+      "name": "Complete 2023 Web Development Bootcamp",
+      "tag": "DEVELOPMENT",
+      "image": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/course+images/Course+Images+3.jpg"
     },
     {
-      "subject": "Subject 100",
-      "semester": 3,
-      "total_timespent": 92,
-      "submission_type": 1,
-      "internet_speed": 6,
-      "percentage_scored": 77,
-      "attempted": 1
+      "id": 4,
+      "name": "Complete Digital Marketing Course - 12 modules",
+      "tag": "MARKETING",
+      "image": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/course+images/Course+Images+4.jpg"
     }
   ]
 }

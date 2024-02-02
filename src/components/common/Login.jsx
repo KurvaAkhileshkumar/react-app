@@ -11,13 +11,13 @@ import {
     Typography,
     Box
 } from "@mui/material";
-import loginImage from "../assets/loginimg.svg";
-import { leftContent, leftHeader, loginHelper, studentPortal, welcome } from "./LoginStlyes.js";
+import loginImage from "../../assets/loginimg.svg";
+import { leftContent, leftHeader, loginHelper, studentPortal, welcome } from "../../pages/DummyStyles/LoginStlyes.js";
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router'
 import { useDispatch } from 'react-redux'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
-import { authSliceActions } from "../Store/Store.jsx";
+import { authSliceActions } from "../../Store/Store.jsx";
 
 
 export default function Login() {

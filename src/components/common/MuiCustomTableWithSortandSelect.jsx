@@ -11,6 +11,7 @@ import {
   Paper,
   Stack,
   Pagination,
+  Box
 } from '@mui/material'
 import MuiCustomTableHeaderRowWithSortandSelect from './MuiCustomTableHeaderRowWithSortandSelect'
 import MuiCustomStudentTableRow from './MuiCustomStudentTableRow'
@@ -64,56 +65,55 @@ const MuiCustomTableWithSortandSelect = () => {
   //Rendering the component
   return (
     <>
-      {isError ? <MyDiv>
-        <Paper
-          sx={{
-            margin: '0px',
-            padding: '0px',
-            border: '0px',
-            boxShadow: 'none',
-          }}
-        >
-          <Table sx={{ width: '861px', margin: '0px', padding: '0px' }} aria-label='sticky table'>
-            <TableHead
-              sx={{
-                height: '31px',
-                background: palette.grey[100],
-              }}
-            >
-              <MuiCustomTableHeaderRowWithSortandSelect
-                headerArray={HeaderArr}
-              />
-            </TableHead>
-            <TableBody>
-              {assessmentsTableData?.map((stu, i) => (
-                <MuiCustomStudentTableRow
-                  stu={stu}
-                  key={i}
-                />
-              ))}
-            </TableBody>
-          </Table>
-        </Paper>
-
-        <Stack
-          direction='row'
-          justifyContent='center'
-          alignItems='center'
-          sx={{ marginTop: '1rem' }}
-        >
-          <Pagination
-            count={~~Math.ceil(assessmentsSliceData?.length / noOfItemsPerPage)}
-            onChange={(event, page) => handleChange(event, page)}
-            color='primary'
+      <Box
+        sx={{
+          margin: '0px',
+          padding: '0px',
+          border: '0px',
+          boxShadow: 'none',
+        }}
+      >
+        <Table
+          sx={{ margin: '0px', padding: '0px' }} aria-label='responsive table'>
+          <TableHead
             sx={{
-              '& .MuiPaginationItem-previousNext': {
-                background: palette.grey[200]
-              },
-              fontFamily: poppinsFont.fontFamily
+              background: palette.grey[100],
             }}
-          />
-        </Stack>
-      </MyDiv> : <ErrorElement />}
+          >
+            <MuiCustomTableHeaderRowWithSortandSelect
+              headerArray={HeaderArr}
+            />
+          </TableHead>
+          <TableBody>
+            {assessmentsTableData?.map((stu, i) => (
+              <MuiCustomStudentTableRow
+                stu={stu}
+                key={i}
+              />
+            ))}
+          </TableBody>
+        </Table>
+      </Box>
+
+      <Box
+        display={'flex'}
+        flexDirection={'row'}
+        justifyContent='center'
+        alignItems='center'
+        sx={{ marginTop: '1rem' }}
+      >
+        <Pagination
+          count={~~Math.ceil(assessmentsSliceData?.length / noOfItemsPerPage)}
+          onChange={(event, page) => handleChange(event, page)}
+          color='primary'
+          sx={{
+            '& .MuiPaginationItem-previousNext': {
+              background: palette.grey[200]
+            },
+            fontFamily: poppinsFont.fontFamily
+          }}
+        />
+      </Box>
     </>
   )
 }

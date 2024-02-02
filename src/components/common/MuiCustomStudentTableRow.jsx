@@ -3,6 +3,7 @@ import {
   TableRow,
   TableCell,
   Typography,
+  Box,
   IconButton,
   Stack,
 } from '@mui/material'
@@ -51,20 +52,20 @@ const MuiCustomStudentTableRow = ({ stu, viewStudentResult }) => {
     >
       <TableCell
         scope='row'
-        sx={{ border: 'none', borderRadius: '6px 0 0 6px' }}
+        sx={{ border: 'none', borderRadius: '6px 0 0 6px', maxWidth: '100px' }}
       >
         <Typography variant='body1' sx={{ ...dataStyling, color: theme.palette.grey[900] }}>
           {stu.subject}
         </Typography>
       </TableCell>
       {(
-        <TableCell scope='row' sx={{ border: 'none' }}>
+        <TableCell scope='row' sx={{ border: 'none', maxWidth: '100px' }}>
           <Typography variant='body1' sx={{ ...dataStyling, color: theme.palette.grey[900] }}>
             {stu.total_timespent ? stu.total_timespent + ' Mins' : '--'}
           </Typography>
         </TableCell>
       )}
-      <TableCell scope='row' sx={{ border: 'none' }}>
+      <TableCell scope='row' sx={{ border: 'none', maxWidth: '100px' }}>
         <Typography
           variant='body1'
           sx={{
@@ -90,29 +91,30 @@ const MuiCustomStudentTableRow = ({ stu, viewStudentResult }) => {
                 : 'Tabswitch'}
         </Typography>
       </TableCell>
-      <TableCell scope='row' sx={{ border: 'none' }}>
+      <TableCell scope='row' sx={{ border: 'none', maxWidth: '100px' }}>
         <Typography variant='body1' sx={{ ...dataStyling, color: theme.palette.grey[900] }}>
           {getInternetQuality(stu.internet_speed)}
         </Typography>
       </TableCell>
-      <TableCell scope='row' sx={{ border: 'none' }}>
+      <TableCell scope='row' sx={{ border: 'none', maxWidth: '100px' }}>
         <Typography variant='body1' sx={{ ...dataStyling, color: theme.palette.grey[900], textAlign: 'center', }}>
           {stu.percentage_scored ? stu.percentage_scored + ' %' : '--'}
         </Typography>
       </TableCell>
       <TableCell
         scope='row'
-        sx={{ border: 'none', borderRadius: '0 6px 6px 0' }}
+        sx={{ border: 'none', borderRadius: '0 6px 6px 0', maxWidth: '100px' }}
       >
-        <Stack
-          direction='row'
+        <Box
+          display={'flex'}
+          flexDirection={'row'}
           justifyContent='space-between'
           alignItems='center'
         >
           <Typography variant='body3' sx={{ ...dataStyling, color: theme.palette.grey[900] }}>
             {stu.attempted ? 'Attempted' : 'Unattempted'}
           </Typography>
-        </Stack>
+        </Box>
       </TableCell>
     </TableRow>
   )

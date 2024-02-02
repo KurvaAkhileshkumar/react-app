@@ -49,7 +49,7 @@ const assessmentsSlice = createSlice({
             state.categories = action.payload.categories
         },
         setAnalyticsData(state, action) {
-            state.analytics = action.payload.analyticsData
+            state.analyticsData = action.payload.analyticsData
         },
         setLeaderBoardData(state, action) {
             state.leaderBoardData = action.payload.leaderBoardData

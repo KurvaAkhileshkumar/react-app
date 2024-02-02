@@ -2,7 +2,7 @@
 //   font-family: 'Poppins', sans-serif;
 // }
 
-import { poppinsFont, pxToRem } from '../theme/typography'
+import { poppinsFont, pxToRem } from '../../theme/typography'
 
 /* left grid */
 

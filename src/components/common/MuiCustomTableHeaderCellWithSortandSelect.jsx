@@ -5,6 +5,7 @@ import {
   TableCell,
   Typography,
   Stack,
+  Box,
   IconButton,
   Menu,
   MenuItem,
@@ -54,13 +55,13 @@ const MuiCustomTableHeaderCellWithSortandSelect = ({
         sx={{
           padding: '0px',
           margin: '0px',
-          height: '30px',
           padding: '12px',
           background: theme.palette.grey[100]
         }}
       >
-        <Stack
-          direction='row'
+        <Box
+          display={'flex'}
+          flexDirection={'row'}
           alignItems='center'
           gap={'0.5rem'}
           sx={{ height: '10px' }}
@@ -85,11 +86,11 @@ const MuiCustomTableHeaderCellWithSortandSelect = ({
               margin: '0px',
               padding: '0px',
               height: '15px',
-              width: '14.931px',
+              width: 'auto',
               color: palette.grey[400]
             }}
           /> : ''}
-        </Stack>
+        </Box>
       </TableCell>
     </>
   )

@@ -1,9 +1,9 @@
-import { Stack, Box } from '@mui/material';
+import { Box } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
-import { attemptedUnattemptedText, circleIcon } from "./RecentAssessmentsStyles";
+import { circleIcon } from "../../pages/DummyStyles/RecentAssessmentsStyles";
 import InputLabel from '@mui/material/InputLabel';
-import { poppinsFont, pxToRem } from "../theme/typography";
-import palette from "../theme/palette";
+import { poppinsFont, pxToRem } from "../../theme/typography";
+import palette from "../../theme/palette";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';

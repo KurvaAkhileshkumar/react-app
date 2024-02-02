@@ -1,5 +1,5 @@
-import palette from '../theme/palette'
-import typography from '../theme/typography'
+import palette from '../../theme/palette'
+import typography from '../../theme/typography'
 
 export const dashBoardStack = {
   padding: '0px',
