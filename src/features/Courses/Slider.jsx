@@ -10,7 +10,7 @@ export default function SliderStatus() {
             <Box display={'flex'} direction={'row'} marginLeft={'85px'} marginTop={'18px'}>
                 <Slider
                     size="medium"
-                    defaultValue={courseCompletionPercentage}
+                    value={courseCompletionPercentage}
                     valueLabelDisplay="auto"
                     max={100}
                     min={0}

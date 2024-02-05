@@ -26,7 +26,6 @@ const intialAsessmentsSliceData = {
     semester
 }
 
-console.log(intialAsessmentsSliceData)
 const assessmentsSlice = createSlice({
     name: 'sliceOfAssessment',
     initialState: intialAsessmentsSliceData,
@@ -37,7 +36,6 @@ const assessmentsSlice = createSlice({
         },
         setAssessmentSliceData(state, action) {
             state.assessmentsSliceData = action.payload
-            console.log(state.assessmentsSliceData)
         },
         setCoursesData(state, action) {
             state.coursesData = action.payload.coursesData

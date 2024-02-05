@@ -9,51 +9,49 @@ import { Box } from '@mui/material'
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import document from '../../assets/document.svg'
-import { MyDiv } from '../../components/myStyledComponents/styledComponents';
 import VectorBlue from '../../assets/VectorBlue.svg'
 import searchStatus from '../../assets/searchstatus.svg'
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-
+import Tabs from '@mui/material/Tabs';
 
 const arr = [1, 2, 3, 4, 5]
 export default function AccordianTopics() {
 
 
     const [topicIndex, setTopicIndex] = useState(0)
+    const [isActive, setIsActive] = useState(false)
 
     //Data from store
     const unitsData = useSelector((state) => state.coursesReducer.unitsData)
     let intialTopicState = ''
     if (unitsData !== undefined) {
-        intialTopicState = unitsData?.map((item, index) => { if (index == topicIndex) return item.topics })
+        intialTopicState = unitsData?.map((item, index) => { if (index === topicIndex) return item.topics })
     }
     function unitIdClickHandler(id) {
         setTopicIndex(id)
     }
     return (
         <>
-            <Box position={'relative'} display={'flex'} flexDirection={'row'} gap={'42.5px'} marginTop={'25px'} marginLeft={'56px'} marginBottom={'25px'}>
-                {unitsData?.map((item, index) => <Typography
-                    sx={
-                        {
-                            fontFamily: typography.fontFamily,
-                            fontSize: pxToRem(15), fontWeight: '600',
-                            fontStyle: 'normal', opacity: '0.5'
-                        }
-                    }
-                    key={index}
-                    onClick={() => unitIdClickHandler(index)}>
-                    {item.unit_name}
-                </Typography>
+            <Box position={'relative'} display={'flex'} width={'600px'} flexDirection={'row'} marginTop={'25px'} marginLeft={'56px'} marginBottom={'25px'}>
+                {unitsData?.map((item, index) =>
+                    <Tabs key={index} value={index} onClick={() => unitIdClickHandler(index)}>
+                        <Tab label={item.unit_name} value={index}
+                            sx={
+                                {
+                                    fontFamily: typography.fontFamily,
+                                    fontSize: pxToRem(15), fontWeight: '600',
+                                    fontStyle: 'normal', opacity: '0.5'
+                                }
+                            } />
+                    </Tabs>
                 )}
 
                 <Box
                     position={'absolute'}
-                    top={'-8px'}
-                    left={'454px'}
+                    top={'10px'}
+                    right={'0px'}
                     display={'flex'}
                     flexDirection={'row'}
                     gap={'11.383px'}
@@ -192,7 +190,7 @@ export default function AccordianTopics() {
                                     </Box>
                                 </AccordionDetails>
                             </Accordion>
-                            <Divider hard />
+                            <Divider hard={1} />
                         </Box >
                     );
                 })}

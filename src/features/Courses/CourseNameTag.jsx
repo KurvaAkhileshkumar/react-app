@@ -11,10 +11,6 @@ export default function CourseNameTag() {
     const id = useSelector((state) => state.coursesReducer.id)
     const courseName = useSelector((state) => state.coursesReducer.courseName)
     const courseTag = useSelector((state) => state.coursesReducer.courseTag)
-
-    console.log(id)
-    console.log(courseName)
-    console.log(courseTag)
     return (
         <>
             <Box display={'flex'} direction={'row'}>

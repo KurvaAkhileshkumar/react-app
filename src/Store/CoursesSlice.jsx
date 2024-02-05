@@ -4,7 +4,7 @@ const id = ''
 const coursesStatus = false;
 const courseName = ''
 const courseTag = ''
-const courseCompletionPercentage = ''
+const courseCompletionPercentage = 0
 const courseDescription = ''
 const continueReadingCardData = []
 
@@ -41,7 +41,6 @@ const courseSlice = createSlice({
         },
         setCourseDescription(state, action) {
             state.courseDescription = action.payload
-            console.log(state.courseDescription)
         },
         setContinueReadingCard(state, action) {
             state.continueReadingCardData = action.payload
