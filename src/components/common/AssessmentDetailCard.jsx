@@ -29,6 +29,8 @@ const AssessmentDetailCard = ({
           lg: '60px', // Height for large screens
           xl: '60px',
         },
+        display: 'flex',
+        flexWrap: 'wrap',
         minHeight: '60px',
         minWidth: '100px',
         width: '100%',
@@ -38,14 +40,16 @@ const AssessmentDetailCard = ({
         padding: '8px 8px 8px 8px',
       }}
     >
-      <Stack
-        direction={'row'}
+      <Box
+        display={'flex'}
+        flexDirection={'row'}
         gap='0 10px'
         alignItems='center'
         sx={{ width: '100%', height: '100%' }}
       >
-        <Stack
-          direction='row'
+        <Box
+          display={'flex'}
+          flexDirection='row'
           alignItems='center'
           gap={'15px'}
           sx={{
@@ -57,9 +61,9 @@ const AssessmentDetailCard = ({
           }}
         >
           <img src={icons[icon]} alt="" />
-        </Stack>
+        </Box>
 
-        <Stack direction='column' justifyContent='center'>
+        <Box display={'flex'} flexDirection='column' justifyContent='center'>
           <Typography variant='caption2'
             sx={{
               fontFamily: poppinsFont.fontFamily,
@@ -92,8 +96,8 @@ const AssessmentDetailCard = ({
               contentMagnitude
             )}
           </Typography>
-        </Stack>
-      </Stack>
+        </Box>
+      </Box>
     </Box>
   )
 }

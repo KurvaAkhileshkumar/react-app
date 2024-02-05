@@ -36,7 +36,7 @@ export default function UserProfile() {
                     <Box
                         sx={{
                             display: 'flex',
-                            direction: 'row',
+                            flexDirection: 'row',
                             marginTop: '10px',
                             marginLeft: '15px'
                         }}

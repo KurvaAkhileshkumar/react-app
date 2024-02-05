@@ -6,7 +6,7 @@ export const titleStyles = {
     fontFamily: poppinsFont.fontFamily,
     fontSize: pxToRem(25),
     fontWeight: 500,
-    lineHeight: '20px',
+    lineHeight: '28px',
     letterSpacing: '-0.25px'
 }
 export const whatYouWillLearnStyles = {
@@ -15,7 +15,7 @@ export const whatYouWillLearnStyles = {
     fontSize: pxToRem(16),
     fontStyle: 'normal',
     fontWeight: 500,
-    lineHeight: 'normal',
+    lineHeight: '10px',
     opacity: 1
 }
 

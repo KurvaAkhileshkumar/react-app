@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import typography, { poppinsFont, pxToRem } from '../../theme/typography';
 import palette from '../../theme/palette';
 import { useState } from 'react';
-import Stack from '@mui/material/Stack'
+import { Box } from '@mui/material'
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import document from '../../assets/document.svg'
@@ -13,11 +13,19 @@ import { MyDiv } from '../../components/myStyledComponents/styledComponents';
 import VectorBlue from '../../assets/VectorBlue.svg'
 import searchStatus from '../../assets/searchstatus.svg'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+
 
 const arr = [1, 2, 3, 4, 5]
-export default function AccordianTopics({ unitsData }) {
-    console.log('executing')
+export default function AccordianTopics() {
+
+
     const [topicIndex, setTopicIndex] = useState(0)
+
+    //Data from store
+    const unitsData = useSelector((state) => state.coursesReducer.unitsData)
     let intialTopicState = ''
     if (unitsData !== undefined) {
         intialTopicState = unitsData?.map((item, index) => { if (index == topicIndex) return item.topics })
@@ -27,14 +35,27 @@ export default function AccordianTopics({ unitsData }) {
     }
     return (
         <>
-            <Stack position={'relative'} direction={'row'} gap={'42.5px'} marginTop={'25px'} marginLeft={'56px'} marginBottom={'25px'}>
-                {unitsData?.map((item, index) => <Typography sx={{ fontFamily: typography.fontFamily, fontSize: pxToRem(15), fontWeight: '600', fontStyle: 'normal', opacity: '0.5' }} key={index} onClick={() => unitIdClickHandler(index)}>{item.unit_name}</Typography>)}
+            <Box position={'relative'} display={'flex'} flexDirection={'row'} gap={'42.5px'} marginTop={'25px'} marginLeft={'56px'} marginBottom={'25px'}>
+                {unitsData?.map((item, index) => <Typography
+                    sx={
+                        {
+                            fontFamily: typography.fontFamily,
+                            fontSize: pxToRem(15), fontWeight: '600',
+                            fontStyle: 'normal', opacity: '0.5'
+                        }
+                    }
+                    key={index}
+                    onClick={() => unitIdClickHandler(index)}>
+                    {item.unit_name}
+                </Typography>
+                )}
 
-                <Stack
+                <Box
                     position={'absolute'}
                     top={'-8px'}
                     left={'454px'}
-                    direction={'row'}
+                    display={'flex'}
+                    flexDirection={'row'}
                     gap={'11.383px'}
                     sx={
                         {
@@ -47,7 +68,7 @@ export default function AccordianTopics({ unitsData }) {
                         }
                     }
                 >
-                    <MyDiv sx={{
+                    <Box sx={{
                         width: '17.514px',
                         borderRadius: '5px',
                         marginTop: '4px',
@@ -55,7 +76,7 @@ export default function AccordianTopics({ unitsData }) {
                         marginBottom: '8px'
                     }}>
                         <img src={searchStatus} alt="Broken" />
-                    </MyDiv>
+                    </Box>
                     <Typography
                         sx={{
                             color: '#919EAB',
@@ -68,8 +89,8 @@ export default function AccordianTopics({ unitsData }) {
                     >
                         Search topics
                     </Typography>
-                </Stack>
-            </Stack>
+                </Box>
+            </Box>
 
 
 
@@ -77,7 +98,7 @@ export default function AccordianTopics({ unitsData }) {
             {
                 intialTopicState[topicIndex]?.map((item, index) => {
                     return (
-                        <Stack key={index} direction={'column'}
+                        <Box key={index} display={'flex'} flexDirection={'column'}
                             sx={
                                 {
                                     marginLeft: '56px',
@@ -123,8 +144,8 @@ export default function AccordianTopics({ unitsData }) {
                                         }
                                     }
                                 >
-                                    <Stack direction={'row'}>
-                                        <MyDiv sx={{
+                                    <Box display={'flex'} flexDirection={'row'}>
+                                        <Box sx={{
                                             width: '16px',
                                             height: '16px',
                                             borderRadius: '5px',
@@ -132,7 +153,7 @@ export default function AccordianTopics({ unitsData }) {
                                             marginRight: '5px'
                                         }}>
                                             <img src={document} alt="Broken" />
-                                        </MyDiv>
+                                        </Box>
                                         <Typography
                                             sx={
                                                 {
@@ -146,7 +167,7 @@ export default function AccordianTopics({ unitsData }) {
                                             {item.topic_name}
                                         </Typography>
                                         <Link to={`/viewpdf/${encodeURIComponent(item.url)}`}>
-                                            <Stack direction={'row'} position={'absolute'} right={'10px'}>
+                                            <Box display={'flex'} flexDirection={'row'} position={'absolute'} right={'10px'}>
                                                 <Typography
                                                     color={palette.primary.main}
                                                     fontFamily={poppinsFont.fontFamily}
@@ -157,7 +178,7 @@ export default function AccordianTopics({ unitsData }) {
                                                 >
                                                     Start
                                                 </Typography>
-                                                <MyDiv sx={{
+                                                <Box sx={{
                                                     width: '14px',
                                                     height: '14px',
                                                     borderRadius: '5px',
@@ -165,14 +186,14 @@ export default function AccordianTopics({ unitsData }) {
                                                     marginLeft: '8px'
                                                 }}>
                                                     <img src={VectorBlue} alt="Broken" />
-                                                </MyDiv>
-                                            </Stack>
+                                                </Box>
+                                            </Box>
                                         </Link>
-                                    </Stack>
+                                    </Box>
                                 </AccordionDetails>
                             </Accordion>
                             <Divider hard />
-                        </Stack >
+                        </Box >
                     );
                 })}
         </>

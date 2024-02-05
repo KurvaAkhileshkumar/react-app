@@ -3,6 +3,7 @@ import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import assessmentsSlice from './AssessmentsReduxSlice'
 import authSlice from './authSlice'
+import courseSlice from './CoursesSlice'
 
 const persistConfig = {
     key: 'root',
@@ -15,11 +16,13 @@ export const store = configureStore({
     reducer: {
         auth: persistedReducer,
         assessmentsReducer: assessmentsSlice.reducer,
+        coursesReducer: courseSlice.reducer,
         authsReducer: authSlice.reducer
     },
 })
 
 const authSliceActions = authSlice.actions
 const assessmentsSliceActions = assessmentsSlice.actions
-export { authSliceActions, assessmentsSliceActions }
+const courseSliceActions = courseSlice.actions
+export { authSliceActions, assessmentsSliceActions, courseSliceActions }
 export const persistor = persistStore(store)

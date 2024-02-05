@@ -9,7 +9,7 @@ import Login from './components/common/Login.jsx'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 import { store, persistor } from '../src/Store/Store'
-import PdfViewer from './pages/CoursesPage/PdfViewer'
+import PdfViewer from './features/Courses/PdfViewer.jsx'
 
 const router = createBrowserRouter([
   {

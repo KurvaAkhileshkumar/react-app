@@ -1,9 +1,9 @@
 import { Stack, Box } from "@mui/material";
-import MuiCustomChipCount from "../components/common/MuiCustomChipCount";
+import MuiCustomChipCount from "../../components/common/MuiCustomChipCount";
 import Typography from '@mui/material/Typography';
 
-import { poppinsFont, pxToRem } from "../theme/typography";
-import palette from "../theme/palette";
+import { poppinsFont, pxToRem } from "../../theme/typography";
+import palette from "../../theme/palette";
 import { Link } from 'react-router-dom'
 import { useSelector } from "react-redux";
 
@@ -17,7 +17,7 @@ export default function Courses() {
             {coursesData.map((item, index) => {
                 return (
                     <Link key={index} to={`courses/${index + 1}`} style={{ textDecoration: 'none' }}>
-                        <Stack direction={'column'} gap={'14px'}
+                        <Box display={'flex'} flexDirection={'column'} gap={'14px'}
                             sx={
                                 {
                                     border: '1px solid #F4F6F8',
@@ -34,13 +34,13 @@ export default function Courses() {
                                 <img
                                     style={{
                                         borderRadius: '10px 10px 0px 0px',
-                                        width: '244px',
-                                        height: '183px',
+                                        width: '100%',
+                                        height: '100%',
 
                                     }}
                                     src={item.image} alt="" />
                             </Box>
-                            <Stack direction={'column'} gap={'10px'}>
+                            <Box display={'flex'} flexDirection={'column'} gap={'10px'}>
                                 <MuiCustomChipCount
                                     width={'max-content'}
                                     height={'20px'}
@@ -62,8 +62,8 @@ export default function Courses() {
                                         padding: '0px 14px  14px',
                                     }}
                                 >{item.name}</Typography>
-                            </Stack>
-                        </Stack>
+                            </Box>
+                        </Box>
                     </Link>
                 );
             })}

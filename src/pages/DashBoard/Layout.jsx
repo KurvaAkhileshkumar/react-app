@@ -18,6 +18,10 @@ import { assessmentsSliceActions } from '../../Store/Store.jsx';
 import { dashBoardStack } from '../DummyStyles/LayoutStyles.js';
 import Analytics from '../../features/Analytics/Analytics.jsx';
 
+import { yourCoursesText } from '../DummyStyles/UserProfileStyles.js';
+import Courses from '../../features/Courses/Courses.jsx'
+import { courses } from '../DummyStyles/LayoutStyles.js';
+
 export default function Layout() {
 
     //Fetching and Dispatching the Data into Store
@@ -81,9 +85,9 @@ export default function Layout() {
                         marginTop: '12px'
                     }}
                 >Dashboard</Typography>
-                <Stack direction={'row'} sx={dashBoardStack}>
+                <Box display={'flex'} flexDirection={'row'} sx={dashBoardStack} flexWrap={'wrap'}>
                     <Analytics />
-                </Stack>
+                </Box>
             </Box>
             {/* MiddleLayout */}
             {
@@ -93,7 +97,7 @@ export default function Layout() {
                     <Grid container columnSpacing={3.75} height={'907px'}>
 
                         {/* LeftColumn */}
-                        <Grid item xs={8} md={8} lg={8} height={'100%'}>
+                        <Grid item xs={8} md={7} lg={8} height={'100%'}>
 
                             {/* Child1 */}
                             <RecenetAssessmentsChart />
@@ -105,7 +109,7 @@ export default function Layout() {
 
 
                         {/* RightColumn */}
-                        <Grid item xs={4} md={4} lg={4} height={'100%'}>
+                        <Grid item xs={4} md={5} lg={4} height={'100%'}>
 
                             {/* RightChild-1 */}
                             <UserProfile />
@@ -120,23 +124,18 @@ export default function Layout() {
             }
 
             {/* Courses Section */}
-            {/* {analyticsData === undefined ? (
-                <CourseSkeleton />
-            ) : (
-                <>
-                    <Stack direction={'column'} gap={'15px'}>
-                        <Typography sx={yourCoursesText} marginLeft={'100px'}>
-                            Your courses
-                        </Typography>
-                        <Stack height={'281px'} direction={'row'}
-                            gap={'22px'}
-                            sx={courses}>
-                            <Courses />
-                        </Stack>
-                    </Stack>
-                </>
-            )
-            } */}
+            <>
+                <Box display='flex' flexDirection={'column'} gap={'15px'}>
+                    <Typography sx={yourCoursesText} marginLeft={'100px'}>
+                        Your courses
+                    </Typography>
+                    <Box display={'flex'} flexDirection={'row'}
+                        gap={'22px'}
+                        sx={courses}>
+                        <Courses />
+                    </Box>
+                </Box>
+            </>
         </>
     )
 }

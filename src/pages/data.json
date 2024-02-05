@@ -1,205 +1,839 @@
 {
   "status": 200,
   "message": "Successfully fetched the data",
-  "name": "Maharram Hasanli",
-  "email": "maha.hasanli@gmail.com",
-  "profile_picture": "https://edwisely-profile-v2.s3.amazonaws.com/profile/EDS3/158746378221920200421092750.jpg",
-  "analytics": {
-    "attendance": "92%",
-    "avg_performance": "88%",
-    "assessment": "45%",
-    "assignment": "79%",
-    "coding": "65%"
-  },
-  "recent_assessments": {
-    "subjects": [
+  "data": {
+    "id": 2,
+    "name": "Basics of UI/UX",
+    "tag": "DESIGN",
+    "image": null,
+    "percentage": 63,
+    "description": "Learn the fundamental principles of user interface (UI) design, including layout, color, and typography, to create visually appealing and effective designs.\nUnderstand the basics of user experience (UX) design, focusing on enhancing user satisfaction by improving the usability and accessibility of digital products.\nExplore the importance of user research and usability testing in the UI/UX design process, gaining insights into user behavior and preferences.\nDive into the principles of interaction design, mastering the art of creating intuitive and engaging user interactions through navigation, feedback, and animation.\nGain hands-on experience with industry-standard design tools and software, honing your skills in wireframing, prototyping, and mockup creation for web and mobile applications.",
+    "continue_reading": [
       {
-        "id": 120,
-        "name": "Web Technologies",
-        "tests": [
-          { "name": "T1", "test_id": 1, "percentage": 53, "attempted": 1 },
-          { "name": "T2", "test_id": 2, "percentage": 72, "attempted": 1 },
-          { "name": "T3", "test_id": 3, "percentage": 78, "attempted": 1 },
-          { "name": "T4", "test_id": 4, "percentage": 89, "attempted": 1 },
-          { "name": "T5", "test_id": 5, "percentage": 0, "attempted": 0 },
-          { "name": "T6", "test_id": 6, "percentage": 0, "attempted": 0 },
-          { "name": "T7", "test_id": 7, "percentage": 15, "attempted": 1 },
-          { "name": "T8", "test_id": 8, "percentage": 48, "attempted": 1 },
-          { "name": "T9", "test_id": 9, "percentage": 19, "attempted": 1 },
-          { "name": "T10", "test_id": 10, "percentage": 0, "attempted": 0 },
-          { "name": "T11", "test_id": 11, "percentage": 60, "attempted": 1 },
-          { "name": "T12", "test_id": 12, "percentage": 27, "attempted": 1 }
-        ]
+        "id": 130,
+        "name": "Color Theory and Visual Design",
+        "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf",
+        "file_name": "Color Theory and Visual Design PDF"
       },
       {
-        "id": 121,
-        "name": "Machine Learning",
-        "tests": [
-          { "name": "T1", "test_id": 13, "percentage": 41, "attempted": 1 },
-          { "name": "T2", "test_id": 14, "percentage": 28, "attempted": 1 },
-          { "name": "T3", "test_id": 15, "percentage": 0, "attempted": 0 },
-          { "name": "T4", "test_id": 16, "percentage": 75, "attempted": 1 },
-          { "name": "T5", "test_id": 17, "percentage": 90, "attempted": 1 },
-          { "name": "T6", "test_id": 18, "percentage": 20, "attempted": 1 },
-          { "name": "T7", "test_id": 19, "percentage": 78, "attempted": 1 },
-          { "name": "T8", "test_id": 20, "percentage": 0, "attempted": 0 },
-          { "name": "T9", "test_id": 21, "percentage": 30, "attempted": 1 },
-          { "name": "T10", "test_id": 22, "percentage": 12, "attempted": 1 },
-          { "name": "T11", "test_id": 23, "percentage": 0, "attempted": 0 },
-          { "name": "T12", "test_id": 24, "percentage": 99, "attempted": 1 }
-        ]
+        "id": 131,
+        "name": "User Research",
+        "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf",
+        "file_name": "User Research PDF"
       },
       {
-        "id": 122,
-        "name": "Data Structures and Algorithms",
-        "tests": [
-          { "name": "T1", "test_id": 25, "percentage": 31, "attempted": 1 },
-          { "name": "T2", "test_id": 26, "percentage": 78, "attempted": 1 },
-          { "name": "T3", "test_id": 27, "percentage": 39, "attempted": 1 },
-          { "name": "T4", "test_id": 28, "percentage": 25, "attempted": 1 },
-          { "name": "T5", "test_id": 29, "percentage": 0, "attempted": 0 },
-          { "name": "T6", "test_id": 30, "percentage": 75, "attempted": 1 },
-          { "name": "T7", "test_id": 31, "percentage": 30, "attempted": 1 },
-          { "name": "T8", "test_id": 32, "percentage": 0, "attempted": 0 },
-          { "name": "T9", "test_id": 33, "percentage": 87, "attempted": 1 },
-          { "name": "T10", "test_id": 34, "percentage": 90, "attempted": 1 },
-          { "name": "T11", "test_id": 35, "percentage": 17, "attempted": 1 },
-          { "name": "T12", "test_id": 36, "percentage": 0, "attempted": 0 }
-        ]
-      },
-      {
-        "id": 123,
-        "name": "Database Management Systems",
-        "tests": [
-          { "name": "T1", "test_id": 37, "percentage": 81, "attempted": 1 },
-          { "name": "T2", "test_id": 38, "percentage": 0, "attempted": 0 },
-          { "name": "T3", "test_id": 39, "percentage": 39, "attempted": 1 },
-          { "name": "T4", "test_id": 40, "percentage": 88, "attempted": 1 },
-          { "name": "T5", "test_id": 41, "percentage": 29, "attempted": 1 },
-          { "name": "T6", "test_id": 42, "percentage": 0, "attempted": 0 },
-          { "name": "T7", "test_id": 43, "percentage": 48, "attempted": 1 },
-          { "name": "T8", "test_id": 44, "percentage": 54, "attempted": 1 },
-          { "name": "T9", "test_id": 45, "percentage": 55, "attempted": 1 },
-          { "name": "T10", "test_id": 46, "percentage": 0, "attempted": 0 },
-          { "name": "T11", "test_id": 47, "percentage": 40, "attempted": 1 },
-          { "name": "T12", "test_id": 48, "percentage": 69, "attempted": 1 }
-        ]
+        "id": 132,
+        "name": "Wireframing and Prototyping",
+        "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf",
+        "file_name": "Wireframing and Prototyping PDF"
       }
     ],
-    "title": "Recent Assessments",
-    "x-axis": "Tests",
-    "y-axis": "Performance"
-  },
-  "leaderboard": [
-    {
-      "id": 1234,
-      "name": "Maharram Hasanli",
-      "percentage": 65.7,
-      "profile_pic": "https://edwisely-profile-v2.s3.amazonaws.com/profile/EDS3/158746378221920200421092750.jpg",
-      "rank": 12
-    },
-    {
-      "id": 1235,
-      "name": "Virat Kohli",
-      "percentage": 98,
-      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
-      "rank": 1
-    },
-    {
-      "id": 1236,
-      "name": "Rohit Sharma",
-      "percentage": 97.5,
-      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
-      "rank": 2
-    },
-    {
-      "id": 1237,
-      "name": "MS Dhoni",
-      "percentage": 95.8,
-      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
-      "rank": 3
-    },
-    {
-      "id": 1238,
-      "name": "Rahul Dravid",
-      "percentage": 94.2,
-      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
-      "rank": 4
-    },
-    {
-      "id": 1239,
-      "name": "Sachin Tendulkar",
-      "percentage": 93.6,
-      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
-      "rank": 5
-    },
-    {
-      "id": 1240,
-      "name": "Kapil Dev",
-      "percentage": 91.5,
-      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
-      "rank": 6
-    },
-    {
-      "id": 1241,
-      "name": "Sourav Ganguly",
-      "percentage": 90,
-      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
-      "rank": 7
-    },
-    {
-      "id": 1242,
-      "name": "AB De Villiers",
-      "percentage": 89.2,
-      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
-      "rank": 8
-    },
-    {
-      "id": 1243,
-      "name": "David Warner",
-      "percentage": 87.6,
-      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
-      "rank": 9
-    },
-    {
-      "id": 1244,
-      "name": "Chris Gayle",
-      "percentage": 79,
-      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
-      "rank": 10
-    },
-    {
-      "id": 1245,
-      "name": "Yuvraj Singh",
-      "percentage": 71.1,
-      "profile_pic": "https://s3.ap-south-1.amazonaws.com/frndzzy-assetsweb/assets/images/app/default.png",
-      "rank": 11
-    }
-  ],
-  "courses": [
-    {
-      "id": 1,
-      "name": "Machine Learning A-Z: Hands on Python & R in Data Science",
-      "tag": "DEVELOPMENT",
-      "image": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/course+images/Course+Images+1.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Basics of UI/UX",
-      "tag": "DESIGN",
-      "image": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/course+images/Course+Images+2.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Complete 2023 Web Development Bootcamp",
-      "tag": "DEVELOPMENT",
-      "image": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/course+images/Course+Images+3.jpg"
-    },
-    {
-      "id": 4,
-      "name": "Complete Digital Marketing Course - 12 modules",
-      "tag": "MARKETING",
-      "image": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/course+images/Course+Images+4.jpg"
-    }
-  ]
+    "units": [
+      {
+        "unit_id": 9900,
+        "unit_name": "Unit I",
+        "topics": [
+          {
+            "topic_id": 1101,
+            "topic_name": "Introduction to UI/UX Design",
+            "materials": [
+              {
+                "id": 1,
+                "name": "Supervised Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 2,
+                "name": "Unsupervised Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 3,
+                "name": "Reinforcement Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 4,
+                "name": "Clustering Methods",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 5,
+                "name": "Support Vector Machines",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1102,
+            "topic_name": "Principles of Visual Design",
+            "materials": [
+              {
+                "id": 6,
+                "name": "Neural Networks",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 7,
+                "name": "Instance Based Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 8,
+                "name": "Hyperparameter Tuning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 9,
+                "name": "Graphical Models",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 10,
+                "name": "Meta-Models",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1103,
+            "topic_name": "Historical Perspectives in Machine Learning",
+            "materials": [
+              {
+                "id": 16,
+                "name": "Neural Networks",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 17,
+                "name": "Ensemble Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 18,
+                "name": "Natural Language Processing",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 19,
+                "name": "Bayesian Methods",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 20,
+                "name": "Random Forests",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1104,
+            "topic_name": "Key Concepts in ML",
+            "materials": [
+              {
+                "id": 21,
+                "name": "Association Rule Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 22,
+                "name": "Bias and Fairness",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 23,
+                "name": "Natural Language Processing",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 24,
+                "name": "Graphical Models",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 25,
+                "name": "Meta-Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1105,
+            "topic_name": "Human-Computer Interaction (HCI) Basics",
+            "materials": [
+              {
+                "id": 31,
+                "name": "Transfer Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 32,
+                "name": "Instance Based Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 33,
+                "name": "Explainable AI",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 34,
+                "name": "Regression Analysis",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 35,
+                "name": "Data Preprocessing and Cleaning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unit_id": 9910,
+        "unit_name": "Unit II",
+        "topics": [
+          {
+            "topic_id": 1010,
+            "topic_name": "Linear Algebra for ML",
+            "materials": [
+              {
+                "id": 1,
+                "name": "Supervised Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 2,
+                "name": "Unsupervised Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 3,
+                "name": "Reinforcement Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 4,
+                "name": "Clustering Methods",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 5,
+                "name": "Support Vector Machines",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1011,
+            "topic_name": "Design Thinking Process",
+            "materials": [
+              {
+                "id": 6,
+                "name": "Neural Networks",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 7,
+                "name": "Instance Based Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 8,
+                "name": "Hyperparameter Tuning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 9,
+                "name": "Graphical Models",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 10,
+                "name": "Meta-Models",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1013,
+            "topic_name": "Probability and Statistics in ML",
+            "materials": [
+              {
+                "id": 16,
+                "name": "Neural Networks",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 17,
+                "name": "Ensemble Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 18,
+                "name": "Natural Language Processing",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 19,
+                "name": "Bayesian Methods",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 20,
+                "name": "Random Forests",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1015,
+            "topic_name": "Creating User Personas",
+            "materials": [
+              {
+                "id": 21,
+                "name": "Association Rule Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 22,
+                "name": "Bias and Fairness",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 23,
+                "name": "Natural Language Processing",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 24,
+                "name": "Graphical Models",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 25,
+                "name": "Meta-Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1018,
+            "topic_name": "Wireframing and Prototyping",
+            "materials": [
+              {
+                "id": 31,
+                "name": "Transfer Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 32,
+                "name": "Instance Based Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 33,
+                "name": "Explainable AI",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 34,
+                "name": "Regression Analysis",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 35,
+                "name": "Data Preprocessing and Cleaning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unit_id": 9920,
+        "unit_name": "Unit III",
+        "topics": [
+          {
+            "topic_id": 1020,
+            "topic_name": "Typography and Font Selection",
+            "materials": [
+              {
+                "id": 1,
+                "name": "Supervised Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 2,
+                "name": "Unsupervised Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 3,
+                "name": "Reinforcement Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 4,
+                "name": "Clustering Methods",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 5,
+                "name": "Support Vector Machines",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1021,
+            "topic_name": "Handling Missing Data",
+            "materials": [
+              {
+                "id": 6,
+                "name": "Neural Networks",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 7,
+                "name": "Instance Based Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 8,
+                "name": "Hyperparameter Tuning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 9,
+                "name": "Graphical Models",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 10,
+                "name": "Meta-Models",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1023,
+            "topic_name": "Visual Hierarchy and Interaction Design",
+            "materials": [
+              {
+                "id": 16,
+                "name": "Neural Networks",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 17,
+                "name": "Ensemble Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 18,
+                "name": "Natural Language Processing",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 19,
+                "name": "Bayesian Methods",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 20,
+                "name": "Random Forests",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1025,
+            "topic_name": "Data Normalization and Standardization",
+            "materials": [
+              {
+                "id": 21,
+                "name": "Association Rule Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 22,
+                "name": "Bias and Fairness",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 23,
+                "name": "Natural Language Processing",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 24,
+                "name": "Graphical Models",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 25,
+                "name": "Meta-Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1028,
+            "topic_name": "Responsive Design Principles",
+            "materials": [
+              {
+                "id": 31,
+                "name": "Transfer Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 32,
+                "name": "Instance Based Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 33,
+                "name": "Explainable AI",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 34,
+                "name": "Regression Analysis",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 35,
+                "name": "Data Preprocessing and Cleaning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unit_id": 9930,
+        "unit_name": "Unit IV",
+        "topics": [
+          {
+            "topic_id": 1030,
+            "topic_name": "Microinteractions in UI",
+            "materials": [
+              {
+                "id": 1,
+                "name": "Supervised Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 2,
+                "name": "Unsupervised Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 3,
+                "name": "Reinforcement Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 4,
+                "name": "Clustering Methods",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 5,
+                "name": "Support Vector Machines",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1031,
+            "topic_name": "Cross-Validation Techniques",
+            "materials": [
+              {
+                "id": 6,
+                "name": "Neural Networks",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 7,
+                "name": "Instance Based Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 8,
+                "name": "Hyperparameter Tuning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 9,
+                "name": "Graphical Models",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 10,
+                "name": "Meta-Models",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1033,
+            "topic_name": "Navigation Design",
+            "materials": [
+              {
+                "id": 16,
+                "name": "Neural Networks",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 17,
+                "name": "Ensemble Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 18,
+                "name": "Natural Language Processing",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 19,
+                "name": "Bayesian Methods",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 20,
+                "name": "Random Forests",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1035,
+            "topic_name": "Comparing ML Models and Algorithms",
+            "materials": [
+              {
+                "id": 21,
+                "name": "Association Rule Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 22,
+                "name": "Bias and Fairness",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 23,
+                "name": "Natural Language Processing",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 24,
+                "name": "Graphical Models",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 25,
+                "name": "Meta-Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1038,
+            "topic_name": "Usability Testing Techniques",
+            "materials": [
+              {
+                "id": 31,
+                "name": "Transfer Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 32,
+                "name": "Instance Based Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 33,
+                "name": "Explainable AI",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 34,
+                "name": "Regression Analysis",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 35,
+                "name": "Data Preprocessing and Cleaning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unit_id": 9940,
+        "unit_name": "Unit V",
+        "topics": [
+          {
+            "topic_id": 1040,
+            "topic_name": "Introduction to Supervised Learning",
+            "materials": [
+              {
+                "id": 1,
+                "name": "Supervised Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 2,
+                "name": "Unsupervised Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 3,
+                "name": "Reinforcement Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 4,
+                "name": "Clustering Methods",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 5,
+                "name": "Support Vector Machines",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1041,
+            "topic_name": "Career Paths and Future Trends in UI/UX Design",
+            "materials": [
+              {
+                "id": 6,
+                "name": "Neural Networks",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 7,
+                "name": "Instance Based Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 8,
+                "name": "Hyperparameter Tuning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 9,
+                "name": "Graphical Models",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 10,
+                "name": "Meta-Models",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1043,
+            "topic_name": "Regression Algorithms",
+            "materials": [
+              {
+                "id": 16,
+                "name": "Neural Networks",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 17,
+                "name": "Ensemble Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 18,
+                "name": "Natural Language Processing",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 19,
+                "name": "Bayesian Methods",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 20,
+                "name": "Random Forests",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1045,
+            "topic_name": "Emerging Technologies in UX",
+            "materials": [
+              {
+                "id": 21,
+                "name": "Association Rule Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 22,
+                "name": "Bias and Fairness",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 23,
+                "name": "Natural Language Processing",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 24,
+                "name": "Graphical Models",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 25,
+                "name": "Meta-Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          },
+          {
+            "topic_id": 1048,
+            "topic_name": "Design Systems and Style Guides",
+            "materials": [
+              {
+                "id": 31,
+                "name": "Transfer Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 32,
+                "name": "Instance Based Learning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 33,
+                "name": "Explainable AI",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              },
+              {
+                "id": 34,
+                "name": "Regression Analysis",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/TT107.pdf"
+              },
+              {
+                "id": 35,
+                "name": "Data Preprocessing and Cleaning",
+                "url": "https://testings-purpose.s3.ap-south-1.amazonaws.com/media/pdfs/waves_quantum.pdf"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }
