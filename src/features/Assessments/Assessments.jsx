@@ -26,6 +26,7 @@ export default function Assessments() {
             <Box sx={{
                 padding: '0px',
                 height: '535px',
+                maxWidth: '100%',
                 bgcolor: '#FFF',
                 borderRadius: '10px',
                 border: '1px solid #F4F6F8',

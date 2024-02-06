@@ -97,7 +97,7 @@ export default function Layout() {
                     <Grid container columnSpacing={3.75} height={'907px'}>
 
                         {/* LeftColumn */}
-                        <Grid item xs={8} md={7} lg={8} height={'100%'}>
+                        <Grid item xs={8} md={8} lg={8} height={'100%'}>
 
                             {/* Child1 */}
                             <RecenetAssessmentsChart />
@@ -109,7 +109,7 @@ export default function Layout() {
 
 
                         {/* RightColumn */}
-                        <Grid item xs={4} md={5} lg={4} height={'100%'}>
+                        <Grid item xs={4} md={4} lg={4} height={'100%'}>
 
                             {/* RightChild-1 */}
                             <UserProfile />

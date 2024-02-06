@@ -37,12 +37,13 @@ export default function RecenetAssessmentsChart() {
                         }
                     }
                 >
-                    <Typography sx={{
-                        ...typography.h5,
-                        marginLeft: '23px',
-                        textAlign: 'start',
-                        color: palette.grey[900],
-                    }}>
+                    <Typography
+                        sx={{
+                            ...typography.h5,
+                            marginLeft: '23px',
+                            textAlign: 'start',
+                            color: palette.grey[900],
+                        }}>
                         Recent Assessments
                     </Typography>
                     <AttemptedUnattempted />

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import { Menu, MenuItem, Typography } from "@mui/material";
 import profileImg from '../../assets/profile.jpeg'
 import { Box } from "@mui/material";
@@ -7,8 +6,11 @@ import { useSelector } from "react-redux";
 import { poppinsFont } from "../../theme/typography.js";
 
 
-export default function TopBarNavigation({ name, email }) {
+export default function TopBarNavigation() {
+
     const profilePicLink = useSelector((state) => state.assessmentsReducer.profile.profilePic)
+    const name = useSelector((state) => state.assessmentsReducer.profile.name)
+    const email = useSelector((state) => state.assessmentsReducer.profile.email)
     const [profileClick, setProfileClick] = useState(false);
 
     const handleLogout = () => {
@@ -42,7 +44,9 @@ export default function TopBarNavigation({ name, email }) {
 
                 <Box
                     sx={{
-                        marginRight: '20px'
+                        position: 'relative',
+                        marginRight: '20px',
+                        cursor: 'pointer'
                     }}
                 >
                     <img
@@ -53,34 +57,45 @@ export default function TopBarNavigation({ name, email }) {
                         onClick={handleLogout}
                         alt=""
                     />
-                    {profileClick && (
-                        <Menu
-                            open={profileClick}
-                            onClose={handleClose}
-                            anchorOrigin={{
-                                vertical: "top",
-                                horizontal: "right",
-                            }}
-                            transformOrigin={{
-                                vertical: "top",
-                                horizontal: "right",
-                            }}
+                    <Box
+                        sx={{
+                            position: 'absolute',
+                            right: '200px'
+                        }}
+                    >
+                        {profileClick && (
+                            <Menu
+                                open={profileClick}
+                                onClose={handleClose}
+                                anchorOrigin={{
+                                    vertical: "top",
+                                    horizontal: "right",
+                                }}
+                                anchorPosition={{
+                                    left: 100,
+                                    top: 100
+                                }}
+                                transformOrigin={{
+                                    vertical: "top",
+                                    horizontal: "right",
+                                }}
 
-                        >
-                            <MenuItem>
-                                <img
-                                    src={profileImg}
-                                    width="50px"
-                                    height="50px"
-                                    style={{ borderRadius: "50%" }}
-                                    alt=""
-                                />
-                            </MenuItem>
-                            <MenuItem>{name}</MenuItem>
-                            <MenuItem>{email}</MenuItem>
-                            <MenuItem>Logout</MenuItem>
-                        </Menu>
-                    )}
+                            >
+                                <MenuItem>
+                                    <img
+                                        src={profilePicLink}
+                                        width="50px"
+                                        height="50px"
+                                        style={{ borderRadius: "50%" }}
+                                        alt=""
+                                    />
+                                </MenuItem>
+                                <MenuItem>{name}</MenuItem>
+                                <MenuItem>{email}</MenuItem>
+                                <MenuItem>Logout</MenuItem>
+                            </Menu>
+                        )}
+                    </Box>
                 </Box>
             </Box>
         </>

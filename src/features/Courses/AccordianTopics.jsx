@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
+import TextField from '@mui/material/TextField';
 
 const arr = [1, 2, 3, 4, 5]
 export default function AccordianTopics() {
@@ -75,7 +76,7 @@ export default function AccordianTopics() {
                     }}>
                         <img src={searchStatus} alt="Broken" />
                     </Box>
-                    <Typography
+                    {/* <Typography
                         sx={{
                             color: '#919EAB',
                             fontFamily: poppinsFont.fontFamily,
@@ -86,7 +87,9 @@ export default function AccordianTopics() {
                         }}
                     >
                         Search topics
-                    </Typography>
+                    </Typography> */}
+
+                    <TextField margin='0px' padding='0px' label="Search-topics" variant="standard" />
                 </Box>
             </Box>
 

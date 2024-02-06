@@ -4,12 +4,7 @@ import { useSelector } from 'react-redux'
 import {
   TableCell,
   Typography,
-  Stack,
   Box,
-  IconButton,
-  Menu,
-  MenuItem,
-  Checkbox,
 } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
 import ArrowDownward from '@mui/icons-material/ArrowDownward';
@@ -17,7 +12,6 @@ import ArrowUpward from '@mui/icons-material/ArrowUpward';
 import { poppinsFont, pxToRem } from '../../theme/typography';
 import palette from '../../theme/palette';
 import { useDispatch } from 'react-redux'
-import assessmentsSlice from '../../Store/AssessmentsReduxSlice';
 
 const options = [
   { id: 1, value: 'Timeout' },
@@ -63,7 +57,6 @@ const MuiCustomTableHeaderCellWithSortandSelect = ({
           display={'flex'}
           flexDirection={'row'}
           alignItems='center'
-          gap={'0.5rem'}
           sx={{ height: '10px' }}
         >
           <Typography

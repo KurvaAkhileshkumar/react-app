@@ -12,6 +12,9 @@ const MuiCustomTableHeaderRowWithSortandSelect = ({
   return (
     <TableRow
       sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
         color: palette.grey[100],
         padding: '0px',
         margin: '0px',

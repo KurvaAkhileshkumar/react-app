@@ -71,12 +71,14 @@ const MuiCustomTableWithSortandSelect = () => {
           padding: '0px',
           border: '0px',
           boxShadow: 'none',
+          maxWidth: '100%',
         }}
       >
         <Table
           sx={{ margin: '0px', padding: '0px' }} aria-label='responsive table'>
           <TableHead
             sx={{
+              maxWidth: '100%',
               background: palette.grey[100],
             }}
           >
@@ -85,12 +87,14 @@ const MuiCustomTableWithSortandSelect = () => {
             />
           </TableHead>
           <TableBody>
-            {assessmentsTableData?.map((stu, i) => (
-              <MuiCustomStudentTableRow
-                stu={stu}
-                key={i}
-              />
-            ))}
+            <Box marginTop={'20px'}>
+              {assessmentsTableData?.map((stu, i) => (
+                <MuiCustomStudentTableRow
+                  stu={stu}
+                  key={i}
+                />
+              ))}
+            </Box>
           </TableBody>
         </Table>
       </Box>

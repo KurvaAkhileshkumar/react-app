@@ -4,19 +4,25 @@ import {
   TableCell,
   Typography,
   Box,
-  IconButton,
-  Stack,
 } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
 import { poppinsFont, pxToRem } from '../../theme/typography';
 
 const dataStyling = {
+  textAlign: 'start',
   fontFamily: poppinsFont.fontFamily,
   fontSize: pxToRem(14),
   fontWeight: 400,
   fontStyle: 'normal',
   lineHeight: 'normal',
   textTransform: 'capitalize',
+}
+
+const tableCellStyling = {
+  padding: '0px',
+  margin: '0px',
+  height: '50px',
+  minWidth: '100px',
 }
 function secondsToMinutes(seconds) {
   const minutes = Math.floor(seconds / 60)
@@ -32,12 +38,17 @@ function getInternetQuality(speed) {
   else return 'Excellent'
 }
 
-const MuiCustomStudentTableRow = ({ stu, viewStudentResult }) => {
+const MuiCustomStudentTableRow = ({ stu }) => {
   const theme = useTheme()
 
   return (
     <TableRow
       sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        margin: '0px',
+        padding: '0px',
         background:
           stu.submission_type === 0
             ? theme.palette.error[200]
@@ -50,22 +61,36 @@ const MuiCustomStudentTableRow = ({ stu, viewStudentResult }) => {
         },
       }}
     >
+
+      {/* Subject name cell */}
       <TableCell
         scope='row'
-        sx={{ border: 'none', borderRadius: '6px 0 0 6px', maxWidth: '100px' }}
+        sx={
+          {
+            ...tableCellStyling,
+            border: 'none',
+            borderRadius: '6px 0 0 6px',
+          }
+
+        }
       >
         <Typography variant='body1' sx={{ ...dataStyling, color: theme.palette.grey[900] }}>
           {stu.subject}
         </Typography>
+
+
+        {/* Time Spent Cell */}
       </TableCell>
       {(
-        <TableCell scope='row' sx={{ border: 'none', maxWidth: '100px' }}>
-          <Typography variant='body1' sx={{ ...dataStyling, color: theme.palette.grey[900] }}>
+        <TableCell scope='row' sx={{ ...tableCellStyling, border: 'none' }}>
+          <Typography variant='body1' sx={{ ...dataStyling, color: theme.palette.grey[900], }}>
             {stu.total_timespent ? stu.total_timespent + ' Mins' : '--'}
           </Typography>
         </TableCell>
       )}
-      <TableCell scope='row' sx={{ border: 'none', maxWidth: '100px' }}>
+
+      {/* Submisson type cell */}
+      <TableCell scope='row' sx={{ ...tableCellStyling, border: 'none' }}>
         <Typography
           variant='body1'
           sx={{
@@ -91,30 +116,29 @@ const MuiCustomStudentTableRow = ({ stu, viewStudentResult }) => {
                 : 'Tabswitch'}
         </Typography>
       </TableCell>
-      <TableCell scope='row' sx={{ border: 'none', maxWidth: '100px' }}>
+
+      {/* Internet quality Cell */}
+      <TableCell scope='row' sx={{ ...tableCellStyling, border: 'none' }}>
         <Typography variant='body1' sx={{ ...dataStyling, color: theme.palette.grey[900] }}>
           {getInternetQuality(stu.internet_speed)}
         </Typography>
       </TableCell>
-      <TableCell scope='row' sx={{ border: 'none', maxWidth: '100px' }}>
+
+      {/* Percentage cell */}
+      <TableCell scope='row' sx={{ ...tableCellStyling, border: 'none' }}>
         <Typography variant='body1' sx={{ ...dataStyling, color: theme.palette.grey[900], textAlign: 'center', }}>
           {stu.percentage_scored ? stu.percentage_scored + ' %' : '--'}
         </Typography>
       </TableCell>
+
+      {/* Attempeted ceLL */}
       <TableCell
         scope='row'
-        sx={{ border: 'none', borderRadius: '0 6px 6px 0', maxWidth: '100px' }}
+        sx={{ ...tableCellStyling, border: 'none', borderRadius: '0 6px 6px 0' }}
       >
-        <Box
-          display={'flex'}
-          flexDirection={'row'}
-          justifyContent='space-between'
-          alignItems='center'
-        >
-          <Typography variant='body3' sx={{ ...dataStyling, color: theme.palette.grey[900] }}>
-            {stu.attempted ? 'Attempted' : 'Unattempted'}
-          </Typography>
-        </Box>
+        <Typography variant='body3' sx={{ ...dataStyling, color: theme.palette.grey[900], marginLeft: '15px' }}>
+          {stu.attempted ? 'Attempted' : 'Unattempted'}
+        </Typography>
       </TableCell>
     </TableRow>
   )
