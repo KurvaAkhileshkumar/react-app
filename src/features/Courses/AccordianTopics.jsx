@@ -37,13 +37,19 @@ export default function AccordianTopics() {
         <>
             <Box position={'relative'} display={'flex'} width={'600px'} flexDirection={'row'} marginTop={'25px'} marginLeft={'56px'} marginBottom={'25px'}>
                 {unitsData?.map((item, index) =>
-                    <Tabs key={index} value={index} onClick={() => unitIdClickHandler(index)}>
+                    <Tabs sx={{
+                        "& button": {
+                            color: 'black!important',
+                        }
+                    }} key={index} value={index} onClick={() => unitIdClickHandler(index)}>
                         <Tab label={item.unit_name} value={index}
                             sx={
                                 {
                                     fontFamily: typography.fontFamily,
-                                    fontSize: pxToRem(15), fontWeight: '600',
-                                    fontStyle: 'normal', opacity: '0.5'
+                                    fontSize: pxToRem(15),
+                                    fontWeight: '600',
+                                    fontStyle: 'normal',
+                                    opacity: '0.5'
                                 }
                             } />
                     </Tabs>
