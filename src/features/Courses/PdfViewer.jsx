@@ -16,7 +16,6 @@ import {
     UpArrowIcon,
 } from '@react-pdf-viewer/page-navigation'
 import { Button } from '@mui/material'
-import { MyDiv } from '../../components/myStyledComponents/styledComponents'
 
 export default function PdfViewer() {
     const { url } = useParams()

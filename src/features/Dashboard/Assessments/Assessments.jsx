@@ -1,12 +1,12 @@
 import { Box, Typography } from "@mui/material";
-import MuiCustomTableWithSortandSelect from "../../components/common/MuiCustomTableWithSortandSelect";
+import MuiCustomTableWithSortandSelect from "../../../components/common/MuiCustomTableWithSortandSelect";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
-import typography, { poppinsFont } from "../../theme/typography";
-import palette from "../../theme/palette";
+import typography, { poppinsFont } from "../../../theme/typography";
+import palette from "../../../theme/palette";
 import { useDispatch, useSelector } from "react-redux";
-import { assessmentsSliceActions } from "../../Store/Store";
+import { assessmentsSliceActions } from "../../../Store/Store";
 export default function Assessments() {
 
     const semester = useSelector((state) => state.assessmentsReducer.semester)

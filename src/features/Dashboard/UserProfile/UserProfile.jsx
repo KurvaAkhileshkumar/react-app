@@ -1,10 +1,10 @@
 import Typography from '@mui/material/Typography';
-import { poppinsFont } from "../../theme/typography";
-import palette from "../../theme/palette";
-import typography from "../../theme/typography";
+import { poppinsFont } from "../../../theme/typography";
+import palette from "../../../theme/palette";
+import typography from "../../../theme/typography";
 import { useSelector } from "react-redux";
 import { Box } from "@mui/material";
-import { userProfileText } from "../../pages/DummyStyles/UserProfileStyles";
+import { userProfileText } from "../../../pages/DummyStyles/UserProfileStyles";
 
 export default function UserProfile() {
     const profilePicLink = useSelector((state) => state.assessmentsReducer.profile.profilePic)

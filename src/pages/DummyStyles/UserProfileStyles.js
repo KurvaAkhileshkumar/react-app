@@ -1,6 +1,6 @@
 import palette from '../../theme/palette'
 import { poppinsFont, pxToRem } from '../../theme/typography'
-import typography from '../../theme/typography'
+
 export const userProfileText = {
   width: '319px',
   color: palette.grey[800],

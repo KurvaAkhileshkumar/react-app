@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import TemporaryDrawer from './Drawer';
-import LeaderBoardCard from '../../components/common/LeaderBoardCard';
-import { calendarText } from "../../pages/DummyStyles/UserProfileStyles";
+import LeaderBoardCard from '../../../components/common/LeaderBoardCard';
+import { calendarText } from "../../../pages/DummyStyles/UserProfileStyles";
 import { useState } from "react";
 export default function LeaderBoard() {
 

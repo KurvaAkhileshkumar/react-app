@@ -1,15 +1,21 @@
-import MuiColumnChart from "../../components/common/MuiColumnChart";
-import palette from "../../theme/palette";
+import MuiColumnChart from "../../../components/common/MuiColumnChart";
+import palette from "../../../theme/palette";
 import Typography from '@mui/material/Typography';
 import AttemptedUnattempted from "./AttemptedUnattempted";
-import typography from "../../theme/typography";
+import typography from "../../../theme/typography";
 import { useSelector } from "react-redux";
 import { Box } from "@mui/material";
 
 
 export default function RecenetAssessmentsChart() {
-    const categories = useSelector((state) => state.assessmentsReducer.categories)
-    const helperSeriesData = useSelector((state) => state.assessmentsReducer.recentAssessmentsData)
+    const categories = []
+    const helperSeriesData = []
+    const selectedSubject = useSelector((state) => state.assessmentsReducer.selectedSubject)
+    const tests = useSelector((state) => state.assessmentsReducer.subjects[selectedSubject]?.tests)
+    tests?.forEach((item) => {
+        helperSeriesData.push(item.percentage)
+        categories.push(item.name)
+    })
     const series = [
         {
             data: [...helperSeriesData]
@@ -38,8 +44,9 @@ export default function RecenetAssessmentsChart() {
                     }
                 >
                     <Typography
+                        variant='h5'
                         sx={{
-                            ...typography.h5,
+                            // ...typography.h5,
                             marginLeft: '23px',
                             textAlign: 'start',
                             color: palette.grey[900],

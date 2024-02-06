@@ -3,20 +3,21 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 //Left Children imports
-import RecenetAssessmentsChart from '../../features/RecentAssessments/RecentAssesments.jsx';
-import Assessments from '../../features/Assessments/Assessments.jsx';
+import RecenetAssessmentsChart from '../../features/Dashboard/RecentAssessments/RecentAssesments.jsx';
+import Assessments from '../../features/Dashboard/Assessments/Assessments.jsx';
 
 //RightChildren imports
-import UserProfile from '../../features/UserProfile/UserProfile.jsx';
-import Calendar from '../../features/Calendar/Calendar.jsx';
-import LeaderBoard from '../../features/LeaderBoard/LeaderBoard.jsx';
+import UserProfile from '../../features/Dashboard/UserProfile/UserProfile.jsx';
+import Calendar from '../../features/Dashboard/Calendar/Calendar.jsx';
+import LeaderBoard from '../../features/Dashboard/LeaderBoard/LeaderBoard.jsx';
 
 
-//These 3 imports should be removed after sperating Dashboard from the layout
+
+
 import { poppinsFont, pxToRem } from '../../theme/typography.js';
 import { assessmentsSliceActions } from '../../Store/Store.jsx';
 import { dashBoardStack } from '../DummyStyles/LayoutStyles.js';
-import Analytics from '../../features/Analytics/Analytics.jsx';
+import Analytics from '../../features/Dashboard/Analytics/Analytics.jsx'
 
 import { yourCoursesText } from '../DummyStyles/UserProfileStyles.js';
 import Courses from '../../features/Courses/Courses.jsx'
@@ -31,38 +32,8 @@ export default function Layout() {
         fetch('https://stagingstudentpython.edwisely.com/reactProject/dashboardData').
             then((response) => response.json()).
             then((resData) => {
-                const data = []
-                const categories = []
-                resData.recent_assessments.subjects[0].tests.forEach((item) => {
-                    data.push(item.percentage)
-                    categories.push(item.name)
-                })
-
-                //Dispatching the Profile(name email pic) into Store
-                const email = resData.email
-                const name = resData.name
-                const profilePic = resData.profile_picture
-                dispatch(assessmentsSliceActions.setProfile({ email, name, profilePic }))
-
-                //Dispatching the Data of 5 Cards of Dashboard into Store.
-                const analyticsData = resData.analytics
-                dispatch(assessmentsSliceActions.setAnalyticsData({ analyticsData }))
-
-
-                //Dispatching the Data Recent Assessments into Store.
-                dispatch(assessmentsSliceActions.setRecentAssessmentsData({ data }))
-                dispatch(assessmentsSliceActions.setCategoriesData({ categories }))
-
-
-                //Dispatching the Data of Leader Board into Store.
-                const leaderBoardData = resData.leaderboard
-                dispatch(assessmentsSliceActions.setLeaderBoardData({ leaderBoardData }))
-
-
-                //Dispatching the Courses Data into Store
-                const coursesData = resData.courses
-                dispatch(assessmentsSliceActions.setCoursesData({ coursesData }))
-
+                //Dispatching the DashBoardData
+                dispatch(assessmentsSliceActions.setDashBoardData(resData))
             })
 
     }, [])

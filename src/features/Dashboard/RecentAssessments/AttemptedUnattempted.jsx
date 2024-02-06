@@ -1,21 +1,24 @@
 import { Box, Button, Typography } from '@mui/material';
 import Popover from '@mui/material/Popover';
 import CircleIcon from '@mui/icons-material/Circle';
-import { circleIcon } from "../../pages/DummyStyles/RecentAssessmentsStyles";
+import { circleIcon } from "../../../pages/DummyStyles/RecentAssessmentsStyles";
 import InputLabel from '@mui/material/InputLabel';
-import { poppinsFont, pxToRem } from "../../theme/typography";
-import palette from "../../theme/palette";
+import { poppinsFont, pxToRem } from "../../../theme/typography";
+import palette from "../../../theme/palette";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
 import { useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { assessmentsSliceActions } from '../../../Store/Store';
 
 
 export default function AttemptedUnattempted() {
 
-    const subjectsArray = [1, 2, 3, 4]
+
+    const dispatch = useDispatch()
+
     const [anchorEl, setAnchorEl] = useState(null);
 
     const handleClick = (event) => {
@@ -28,6 +31,13 @@ export default function AttemptedUnattempted() {
 
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
+
+    const subjects = useSelector((state) => state.assessmentsReducer.subjects)
+    const selectedSubject = useSelector((state) => state.assessmentsReducer.selectedSubject)
+    const handleSubject = (index) => {
+        dispatch(assessmentsSliceActions.setSubject(index))
+    }
+
     return (
         <>
             <Box
@@ -63,7 +73,7 @@ export default function AttemptedUnattempted() {
                         textTransform: 'capitalize',
                         color: palette.grey[400],
                     }
-                }>subjects</InputLabel>
+                }>{subjects[selectedSubject]?.name}</InputLabel>
                 <KeyboardArrowDownIcon
                     onClick={handleClick}
                     sx={{
@@ -74,8 +84,6 @@ export default function AttemptedUnattempted() {
                     }} />
             </Box>
             <Popover
-                sx={{
-                }}
                 id={id}
                 open={open}
                 anchorEl={anchorEl}
@@ -90,11 +98,18 @@ export default function AttemptedUnattempted() {
                     defaultValue="female"
                     name="radio-buttons-group"
                 >
-                    {subjectsArray.map((index) => {
-                        return <FormControlLabel sx={{
-                            padding: '0px',
-                            margin: '0px'
-                        }} value={`subject0${index}`} control={<Radio />} label={`Subject 0${index}`} />
+                    {subjects.map((item, index) => {
+                        return <FormControlLabel
+                            key={index}
+                            onChange={() => handleSubject(index)}
+                            sx={{
+                                padding: '0px',
+                                paddingRight: '10px',
+                                margin: '0px'
+                            }}
+                            value={`subject0${index}`}
+                            control={<Radio />}
+                            label={item.name} />
                     })}
                 </RadioGroup>
             </Popover>
