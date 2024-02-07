@@ -14,7 +14,7 @@ const LeaderBoardCard = ({ width = '100%', height = '100%', isDrawer }) => {
                     const noOfItemsWhenDrawerClosed = 6
                     const noOfItemInTheLeaderBoard = isDrawer ? leaderBoardData.length : noOfItemsWhenDrawerClosed
                     if (index < noOfItemInTheLeaderBoard) {
-                        return <LeaderRanking isDrawer={isDrawer} key={index + 1} data={item} percentage={item.percentage} value={item.rank} index={index + 1} />
+                        return <LeaderRanking key={index + 1} data={item} percentage={item.percentage} value={item.rank} index={index + 1} />
                     }
                 }
                 )}

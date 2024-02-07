@@ -5,7 +5,7 @@ export const dashBoardStack = {
   padding: '0px',
   margin: '0px',
   marginTop: '20px',
-  marginLeft: '100px',
+  marginBottom: '15px',
   alignItems: 'center',
 }
 export const dashBoardCard = {

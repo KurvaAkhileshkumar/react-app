@@ -40,7 +40,7 @@ export default function TopBarNavigation() {
                         fontWeight: '400',
                         lineHeight: '32px',
                     }
-                }>Good morning, Maharram</Typography>
+                }>Good morning, {name}👋</Typography>
 
                 <Box
                     sx={{

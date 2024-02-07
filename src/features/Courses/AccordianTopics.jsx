@@ -139,65 +139,73 @@ export default function AccordianTopics() {
                                     aria-controls="panel1-content"
                                 >{item.topic_name}
                                 </AccordionSummary>
-                                <AccordionDetails
-                                    sx={
-                                        {
-                                            padding: '0px 0px 12px 12px',
-                                            display: 'flex',
-                                            width: '504px',
-                                            fontFamily: poppinsFont.fontFamily,
-                                            fontSize: pxToRem(16),
-                                            color: palette.grey[400]
-                                        }
-                                    }
-                                >
-                                    <Box display={'flex'} flexDirection={'row'}>
-                                        <Box sx={{
-                                            width: '16px',
-                                            height: '16px',
-                                            borderRadius: '5px',
-                                            background: '#DFE3E8',
-                                            marginRight: '5px'
-                                        }}>
-                                            <img src={document} alt="Broken" />
-                                        </Box>
-                                        <Typography
-                                            sx={
-                                                {
-                                                    padding: '0px',
-                                                    fontFamily: poppinsFont.fontFamily,
-                                                    fontSize: pxToRem(16),
-                                                    color: palette.grey[900]
+
+                                {
+                                    item.materials?.map((materialItems, materialItemsIndex) => {
+                                        return (
+                                            <AccordionDetails
+                                                key={materialItemsIndex}
+                                                sx={
+                                                    {
+                                                        padding: '0px 0px 12px 12px',
+                                                        display: 'flex',
+                                                        width: '504px',
+                                                        fontFamily: poppinsFont.fontFamily,
+                                                        fontSize: pxToRem(16),
+                                                        color: palette.grey[400]
+                                                    }
                                                 }
-                                            }
-                                        >
-                                            {item.topic_name}
-                                        </Typography>
-                                        <Link to={`/viewpdf/${encodeURIComponent(item.url)}`}>
-                                            <Box display={'flex'} flexDirection={'row'} position={'absolute'} right={'10px'}>
-                                                <Typography
-                                                    color={palette.primary.main}
-                                                    fontFamily={poppinsFont.fontFamily}
-                                                    fontSize={pxToRem(14)}
-                                                    fontWeight={400}
-                                                    fontStyle={'normal'}
-                                                    lineHeight={'normal'}
-                                                >
-                                                    Start
-                                                </Typography>
-                                                <Box sx={{
-                                                    width: '14px',
-                                                    height: '14px',
-                                                    borderRadius: '5px',
-                                                    marginTop: '4px',
-                                                    marginLeft: '8px'
-                                                }}>
-                                                    <img src={VectorBlue} alt="Broken" />
+                                            >
+                                                <Box display={'flex'} flexDirection={'row'}>
+                                                    <Box sx={{
+                                                        width: '16px',
+                                                        height: '16px',
+                                                        borderRadius: '5px',
+                                                        background: '#DFE3E8',
+                                                        marginRight: '5px'
+                                                    }}>
+                                                        <img src={document} alt="Broken" />
+                                                    </Box>
+                                                    <Typography
+                                                        sx={
+                                                            {
+                                                                padding: '0px',
+                                                                fontFamily: poppinsFont.fontFamily,
+                                                                fontSize: pxToRem(16),
+                                                                color: palette.grey[900]
+                                                            }
+                                                        }
+                                                    >
+                                                        {materialItems.name}
+                                                    </Typography>
+                                                    <Link to={`/viewpdf/${encodeURIComponent(item.url)}`}>
+                                                        <Box display={'flex'} flexDirection={'row'} position={'absolute'} right={'10px'}>
+                                                            <Typography
+                                                                color={palette.primary.main}
+                                                                fontFamily={poppinsFont.fontFamily}
+                                                                fontSize={pxToRem(14)}
+                                                                fontWeight={400}
+                                                                fontStyle={'normal'}
+                                                                lineHeight={'normal'}
+                                                            >
+                                                                Start
+                                                            </Typography>
+                                                            <Box sx={{
+                                                                width: '14px',
+                                                                height: '14px',
+                                                                borderRadius: '5px',
+                                                                marginTop: '4px',
+                                                                marginLeft: '8px'
+                                                            }}>
+                                                                <img src={VectorBlue} alt="Broken" />
+                                                            </Box>
+                                                        </Box>
+                                                    </Link>
                                                 </Box>
-                                            </Box>
-                                        </Link>
-                                    </Box>
-                                </AccordionDetails>
+                                            </AccordionDetails>
+                                        );
+                                    })
+                                }
                             </Accordion>
                             <Divider hard={1} />
                         </Box >

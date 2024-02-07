@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import TemporaryDrawer from './Drawer';
+import LeaderBoardDrawer from './LeaderBoardDrawer';
 import LeaderBoardCard from '../../../components/common/LeaderBoardCard';
 import { calendarText } from "../../../pages/DummyStyles/UserProfileStyles";
 import { useState } from "react";
@@ -19,6 +19,7 @@ export default function LeaderBoard() {
 
     return (
         <Box sx={{
+            width: 'auto',
             position: 'relative',
             padding: '0px',
         }}>
@@ -33,7 +34,7 @@ export default function LeaderBoard() {
                     onClick={toggleDrawer('right', true)}
                 />
             </Box>
-            <TemporaryDrawer state={state} toggleDrawer={toggleDrawer} />
+            <LeaderBoardDrawer state={state} toggleDrawer={toggleDrawer} />
 
             <Box
                 sx={

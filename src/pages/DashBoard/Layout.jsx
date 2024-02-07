@@ -1,4 +1,4 @@
-import { Stack, Box, Typography, Grid } from '@mui/material'
+import { Box, Typography, Grid } from '@mui/material'
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -14,9 +14,9 @@ import LeaderBoard from '../../features/Dashboard/LeaderBoard/LeaderBoard.jsx';
 
 
 
-import { poppinsFont, pxToRem } from '../../theme/typography.js';
+
 import { assessmentsSliceActions } from '../../Store/Store.jsx';
-import { dashBoardStack } from '../DummyStyles/LayoutStyles.js';
+
 import Analytics from '../../features/Dashboard/Analytics/Analytics.jsx'
 
 import { yourCoursesText } from '../DummyStyles/UserProfileStyles.js';
@@ -43,32 +43,18 @@ export default function Layout() {
     return (
         <>
 
-            {/* DashBoardLayout */}
-            <Box>
-                <Typography
-                    sx={{
-                        fontFamily: poppinsFont.fontFamily,
-                        fontSize: pxToRem(20),
-                        fontWeight: '600',
-                        lineHeight: '28px',
-                        textAlign: 'start',
-                        marginLeft: '98px',
-                        marginTop: '12px'
-                    }}
-                >Dashboard</Typography>
-                <Box display={'flex'} flexDirection={'row'} sx={dashBoardStack} flexWrap={'wrap'}>
-                    <Analytics />
-                </Box>
-            </Box>
             {/* MiddleLayout */}
             {
-                <Box marginRight={'28px'} marginLeft={'108px'} marginTop={'28px'} height={'907px'}>
+                <Box marginRight={'28px'} marginLeft={'108px'} marginTop={'28px'}>
 
                     {/* Parend Container */}
-                    <Grid container columnSpacing={3.75} height={'907px'}>
+                    <Grid container columnSpacing={3.75}>
 
+                        <Grid item xs={12}>
+                            <Analytics />
+                        </Grid>
                         {/* LeftColumn */}
-                        <Grid item xs={8} md={8} lg={8} height={'100%'}>
+                        <Grid item xs={8} md={8} lg={8}>
 
                             {/* Child1 */}
                             <RecenetAssessmentsChart />
@@ -80,7 +66,7 @@ export default function Layout() {
 
 
                         {/* RightColumn */}
-                        <Grid item xs={4} md={4} lg={4} height={'100%'}>
+                        <Grid item xs={4} md={4} lg={4}>
 
                             {/* RightChild-1 */}
                             <UserProfile />

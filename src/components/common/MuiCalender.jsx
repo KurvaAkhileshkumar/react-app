@@ -10,26 +10,24 @@ export default function MuiCalendar() {
                 <DateCalendar
                     views={['day']}
                     sx={{
-                        // '&.MuiDateCalendar-root': {
-                        //     width: '100%',
-                        //     height: '100%',
-                        //     marginLeft: 0,
-
-                        // },
-                        '&.MuiDayCalendar-header': {
-                            margin: '0px',
-                            padding: '0px',
+                        '&.MuiDateCalendar-root': {
                             width: '100%',
-                            fontSize: '0px'
+                            maxHeight: '234px',
+                            marginLeft: 0,
+
                         },
                         '& .MuiPickersCalendarHeader-root': {
+                            display: 'flex',
+                            justifyContent: 'space-between',
                             margin: '0px',
                             padding: '0px',
+                            paddingLeft: '20px',
+                            paddingRight: '10px',
                             width: '100%',
                             marginTop: '2px',
                         },
                         '& .MuiPickersCalendarHeader-labelContainer': {
-                            marginLeft: '20px',
+                            margin: '0px',
                             padding: '0px',
                             gap: '20px'
                         },
@@ -53,6 +51,18 @@ export default function MuiCalendar() {
                             width: '0px',
                             height: '0px'
                         },
+                        '& .MuiDayCalendar-root': {
+                            width: '100%',
+                            maxHeight: '234px',
+                            marginLeft: 0,
+
+                        },
+                        '& .MuiDayCalendar-header': {
+                            paddingLeft: '20px',
+                            paddingRight: '20px',
+                            display: 'flex',
+                            justifyContent: 'space-around'
+                        },
                         '& .MuiDayCalendar-weekDayLabel': {
                             margin: '0px',
                             padding: '0px',
@@ -65,7 +75,17 @@ export default function MuiCalendar() {
                         '& .MuiDayCalendar-weekContainer': {
                             margin: '0px',
                             padding: '0px',
+                            paddingLeft: '20px',
+                            paddingRight: '20px',
+                            display: 'flex',
+                            justifyContent: 'space-around'
 
+                        },
+                        '& .MuiDayCalendar-slideTransition': {
+                            width: '100%',
+                            maxHeight: '234px!important',
+                            margin: '0px',
+                            padding: '0px'
                         },
                         '& .MuiPickersDay-root': {
                             margin: '0px',
@@ -79,10 +99,7 @@ export default function MuiCalendar() {
                             fontWeight: 500,
                             lineHeight: 'normal'
                         },
-                        '& .MuiDateCalendar-root': {
-                            margin: '0px',
-                            padding: '0px',
-                        }
+
 
                     }}
                 />

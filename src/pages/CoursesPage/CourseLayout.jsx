@@ -8,12 +8,14 @@ import CourseDescription from '../../features/Courses/CourseDescription';
 import ContinueReadingCard from '../../features/Courses/ContinueReadingCard'
 import AccordianTopics from '../../features/Courses/AccordianTopics';
 import { courseSliceActions } from '../../Store/Store';
+import { useSelector } from 'react-redux';
 
 
 export default function CourseLayout() {
     const params = useParams();
     const fetchUrl = 'https://stagingstudentpython.edwisely.com/reactProject/courseData?course_id=' + params.id
 
+    console.log(fetchUrl)
 
     const dispatch = useDispatch()
 
@@ -22,13 +24,8 @@ export default function CourseLayout() {
             then((response) => response.json()).
             then((res) => {
                 const resData = res.data
-                dispatch(courseSliceActions.setCourseId(params.id))
-                dispatch(courseSliceActions.setCourseName(resData.name))
-                dispatch(courseSliceActions.setCourseTag(resData.tag))
-                dispatch(courseSliceActions.setCoursesCompletionPercentage(resData.percentage))
-                dispatch(courseSliceActions.setContinueReadingCard(resData.continue_reading))
-                dispatch(courseSliceActions.setUnitsData(resData.units))
-                dispatch(courseSliceActions.setCourseDescription(resData.description))
+                console.log(resData)
+                dispatch(courseSliceActions.setCoursesData(resData))
             })
     }, [])
 

@@ -95,7 +95,7 @@ export default function AttemptedUnattempted() {
             >
                 <RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
-                    defaultValue="female"
+                    defaultValue={subjects[selectedSubject]?.name}
                     name="radio-buttons-group"
                 >
                     {subjects.map((item, index) => {
@@ -107,7 +107,7 @@ export default function AttemptedUnattempted() {
                                 paddingRight: '10px',
                                 margin: '0px'
                             }}
-                            value={`subject0${index}`}
+                            value={item.name}
                             control={<Radio />}
                             label={item.name} />
                     })}

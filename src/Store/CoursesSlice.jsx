@@ -1,5 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
+const profile = {
+    name: '',
+    email: '',
+    profilePic: ''
+
+}
 const id = ''
 const coursesStatus = false;
 const courseName = ''
@@ -11,7 +18,6 @@ const continueReadingCardData = []
 const unitsData = []
 
 const intialCoursesData = {
-    coursesStatus,
     courseName,
     courseTag,
     courseCompletionPercentage,
@@ -24,30 +30,15 @@ const courseSlice = createSlice({
     name: 'sliceOfCourses',
     initialState: intialCoursesData,
     reducers: {
-        setCourseId(state, action) {
-            state.id = action.payload
+        setCoursesData(state, action) {
+            state.id = action.payload.id
+            state.courseCompletionPercentage = action.payload.percentage
+            state.courseName = action.payload.name
+            state.courseTag = action.payload.tag
+            state.courseDescription = action.payload.description
+            state.continueReadingCardData = action.payload.continue_reading
+            state.unitsData = action.payload.units
         },
-        setCourseStatus(state, action) {
-            state.coursesStatus = action.payload
-        },
-        setCourseName(state, action) {
-            state.courseName = action.payload
-        },
-        setCourseTag(state, action) {
-            state.courseTag = action.payload
-        },
-        setCoursesCompletionPercentage(state, action) {
-            state.courseCompletionPercentage = action.payload
-        },
-        setCourseDescription(state, action) {
-            state.courseDescription = action.payload
-        },
-        setContinueReadingCard(state, action) {
-            state.continueReadingCardData = action.payload
-        },
-        setUnitsData(state, action) {
-            state.unitsData = action.payload
-        }
     }
 })
 

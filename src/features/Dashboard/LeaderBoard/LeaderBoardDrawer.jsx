@@ -6,18 +6,16 @@ import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography';
 import { calendarText } from "../../../pages/DummyStyles/UserProfileStyles";
 import LeaderBoardCard from '../../../components/common/LeaderBoardCard';
-import { drawerStyles, rightItem3 } from '../../../pages/DummyStyles/LayoutStyles';
-import { useSelector } from 'react-redux';
-export default function TemporaryDrawer({ state, toggleDrawer, data }) {
-    const leaderBoardData = useSelector((state) => state.assessmentsReducer.leaderBoardData)
+import { drawerStyles, } from '../../../pages/DummyStyles/LayoutStyles';
+export default function LeaderBoardDrawer({ state, toggleDrawer, data }) {
+
     const list = (anchor) => (
         <Box
             sx={
                 {
                     padding: '0px',
                     margin: '0px',
-                    maxWidth: '364px',
-                    width: '100%px',
+                    width: '470px',
                     height: '100%',
                 }
             }
@@ -48,7 +46,7 @@ export default function TemporaryDrawer({ state, toggleDrawer, data }) {
 
     );
     return (
-        <div>
+        <>
             {['right'].map((anchor) => (
                 <React.Fragment key={anchor}>
                     <Drawer
@@ -60,6 +58,6 @@ export default function TemporaryDrawer({ state, toggleDrawer, data }) {
                     </Drawer>
                 </React.Fragment>
             ))}
-        </div>
+        </>
     );
 }
