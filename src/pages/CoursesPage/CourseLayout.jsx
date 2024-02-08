@@ -13,9 +13,8 @@ import { useSelector } from 'react-redux';
 
 export default function CourseLayout() {
     const params = useParams();
+    console.log(params)
     const fetchUrl = 'https://stagingstudentpython.edwisely.com/reactProject/courseData?course_id=' + params.id
-
-    console.log(fetchUrl)
 
     const dispatch = useDispatch()
 

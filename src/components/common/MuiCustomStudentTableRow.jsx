@@ -11,7 +11,10 @@ import { poppinsFont, pxToRem } from '../../theme/typography';
 const dataStyling = {
   textAlign: 'start',
   fontFamily: poppinsFont.fontFamily,
-  fontSize: pxToRem(14),
+  fontSize: {
+    md: pxToRem(10),
+    lg: pxToRem(14)
+  },
   fontWeight: 400,
   fontStyle: 'normal',
   lineHeight: 'normal',
@@ -22,7 +25,10 @@ const tableCellStyling = {
   padding: '0px',
   margin: '0px',
   height: '50px',
-  minWidth: '100px',
+  minWidth: {
+    md: '60px',
+    lg: '100px'
+  }
 }
 function secondsToMinutes(seconds) {
   const minutes = Math.floor(seconds / 60)

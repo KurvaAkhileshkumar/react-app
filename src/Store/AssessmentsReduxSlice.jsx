@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const isSorting = false
 const selectedSubject = 0
-const assessmentsSliceData = {}
+const assessmentsData = {}
 const recentAssessmentsData = []
 const categories = []
 const profile = {
@@ -16,9 +16,11 @@ const analyticsData = []
 const leaderBoardData = []
 const semester = 1
 const intialDashBoardData = {}
+
+
 const intialAsessmentsSliceData = {
     profile,
-    ...assessmentsSliceData,
+    ...assessmentsData,
     coursesData: [],
     recentAssessmentsData,
     categories,
@@ -52,8 +54,8 @@ const assessmentsSlice = createSlice({
         setSubject(state, action) {
             state.selectedSubject = action.payload
         },
-        setAssessmentSliceData(state, action) {
-            state.assessmentsSliceData = action.payload
+        setAssessmentsData(state, action) {
+            state.assessmentsData = action.payload
         },
         setSemester(state, action) {
             state.semester = action.payload

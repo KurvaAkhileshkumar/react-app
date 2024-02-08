@@ -178,7 +178,7 @@ export default function AccordianTopics() {
                                                     >
                                                         {materialItems.name}
                                                     </Typography>
-                                                    <Link to={`/viewpdf/${encodeURIComponent(item.url)}`}>
+                                                    <Link to={`/viewpdf/${encodeURIComponent(materialItems.url)}`}>
                                                         <Box display={'flex'} flexDirection={'row'} position={'absolute'} right={'10px'}>
                                                             <Typography
                                                                 color={palette.primary.main}

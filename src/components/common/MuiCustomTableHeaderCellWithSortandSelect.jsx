@@ -64,7 +64,10 @@ const MuiCustomTableHeaderCellWithSortandSelect = ({
             variant='body2'
             sx={{
               fontFamily: poppinsFont.fontFamily,
-              fontSize: pxToRem(14),
+              fontSize: {
+                md: pxToRem(10),
+                lg: pxToRem(14)
+              },
               fontStyle: 'normal',
               fontWeight: 500,
               color: theme.palette.grey[500],

@@ -1,4 +1,5 @@
-import Typography from '@mui/material/Typography';
+import { Typography, Skeleton } from '@mui/material';
+
 import { poppinsFont } from "../../../theme/typography";
 import palette from "../../../theme/palette";
 import typography from "../../../theme/typography";
@@ -23,7 +24,7 @@ export default function UserProfile() {
                 </Typography>
 
                 {/* UserProfileCard */}
-                <Box
+                {name ? <Box
                     sx={{
                         height: '70px',
                         bgcolor: '#FFF',
@@ -83,7 +84,8 @@ export default function UserProfile() {
                             </Box>
                         </Box>
                     </Box>
-                </Box>
+                </Box> : <Skeleton variant='rounded' height={'70px'} marginBottom='20px' />}
+
             </Box>
 
         </>

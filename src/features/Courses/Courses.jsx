@@ -27,8 +27,15 @@ export default function Courses() {
                         >
                             <Box
                                 sx={{
-                                    width: '244px',
-                                    height: '183px',
+                                    // width: '244px',                                    
+                                    width: {
+                                        md: '170px',
+                                        lg: '244px',
+                                        xl: '244px'
+                                    },
+                                    height: {
+                                        xs: '183px'
+                                    }
                                 }}
                             >
                                 <img
@@ -52,6 +59,10 @@ export default function Courses() {
                                 <Typography
                                     sx={{
                                         height: '50px',
+                                        maxWidth: {
+                                            md: '120px',
+                                            lg: '100%'
+                                        },
                                         color: palette.grey[900],
                                         textAlign: 'start',
                                         fontFamily: poppinsFont.fontFamily,
@@ -60,6 +71,16 @@ export default function Courses() {
                                         lineHeight: '20px',
                                         letterSpacing: '-0.14px',
                                         padding: '0px 14px  14px',
+                                        overflow:
+                                        {
+                                            md: 'hidden',
+                                        },
+                                        whiteSpace: {
+                                            ms: 'nowrap'
+                                        },
+                                        textOverflow: {
+                                            md: 'ellipsis'
+                                        }
                                     }}
                                 >{item.name}</Typography>
                             </Box>

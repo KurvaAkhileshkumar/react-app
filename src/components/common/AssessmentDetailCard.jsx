@@ -13,7 +13,6 @@ const colors = ["#E7EEFE", "#E6F2FD", "#FFF8EC", "#FEECEB", "#EDFAEE"];
 
 const AssessmentDetailCard = ({
   icon,
-  iconBgColor,
   iconSize = 'medium',
   title,
   contentMagnitude,

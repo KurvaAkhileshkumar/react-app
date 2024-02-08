@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Skeleton, Typography } from "@mui/material";
 import MuiCustomTableWithSortandSelect from "../../../components/common/MuiCustomTableWithSortandSelect";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -10,6 +10,8 @@ import { assessmentsSliceActions } from "../../../Store/Store";
 export default function Assessments() {
 
     const semester = useSelector((state) => state.assessmentsReducer.semester)
+
+
     const dispatch = useDispatch()
 
     const changeSemester = (whichIcon) => {

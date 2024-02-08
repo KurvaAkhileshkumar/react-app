@@ -10,7 +10,8 @@ import {
   Paper,
   Stack,
   Pagination,
-  Box
+  Box,
+  Skeleton
 } from '@mui/material'
 import MuiCustomTableHeaderRowWithSortandSelect from './MuiCustomTableHeaderRowWithSortandSelect'
 import MuiCustomStudentTableRow from './MuiCustomStudentTableRow'
@@ -31,7 +32,7 @@ const MuiCustomTableWithSortandSelect = () => {
   const dispatch = useDispatch()
 
   //Retrieving the data from store of Assessments
-  const assessmentsSliceData = useSelector((state) => state.assessmentsReducer.assessmentsSliceData)
+  const assessmentsData = useSelector((state) => state.assessmentsReducer.assessmentsData)
 
   //IsSorting is retrieved from the store to check if clicked for sorting.
   const isSorting = useSelector((state) => state.assessmentsReducer.isSorting)
@@ -39,14 +40,14 @@ const MuiCustomTableWithSortandSelect = () => {
   setTimeout(() => {
     if (isSorting) {
       //Setting the table data for updating the table with sorted data            
-      setAssessmentsTableData(assessmentsSliceData?.slice(0, noOfItemsPerPage))
+      setAssessmentsTableData(assessmentsData?.slice(0, noOfItemsPerPage))
       dispatch(assessmentsSliceActions.isClickedForSorting(false))
     }
   }, 1000)
 
   //Setting the data when the page is Changed
   function handleChange(event, page) {
-    setAssessmentsTableData(assessmentsSliceData.slice(noOfItemsPerPage * (page - 1), noOfItemsPerPage * (page)))
+    setAssessmentsTableData(assessmentsData.slice(noOfItemsPerPage * (page - 1), noOfItemsPerPage * (page)))
   }
 
   //Fetching the data from api and setting the data in the store.
@@ -54,69 +55,90 @@ const MuiCustomTableWithSortandSelect = () => {
     fetch('https://stagingstudentpython.edwisely.com/reactProject/assessments').then((response) => {
       return response.json()
     }).then((resData) => {
-      if (resData.status !== 200)
+      if (resData.status !== 200) {
+        setIsError(true)
         console.log('Error Occured')
+      }
+      else {
+        setIsError(false)
+      }
       setAssessmentsTableData(resData.assessments?.slice(0, noOfItemsPerPage))
-      dispatch(assessmentsSliceActions.setAssessmentSliceData(resData.assessments))
+      dispatch(assessmentsSliceActions.setAssessmentsData(resData.assessments))
     })
   }, [])
 
   //Rendering the component
   return (
     <>
-      <Box
-        sx={{
-          margin: '0px',
-          padding: '0px',
-          border: '0px',
-          boxShadow: 'none',
-          maxWidth: '100%',
-        }}
-      >
-        <Table
-          sx={{ margin: '0px', padding: '0px' }} aria-label='responsive table'>
-          <TableHead
-            sx={{
-              maxWidth: '100%',
-              background: palette.grey[100],
-            }}
-          >
-            <MuiCustomTableHeaderRowWithSortandSelect
-              headerArray={HeaderArr}
-            />
-          </TableHead>
-          <TableBody>
-            <Box marginTop={'20px'}>
-              {assessmentsTableData?.map((stu, i) => (
-                <MuiCustomStudentTableRow
-                  stu={stu}
-                  key={i}
-                />
-              ))}
-            </Box>
-          </TableBody>
-        </Table>
-      </Box>
-
-      <Box
-        display={'flex'}
-        flexDirection={'row'}
-        justifyContent='center'
-        alignItems='center'
-        sx={{ marginTop: '1rem' }}
-      >
-        <Pagination
-          count={~~Math.ceil(assessmentsSliceData?.length / noOfItemsPerPage)}
-          onChange={(event, page) => handleChange(event, page)}
-          color='primary'
+      {isError ? <Skeleton variant='rounded' height={'480px'} /> : assessmentsData ? <Box>
+        <Box
           sx={{
-            '& .MuiPaginationItem-previousNext': {
-              background: palette.grey[200]
-            },
-            fontFamily: poppinsFont.fontFamily
+            margin: '0px',
+            padding: '0px',
+            border: '0px',
+            boxShadow: 'none',
+            maxWidth: '100%',
           }}
-        />
-      </Box>
+        >
+          <Table
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-evenly',
+              margin: '0px', padding: '0px',
+              width: '100%',
+            }} aria-label='responsive table'>
+            <TableHead
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-evenly',
+                width: '100%',
+                background: palette.grey[100],
+              }}
+            >
+              <MuiCustomTableHeaderRowWithSortandSelect
+                headerArray={HeaderArr}
+              />
+            </TableHead>
+            <TableBody sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-evenly',
+              width: '100%',
+            }}>
+              <Box marginTop={'20px'}>
+                {assessmentsTableData?.map((stu, i) => (
+                  <MuiCustomStudentTableRow
+                    stu={stu}
+                    key={i}
+                  />
+                ))}
+              </Box>
+            </TableBody>
+          </Table>
+        </Box>
+
+        <Box
+          display={'flex'}
+          flexDirection={'row'}
+          justifyContent='center'
+          alignItems='center'
+          sx={{ marginTop: '1rem' }}
+        >
+          <Pagination
+            count={~~Math.ceil(assessmentsData?.length / noOfItemsPerPage)}
+            onChange={(event, page) => handleChange(event, page)}
+            color='primary'
+            sx={{
+              '& .MuiPaginationItem-previousNext': {
+                background: palette.grey[200]
+              },
+              fontFamily: poppinsFont.fontFamily
+            }}
+          />
+        </Box>
+      </Box> : <h1>Error Occured</h1>}
     </>
   )
 }

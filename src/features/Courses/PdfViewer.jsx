@@ -18,9 +18,10 @@ import {
 import { Button } from '@mui/material'
 
 export default function PdfViewer() {
-    const { url } = useParams()
-    const pdfUrl = decodeURIComponent(url)
-    console.log(url)
+
+    console.log('Enteerd')
+    const params = useParams()
+    const pdfUrl = decodeURIComponent(params.url)
     const zoomPluginInstance = zoomPlugin()
     const { ZoomInButton, ZoomOutButton, ZoomPopover } = zoomPluginInstance
     const fullScreenPluginInstance = fullScreenPlugin()

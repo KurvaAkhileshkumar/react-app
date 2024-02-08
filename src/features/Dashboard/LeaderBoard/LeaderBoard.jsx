@@ -1,12 +1,14 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Skeleton } from "@mui/material";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import LeaderBoardDrawer from './LeaderBoardDrawer';
 import LeaderBoardCard from '../../../components/common/LeaderBoardCard';
 import { calendarText } from "../../../pages/DummyStyles/UserProfileStyles";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 export default function LeaderBoard() {
 
     //Toggling the Drawer Should be handled in the store.
+    const leaderBoardData = useSelector((state) => state.assessmentsReducer.leaderBoardData)
     const [state, setState] = useState({
         right: false,
     });
@@ -34,9 +36,7 @@ export default function LeaderBoard() {
                     onClick={toggleDrawer('right', true)}
                 />
             </Box>
-            <LeaderBoardDrawer state={state} toggleDrawer={toggleDrawer} />
-
-            <Box
+            {leaderBoardData ? <Box
                 sx={
                     {
                         height: '447px',
@@ -48,7 +48,8 @@ export default function LeaderBoard() {
                 }
             >
                 <LeaderBoardCard isDrawer={false} />
-            </Box>
+            </Box> : <Skeleton variant='rounded' height='447px' />}
+            <LeaderBoardDrawer state={state} toggleDrawer={toggleDrawer} />
         </Box>
     );
 }
