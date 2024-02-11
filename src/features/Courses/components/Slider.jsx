@@ -18,6 +18,10 @@ export default function SliderStatus() {
                         padding: '8px 0px 8px 0px',
                         color: '#0B58F5',
                         width: '300px',
+                        "& .MuiSlider-thumb": {
+                            width: 0,
+                            height: 0,
+                        },
                     }}
                 />
                 <Box sx={{
