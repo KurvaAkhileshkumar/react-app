@@ -19,8 +19,10 @@ import { assessmentsSliceActions } from '../../Store/Store.jsx';
 
 import Analytics from '../../features/Dashboard/Analytics/Analytics.jsx'
 
-import { yourCoursesText } from '../DummyStyles/UserProfileStyles.js';
 import Courses from '../../features/Courses/Courses.jsx'
+
+import palette from '../../theme/palette.js';
+import { poppinsFont, pxToRem } from '../../theme/typography.js';
 
 export default function Layout() {
 
@@ -81,7 +83,16 @@ export default function Layout() {
                                 display='flex'
                                 flexDirection={'column'}
                                 gap={'15px'}>
-                                <Typography sx={yourCoursesText}>
+                                <Typography sx={{
+                                    width: '100%',
+                                    color: palette.grey[800],
+                                    fontFamily: poppinsFont.fontFamily,
+                                    fontSize: pxToRem(20),
+                                    fontStyle: 'normal',
+                                    lineHeight: pxToRem(28),
+                                    textAlign: 'start',
+                                    fontWeight: 600,
+                                }}>
                                     Your courses
                                 </Typography>
                                 <Box

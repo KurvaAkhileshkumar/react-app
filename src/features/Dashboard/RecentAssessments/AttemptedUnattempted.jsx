@@ -1,7 +1,6 @@
-import { Box, Button, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import Popover from '@mui/material/Popover';
 import CircleIcon from '@mui/icons-material/Circle';
-import { circleIcon } from "../../../pages/DummyStyles/RecentAssessmentsStyles";
 import InputLabel from '@mui/material/InputLabel';
 import { poppinsFont, pxToRem } from "../../../theme/typography";
 import palette from "../../../theme/palette";
@@ -16,6 +15,11 @@ import { assessmentsSliceActions } from '../../../Store/Store';
 
 export default function AttemptedUnattempted() {
 
+    const circleIcon = {
+        width: '8px',
+        height: '8px',
+        marginRight: '5px',
+    }
 
     const dispatch = useDispatch()
 

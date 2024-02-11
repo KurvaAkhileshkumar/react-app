@@ -2,8 +2,9 @@ import { useSelector } from "react-redux";
 import { Typography, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import vector from '../../assets/Vector.svg'
-import { titleStyles } from "../../pages/CoursesPage/CourseLayoutStyles";
 import MuiCustomChipCount from '../../components/common/MuiCustomChipCount'
+import { pxToRem, poppinsFont } from "../../theme/typography";
+import palette from "../../theme/palette";
 
 const chipColors = ['#E7EEFE', '#FFF0D8', '#EDFAEE', '#FFF0D8']
 const chipTextColor = ['#0B58F5', '#D89932', '#4ECD56', '#D89932']
@@ -23,7 +24,14 @@ export default function CourseNameTag() {
                         color: '#252525'
                     }} src={vector} alt="Arrow backIcon" />
                 </Link>
-                <Typography sx={titleStyles}>
+                <Typography sx={{
+                    color: palette.grey[900],
+                    fontFamily: poppinsFont.fontFamily,
+                    fontSize: pxToRem(25),
+                    fontWeight: 500,
+                    lineHeight: '28px',
+                    letterSpacing: '-0.25px'
+                }}>
                     {courseName}
                 </Typography>
                 <MuiCustomChipCount

@@ -2,10 +2,12 @@ import { Box } from "@mui/material";
 import document from '../../assets/document.svg'
 import presentationChart from '../../assets/presention-chart.svg'
 import Typography from '@mui/material/Typography';
-import { continueReadingStyles, continueReadingCardTestStyles } from "../../pages/CoursesPage/CourseLayoutStyles";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import typography from "../../theme/typography";
+import { poppinsFont, pxToRem } from "../../theme/typography";
+import palette from "../../theme/palette";
 
 const icons = [document, presentationChart, presentationChart]
 export default function ContinueReadingCard() {
@@ -21,7 +23,15 @@ export default function ContinueReadingCard() {
                 gap={'10px'}
             >
                 <Typography
-                    sx={continueReadingStyles}
+                    sx={{
+                        color: palette.grey[900],
+                        fontFamily: poppinsFont.fontFamily,
+                        fontSize: pxToRem(20),
+                        fontStyle: 'normal',
+                        fontWeight: typography.fontWeightMedium,
+                        lineHeight: 'normal',
+                        marginLeft: '56px'
+                    }}
                 >Continue reading</Typography>
                 <Box marginLeft={'56px'} display={'flex'} flexDirection={'row'} gap={'22px'} flexWrap={'wrap'} >
                     {
@@ -64,7 +74,18 @@ export default function ContinueReadingCard() {
                                                 }
                                             >
                                                 <Typography
-                                                    sx={continueReadingCardTestStyles}
+                                                    sx={{
+                                                        color: palette.grey[900],
+                                                        textEdge: 'cap',
+                                                        fontFamily: poppinsFont.fontFamily,
+                                                        fontSize: pxToRem(14),
+                                                        fontStyle: 'normal',
+                                                        fontWeight: typography.fontWeightRegular,
+                                                        fontHeight: 'normal',
+                                                        textAlign: 'start',
+                                                        paddingTop: '15px'
+                                                    }
+                                                    }
                                                 >
                                                     {item.name}
                                                 </Typography>

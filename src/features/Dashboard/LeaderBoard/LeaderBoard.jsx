@@ -2,9 +2,10 @@ import { Box, Typography, Skeleton } from "@mui/material";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import LeaderBoardDrawer from './LeaderBoardDrawer';
 import LeaderBoardCard from '../../../components/common/LeaderBoardCard';
-import { calendarText } from "../../../pages/DummyStyles/UserProfileStyles";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { poppinsFont, pxToRem } from "../../../theme/typography";
+import palette from "../../../theme/palette";
 export default function LeaderBoard() {
 
     //Toggling the Drawer Should be handled in the store.
@@ -26,7 +27,16 @@ export default function LeaderBoard() {
             padding: '0px',
         }}>
             <Box display={'flex'} direction={'row'} justifyContent={'space-between'}>
-                <Typography sx={calendarText}>
+                <Typography sx={{
+                    width: '319px',
+                    color: palette.grey[800],
+                    fontFamily: poppinsFont.fontFamily,
+                    fontSize: pxToRem(20),
+                    fontStyle: 'normal',
+                    lineHeight: pxToRem(28),
+                    textAlign: 'start',
+                    marginBottom: '10px',
+                }}>
                     LeaderBoard
                 </Typography>
                 <ChevronRightIcon

@@ -102,7 +102,8 @@ const MuiCustomTableWithSortandSelect = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-evenly',
-                margin: '0px', padding: '0px',
+                margin: '0px',
+                padding: '0px',
                 width: '100%',
               }} aria-label='responsive table'>
               <TableHead

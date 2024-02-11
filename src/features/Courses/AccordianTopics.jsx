@@ -34,6 +34,7 @@ export default function AccordianTopics() {
         intialTopicState = unitsData?.map((item, index) => {
             if (index === topicIndex) return item.topics
         })
+        console.log(intialTopicState)
     }
     const [searchInput, setSearchInput] = useState('')
 
@@ -90,121 +91,125 @@ export default function AccordianTopics() {
                 />
             </Box>
 
-            {intialTopicState[topicIndex]?.map((item, index) => {
-                return (
-                    <Box
-                        key={index}
-                        display={'flex'}
-                        flexDirection={'column'}
-                        sx={{
-                            marginLeft: '56px',
-                            position: 'relative',
-                            width: '504px',
-                            background: '#FFF',
-                        }}
-                    >
-                        <Accordion
-                            position={'relative'}
-                            sx={{
-                                border: '0px',
-                                background: '#FFF',
-                                boxShadow: 'none',
-                            }}
-                        >
-                            <AccordionSummary
+            {
+                intialTopicState[topicIndex]?.map((item, index) => {
+                    if (item.topic_name.toLowerCase().includes(searchInput.toLowerCase())) {
+                        return (
+                            <Box
+                                key={index}
+                                display={'flex'}
+                                flexDirection={'column'}
                                 sx={{
-                                    padding: '0px',
+                                    marginLeft: '56px',
+                                    position: 'relative',
+                                    width: '504px',
                                     background: '#FFF',
-                                    boxShadow: 'none',
-                                    fontFamily: poppinsFont.fontFamily,
-                                    fontSize: pxToRem(16),
-                                    color: palette.grey[400],
-                                    marginLeft: '5px',
                                 }}
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel1-content"
                             >
-                                {item.topic_name}
-                            </AccordionSummary>
-
-                            {item.materials?.map((materialItems, materialItemsIndex) => {
-                                return (
-                                    <AccordionDetails
-                                        key={materialItemsIndex}
+                                <Accordion
+                                    position={'relative'}
+                                    sx={{
+                                        border: '0px',
+                                        background: '#FFF',
+                                        boxShadow: 'none',
+                                    }}
+                                >
+                                    <AccordionSummary
                                         sx={{
-                                            padding: '0px 0px 12px 12px',
-                                            display: 'flex',
-                                            width: '504px',
+                                            padding: '0px',
+                                            background: '#FFF',
+                                            boxShadow: 'none',
                                             fontFamily: poppinsFont.fontFamily,
                                             fontSize: pxToRem(16),
                                             color: palette.grey[400],
+                                            marginLeft: '5px',
                                         }}
+                                        expandIcon={<ExpandMoreIcon />}
+                                        aria-controls="panel1-content"
                                     >
-                                        <Box display={'flex'} flexDirection={'row'}>
-                                            <Box
+                                        {item.topic_name}
+                                    </AccordionSummary>
+
+                                    {item.materials?.map((materialItems, materialItemsIndex) => {
+                                        return (
+                                            <AccordionDetails
+                                                key={materialItemsIndex}
                                                 sx={{
-                                                    width: '16px',
-                                                    height: '16px',
-                                                    borderRadius: '5px',
-                                                    background: '#DFE3E8',
-                                                    marginRight: '5px',
-                                                }}
-                                            >
-                                                <img src={document} alt="Broken" />
-                                            </Box>
-                                            <Typography
-                                                sx={{
-                                                    padding: '0px',
+                                                    padding: '0px 0px 12px 12px',
+                                                    display: 'flex',
+                                                    width: '504px',
                                                     fontFamily: poppinsFont.fontFamily,
                                                     fontSize: pxToRem(16),
-                                                    color: palette.grey[900],
+                                                    color: palette.grey[400],
                                                 }}
                                             >
-                                                {materialItems.name}
-                                            </Typography>
-                                            <Link
-                                                to={`/pdf/viewpdf/${encodeURIComponent(
-                                                    materialItems.url
-                                                )}`}
-                                            >
-                                                <Box
-                                                    display={'flex'}
-                                                    flexDirection={'row'}
-                                                    position={'absolute'}
-                                                    right={'10px'}
-                                                >
-                                                    <Typography
-                                                        color={palette.primary.main}
-                                                        fontFamily={poppinsFont.fontFamily}
-                                                        fontSize={pxToRem(14)}
-                                                        fontWeight={400}
-                                                        fontStyle={'normal'}
-                                                        lineHeight={'normal'}
-                                                    >
-                                                        Start
-                                                    </Typography>
+                                                <Box display={'flex'} flexDirection={'row'}>
                                                     <Box
                                                         sx={{
-                                                            width: '14px',
-                                                            height: '14px',
+                                                            width: '16px',
+                                                            height: '16px',
                                                             borderRadius: '5px',
-                                                            marginTop: '4px',
-                                                            marginLeft: '8px',
+                                                            background: '#DFE3E8',
+                                                            marginRight: '5px',
                                                         }}
                                                     >
-                                                        <img src={VectorBlue} alt="Broken" />
+                                                        <img src={document} alt="Broken" />
                                                     </Box>
+                                                    <Typography
+                                                        sx={{
+                                                            padding: '0px',
+                                                            fontFamily: poppinsFont.fontFamily,
+                                                            fontSize: pxToRem(16),
+                                                            color: palette.grey[900],
+                                                        }}
+                                                    >
+                                                        {materialItems.name}
+                                                    </Typography>
+                                                    <Link
+                                                        to={`/pdf/viewpdf/${encodeURIComponent(
+                                                            materialItems.url
+                                                        )}`}
+                                                    >
+                                                        <Box
+                                                            display={'flex'}
+                                                            flexDirection={'row'}
+                                                            position={'absolute'}
+                                                            right={'10px'}
+                                                        >
+                                                            <Typography
+                                                                color={palette.primary.main}
+                                                                fontFamily={poppinsFont.fontFamily}
+                                                                fontSize={pxToRem(14)}
+                                                                fontWeight={400}
+                                                                fontStyle={'normal'}
+                                                                lineHeight={'normal'}
+                                                            >
+                                                                Start
+                                                            </Typography>
+                                                            <Box
+                                                                sx={{
+                                                                    width: '14px',
+                                                                    height: '14px',
+                                                                    borderRadius: '5px',
+                                                                    marginTop: '4px',
+                                                                    marginLeft: '8px',
+                                                                }}
+                                                            >
+                                                                <img src={VectorBlue} alt="Broken" />
+                                                            </Box>
+                                                        </Box>
+                                                    </Link>
                                                 </Box>
-                                            </Link>
-                                        </Box>
-                                    </AccordionDetails>
-                                )
-                            })}
-                        </Accordion>
-                        <Divider hard={1} />
-                    </Box>
-                )
-            })}
+                                            </AccordionDetails>
+                                        )
+                                    })}
+                                </Accordion>
+                                <Divider hard={1} />
+                            </Box>
+                        )
+                    }
+                    return null
+                })}
         </>
     )
 }

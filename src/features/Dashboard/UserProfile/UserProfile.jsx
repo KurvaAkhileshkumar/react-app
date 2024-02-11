@@ -5,7 +5,8 @@ import palette from "../../../theme/palette";
 import typography from "../../../theme/typography";
 import { useSelector } from "react-redux";
 import { Box } from "@mui/material";
-import { userProfileText } from "../../../pages/DummyStyles/UserProfileStyles";
+
+import { pxToRem } from '../../../theme/typography';
 
 export default function UserProfile() {
     const profilePicLink = useSelector((state) => state.assessmentsReducer.profile.profilePic)
@@ -20,7 +21,17 @@ export default function UserProfile() {
                 bgcolor: '#FFF'
             }}>
                 {/* UserProfileText */}
-                <Typography sx={userProfileText}>
+                <Typography sx={{
+                    width: '100%',
+                    color: palette.grey[800],
+                    fontFamily: poppinsFont.fontFamily,
+                    fontSize: pxToRem(20),
+                    fontStyle: 'normal',
+                    lineHeight: pxToRem(28),
+                    textAlign: 'start',
+                    marginBottom: '12px',
+                    fontWeight: 500,
+                }}>
                     User profile
                 </Typography>
 

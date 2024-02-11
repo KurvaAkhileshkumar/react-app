@@ -12,7 +12,7 @@ import {
     Box
 } from "@mui/material";
 import loginImage from "../../assets/loginimg.svg";
-import { leftContent, leftHeader, loginHelper, studentPortal, welcome } from "../../pages/DummyStyles/LoginStlyes.js";
+import { pxToRem, poppinsFont } from "../../theme/typography.js";
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router'
 import { useDispatch } from 'react-redux'
@@ -82,15 +82,48 @@ export default function Login() {
                     justifyContent="center"
                     backgroundColor="#0B58F5"
                 >
-                    <Stack gap={'71.41px'} sx={leftContent}>
-                        <Box sx={leftHeader}>
-                            <Box sx={welcome}>Welcome to</Box>
-                            <Box sx={studentPortal}>Student Portal</Box>
-                            <Box sx={loginHelper}>Login to access your account</Box>
+                    <Stack gap={'71.41px'} sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                    }}>
+                        <Box sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            width: '405px',
+                            height: '101px',
+                            marginTop: '84px',
+                            marginLeft: '86px',
+                        }}>
+                            <Box sx={{
+                                color: '#fff',
+                                fontFamily: poppinsFont.fontFamily,
+                                fontSize: '57.251px',
+                                fontStyle: 'normal',
+                                fontWeight: '700',
+                                lineHeight: '50.094px',
+                                textAlign: 'start',
+                            }}>Welcome to</Box>
+                            <Box sx={{
+                                color: '#fff',
+                                fontFamily: poppinsFont.fontFamily,
+                                fontSize: '57.251px',
+                                fontStyle: 'normal',
+                                fontWeight: '400',
+                                lineHeight: '50.094px',
+                            }
+                            }>Student Portal</Box>
+                            <Box sx={{
+                                color: '#FFF',
+                                fontFamily: poppinsFont.fontFamily,
+                                fontSize: pxToRem(14),
+                                fontStyle: 'normal',
+                                fontWeight: 500,
+                                lineHeight: 'normal',
+                                textAlign: 'start',
+                            }}>Login to access your account</Box>
                         </Box>
                         <Box>
-                            <img sx={{
-                            }} src={loginImage} alt="" />
+                            <img src={loginImage} alt="" />
                         </Box>
                     </Stack>
                 </Grid>

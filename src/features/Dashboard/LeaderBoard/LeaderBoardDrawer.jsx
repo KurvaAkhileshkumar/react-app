@@ -4,9 +4,9 @@ import Box from '@mui/material/Box';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography';
-import { calendarText } from "../../../pages/DummyStyles/UserProfileStyles";
 import LeaderBoardCard from '../../../components/common/LeaderBoardCard';
-import { drawerStyles, } from '../../../pages/DummyStyles/LayoutStyles';
+import palette from '../../../theme/palette';
+import { poppinsFont, pxToRem } from '../../../theme/typography';
 export default function LeaderBoardDrawer({ state, toggleDrawer, data }) {
 
     const list = (anchor) => (
@@ -34,11 +34,27 @@ export default function LeaderBoardDrawer({ state, toggleDrawer, data }) {
                     }}
                     onClick={toggleDrawer(anchor, false)}
                 />
-                <Typography sx={calendarText} marginTop={'19px'}>
+                <Typography sx={{
+                    width: '319px',
+                    color: palette.grey[800],
+                    fontFamily: poppinsFont.fontFamily,
+                    fontSize: pxToRem(20),
+                    fontStyle: 'normal',
+                    lineHeight: pxToRem(28),
+                    textAlign: 'start',
+                    marginBottom: '10px',
+                }} marginTop={'19px'}>
                     Leaderboard
                 </Typography>
             </Stack>
-            <Box sx={drawerStyles}>
+            <Box sx={{
+                padding: '0px',
+                margin: '20px 33px 0px 33px',
+                width: '298px',
+                height: '100%',
+                borderRadius: '10px',
+                background: '#FFF',
+            }}>
                 <LeaderBoardCard data={data} isDrawer={true} />
             </Box>
         </Box>

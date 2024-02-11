@@ -1,8 +1,6 @@
 import AssessmentDetailCard from '../../../components/common/AssessmentDetailCard'
 import { Box, Typography } from "@mui/material";
-import { dashBoardCard } from "../../../pages/DummyStyles/LayoutStyles";
 import { useSelector } from "react-redux";
-import { dashBoardStack } from '../../../pages/DummyStyles/LayoutStyles';
 import { poppinsFont, pxToRem } from '../../../theme/typography.js';
 export default function Analytics() {
     const analyticsData = useSelector((state) => state.assessmentsReducer.analyticsData)
@@ -20,11 +18,22 @@ export default function Analytics() {
                         textAlign: 'start',
                     }}
                 >Dashboard</Typography>
-                <Box display={'flex'} flexDirection={'row'} sx={dashBoardStack} flexWrap={'wrap'}>
+                <Box display={'flex'} flexDirection={'row'} sx={{
+                    padding: '0px',
+                    margin: '0px',
+                    marginTop: '20px',
+                    marginBottom: '15px',
+                    alignItems: 'center',
+                }} flexWrap={'wrap'}>
                     {
                         dashBoardValues.map((item, index) => {
                             return (
-                                <Box sx={dashBoardCard} key={index}>
+                                <Box sx={{
+                                    margin: '0px',
+                                    marginRight: '24px',
+                                    width: '230px',
+                                    height: '80px',
+                                }} key={index}>
                                     <AssessmentDetailCard
                                         icon={index}
                                         iconBgColor={index}
