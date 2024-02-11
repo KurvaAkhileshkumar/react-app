@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Popover from '@mui/material/Popover';
 import CircleIcon from '@mui/icons-material/Circle';
 import InputLabel from '@mui/material/InputLabel';
@@ -19,6 +19,7 @@ export default function AttemptedUnattempted() {
         width: '8px',
         height: '8px',
         marginRight: '5px',
+        marginTop: '7px'
     }
 
     const dispatch = useDispatch()
@@ -47,45 +48,34 @@ export default function AttemptedUnattempted() {
             <Box
                 display={'flex'}
                 flexDirection={'row'}
+                gap={'12px'}
             >
-                <Box
-                    sx={{
-                        padding: '5px'
-                    }}
-                >
+                <Box display={'flex'} flexDirection={'row'}>
                     <CircleIcon sx={{ ...circleIcon, color: 'blue', }} />
-                    Attempted
+                    <Typography variant={'subtitle2'} fontWeight={'400'}>Attempted</Typography>
                 </Box>
-                <Box
-                    sx={{
-                        padding: '5px'
-                    }}
-                >
+                <Box display={'flex'} flexDirection={'row'}>
                     <CircleIcon sx={{ ...circleIcon, color: 'red', }} />
-                    Unattempted
+                    <Typography variant={'subtitle2'} fontWeight={'400'}>Unattempted</Typography>
                 </Box>
-                <InputLabel sx={
-                    {
-                        padding: '5px',
-                        paddingRight: '0px',
-                        fontFamily: poppinsFont.fontFamily,
-                        textEdge: 'cap',
-                        fontSize: pxToRem(12),
-                        fontStyle: 'normal',
-                        fontWeight: '500',
-                        lineHeight: 'normal',
-                        textTransform: 'capitalize',
-                        color: palette.grey[400],
-                    }
-                }>{subjects[selectedSubject]?.name}</InputLabel>
-                <KeyboardArrowDownIcon
-                    onClick={handleClick}
-                    sx={{
-                        paddingTop: '5px',
-                        cursor: 'pointer',
-                        color: palette.grey[400],
-                        fontSize: pxToRem(24)
-                    }} />
+                <Box display='flex' flexDirection={'row'}>
+                    <InputLabel
+                        variant='body2'
+                        sx={
+                            {
+                                textEdge: 'cap',
+                                lineHeight: 'normal',
+                                textTransform: 'capitalize',
+                                color: (theme) => theme.palette.grey[400],
+                            }
+                        }>{subjects[selectedSubject]?.name}</InputLabel>
+                    <KeyboardArrowDownIcon
+                        onClick={handleClick}
+                        sx={{
+                            cursor: 'pointer',
+                            color: (theme) => theme.palette.grey[400],
+                        }} />
+                </Box>
             </Box>
             <Popover
                 id={id}

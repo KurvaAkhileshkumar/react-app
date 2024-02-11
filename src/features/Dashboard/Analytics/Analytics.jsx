@@ -10,13 +10,9 @@ export default function Analytics() {
         <>
             <Box>
                 <Typography
-                    sx={{
-                        fontFamily: poppinsFont.fontFamily,
-                        fontSize: pxToRem(20),
-                        fontWeight: '600',
-                        lineHeight: '28px',
-                        textAlign: 'start',
-                    }}
+                    variant='h4'
+                    textAlign={'start'}
+                    fontWeight={'600'}
                 >Dashboard</Typography>
                 <Box display={'flex'} flexDirection={'row'} sx={{
                     padding: '0px',

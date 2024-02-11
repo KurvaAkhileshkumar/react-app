@@ -26,6 +26,7 @@ export function responsiveFontSizes({ sm, md, lg }) {
 // ----------------------------------------------------------------------
 // const lineHeightRatio = 80 / 64
 const FONT_PRIMARY = [
+  'Poppins',
   'Axiforma-Book',
   'Axiforma-Medium',
   'Axiforma-SemiBold',
@@ -33,19 +34,19 @@ const FONT_PRIMARY = [
   'sans-serif',
 ].join(',')
 const FONT_PRIMARY_REGULAR = [
-  'Poppins-Italic',
+  'Poppins',
   'Axiforma-Book',
   'Arial',
   'sans-serif',
 ].join(',')
 const FONT_PRIMARY_MEDIUM = [
-  'Poppins-Italic',
+  'Poppins',
   'Axiforma-Medium',
   'Arial',
   'sans-serif',
 ].join(',')
 const FONT_PRIMARY_BOLD = [
-  'Poppins-Italic',
+  'Poppins',
   'Axiforma-SemiBold',
   'Arial',
   'sans-serif',

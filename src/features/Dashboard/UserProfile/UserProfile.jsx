@@ -21,17 +21,14 @@ export default function UserProfile() {
                 bgcolor: '#FFF'
             }}>
                 {/* UserProfileText */}
-                <Typography sx={{
-                    width: '100%',
-                    color: palette.grey[800],
-                    fontFamily: poppinsFont.fontFamily,
-                    fontSize: pxToRem(20),
-                    fontStyle: 'normal',
-                    lineHeight: pxToRem(28),
-                    textAlign: 'start',
-                    marginBottom: '12px',
-                    fontWeight: 500,
-                }}>
+                <Typography
+                    variant="h5"
+                    color={(theme) => theme.palette.grey[800]}
+                    sx={{
+                        width: '100%',
+                        fontStyle: 'normal',
+                        marginBottom: '12px',
+                    }}>
                     User profile
                 </Typography>
 
@@ -39,7 +36,7 @@ export default function UserProfile() {
                 {name ? <Box
                     sx={{
                         height: '70px',
-                        bgcolor: '#FFF',
+                        bgcolor: (theme) => theme.palette.primary[0],
                         marginBottom: '20px',
                         borderRadius: '10px',
                         border: '1px solid #F4F6F8',

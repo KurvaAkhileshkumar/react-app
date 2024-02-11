@@ -27,20 +27,21 @@ export default function LeaderBoard() {
             padding: '0px',
         }}>
             <Box display={'flex'} direction={'row'} justifyContent={'space-between'}>
-                <Typography sx={{
-                    width: '319px',
-                    color: palette.grey[800],
-                    fontFamily: poppinsFont.fontFamily,
-                    fontSize: pxToRem(20),
-                    fontStyle: 'normal',
-                    lineHeight: pxToRem(28),
-                    textAlign: 'start',
-                    marginBottom: '10px',
-                }}>
+                <Typography
+                    variant="h5"
+                    color={(theme) => theme.palette.grey[800]}
+                    sx={{
+                        width: '319px',
+                        fontStyle: 'normal',
+                        lineHeight: pxToRem(28),
+                        textAlign: 'start',
+                        marginBottom: '10px',
+                    }}>
                     LeaderBoard
                 </Typography>
                 <ChevronRightIcon
                     sx={{
+                        cursor: 'pointer',
                         fontSize: '24px',
                     }}
                     onClick={toggleDrawer('right', true)}
@@ -50,7 +51,7 @@ export default function LeaderBoard() {
                 sx={
                     {
                         height: '447px',
-                        bgcolor: '#FFF',
+                        bgcolor: (theme) => theme.palette.primary[0],
                         borderRadius: '10px',
                         border: '1px solid #F4F6F8',
                         boxShadow: '10px 10px 32px 0px rgba(22, 22, 22, 0.04)',

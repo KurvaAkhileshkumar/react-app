@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Stack, Typography, Icon } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import CountUp from 'react-countup'
 import typography, { poppinsFont, pxToRem } from '../../theme/typography'
 import assessmentLogo from '../../assets/assess.svg'
@@ -13,7 +13,6 @@ const colors = ["#E7EEFE", "#E6F2FD", "#FFF8EC", "#FEECEB", "#EDFAEE"];
 
 const AssessmentDetailCard = ({
   icon,
-  iconSize = 'medium',
   title,
   contentMagnitude,
   contentType,
@@ -63,15 +62,8 @@ const AssessmentDetailCard = ({
         </Box>
 
         <Box display={'flex'} flexDirection='column' justifyContent='center'>
-          <Typography variant='caption2'
-            sx={{
-              fontFamily: poppinsFont.fontFamily,
-              fontSize: pxToRem(14),
-              fontWeight: typography.fontWeightMedium,
-              textAlign: 'start'
-            }}
-          >{title}</Typography>
-          <Typography variant='h5' sx={{ textAlign: 'start' }}>
+          <Typography variant='caption2' fontSize={pxToRem(14)} sx={{ textTransform: 'capitalize' }}>{title}</Typography>
+          <Typography variant='h5'>
             {showCountingAnimation ? (
               <CountUp
                 start={0}

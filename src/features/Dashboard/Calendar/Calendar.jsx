@@ -1,8 +1,7 @@
 import { Box } from "@mui/material";
 import Typography from '@mui/material/Typography';
 import MuiCalendar from "../../../components/common/MuiCalender";
-import { poppinsFont, pxToRem } from "../../../theme/typography";
-import palette from "../../../theme/palette";
+import { pxToRem } from "../../../theme/typography";
 
 export default function Calendar() {
     return (
@@ -10,19 +9,19 @@ export default function Calendar() {
             <Box sx={{
                 margin: '0px',
                 padding: '0px',
-                bgcolor: '#FFF',
+                bgcolor: (theme) => theme.palette.primary[0],
             }}>
                 {/* CalenderText */}
-                <Typography sx={{
-                    width: '100%',
-                    color: palette.grey[800],
-                    fontFamily: poppinsFont.fontFamily,
-                    fontSize: pxToRem(20),
-                    fontStyle: 'normal',
-                    lineHeight: pxToRem(28),
-                    textAlign: 'start',
-                    marginBottom: '10px',
-                }}>
+                <Typography
+                    variant="h5"
+                    color={(theme) => theme.palette.grey[800]}
+                    sx={{
+                        width: '100%',
+                        fontStyle: 'normal',
+                        lineHeight: pxToRem(28),
+                        textAlign: 'start',
+                        marginBottom: '12px',
+                    }}>
                     Calendar
                 </Typography>
 
@@ -35,7 +34,7 @@ export default function Calendar() {
                         borderRadius: '10px',
                         border: '1px solid #F4F6F8',
                         boxShadow: '10px 10px 32px 0px rgba(22, 22, 22, 0.04)',
-                        marginBottom: '20px',
+                        marginBottom: '10px',
                     }}
                 >
                     <MuiCalendar />

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Menu, MenuItem, Typography } from "@mui/material";
-import profileImg from '../../assets/profile.jpeg'
 import { Box } from "@mui/material";
 import { useSelector } from "react-redux";
 import { poppinsFont } from "../../theme/typography.js";
-
-
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
+import { authSliceActions } from "../../Store/Store.jsx";
 export default function TopBarNavigation() {
 
     const profilePicLink = useSelector((state) => state.assessmentsReducer.profile.profilePic)
@@ -13,6 +13,13 @@ export default function TopBarNavigation() {
     const email = useSelector((state) => state.assessmentsReducer.profile.email)
     const [profileClick, setProfileClick] = useState(false);
 
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const logoutHandler = () => {
+        dispatch(authSliceActions.logout())
+        navigate('/')
+    }
     const handleLogout = () => {
         setProfileClick(true);
     };
@@ -92,7 +99,7 @@ export default function TopBarNavigation() {
                                 </MenuItem>
                                 <MenuItem>{name}</MenuItem>
                                 <MenuItem>{email}</MenuItem>
-                                <MenuItem>Logout</MenuItem>
+                                <MenuItem onClick={logoutHandler}>Logout</MenuItem>
                             </Menu>
                         )}
                     </Box>

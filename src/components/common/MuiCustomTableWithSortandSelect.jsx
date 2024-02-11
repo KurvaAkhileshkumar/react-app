@@ -13,6 +13,7 @@ import {
   Box,
   Skeleton
 } from '@mui/material'
+import { Link } from 'react-router-dom'
 import MuiCustomTableHeaderRowWithSortandSelect from './MuiCustomTableHeaderRowWithSortandSelect'
 import MuiCustomStudentTableRow from './MuiCustomStudentTableRow'
 import { useDispatch, useSelector } from 'react-redux'
@@ -84,8 +85,8 @@ const MuiCustomTableWithSortandSelect = () => {
           width={'100%'}
         >
           <img src={errorImg} alt="Error Img" />
-          <Typography>Error Loading Assessment</Typography>
-          <Typography onClick={handleReload}>Relaod</Typography>
+          <Typography variant='h2' color={(theme) => theme.palette.grey[400]}>Error Loading Assessment</Typography>
+          <Link variant='h5' color={(theme) => theme.palette.info.main} onClick={handleReload}>Reload</Link>
         </Box>
         : assessmentsData ? <Box>
           <Box
@@ -112,7 +113,7 @@ const MuiCustomTableWithSortandSelect = () => {
                   flexDirection: 'column',
                   justifyContent: 'space-evenly',
                   width: '100%',
-                  background: palette.grey[100],
+                  background: (theme) => theme.palette.grey[100],
                 }}
               >
                 <MuiCustomTableHeaderRowWithSortandSelect
