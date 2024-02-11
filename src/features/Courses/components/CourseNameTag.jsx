@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 import { Typography, Box } from "@mui/material";
 import { Link } from "react-router-dom";
-import vector from '../../assets/Vector.svg'
-import MuiCustomChipCount from '../../components/common/MuiCustomChipCount'
-import { pxToRem, poppinsFont } from "../../theme/typography";
-import palette from "../../theme/palette";
+import vector from '../../../assets/Vector.svg'
+import MuiCustomChipCount from '../../../components/common/MuiCustomChipCount'
+import { pxToRem, poppinsFont } from "../../../theme/typography";
+import palette from "../../../theme/palette";
 
 const chipColors = ['#E7EEFE', '#FFF0D8', '#EDFAEE', '#FFF0D8']
 const chipTextColor = ['#0B58F5', '#D89932', '#4ECD56', '#D89932']

@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
-import MuiCustomChipCount from "../../components/common/MuiCustomChipCount";
+import MuiCustomChipCount from "../../../components/common/MuiCustomChipCount";
 import Typography from '@mui/material/Typography';
 
-import { poppinsFont, pxToRem } from "../../theme/typography";
-import palette from "../../theme/palette";
+import { poppinsFont, pxToRem } from "../../../theme/typography";
+import palette from "../../../theme/palette";
 import { Link } from 'react-router-dom'
 import { useSelector } from "react-redux";
 

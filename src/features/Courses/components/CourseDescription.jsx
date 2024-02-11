@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { pxToRem, poppinsFont } from "../../theme/typography";
-import palette from "../../theme/palette";
+import { pxToRem, poppinsFont } from "../../../theme/typography";
+import palette from "../../../theme/palette";
 export default function CourseDescription() {
     const description = useSelector((state) => state.coursesReducer.courseDescription)
     let listArray = description?.split("\n").map((text) => text)

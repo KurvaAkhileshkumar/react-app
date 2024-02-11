@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import Slider from "@mui/material/Slider";
 import { useSelector } from "react-redux";
-import palette from "../../theme/palette";
-import { pxToRem, poppinsFont } from "../../theme/typography";
+import palette from "../../../theme/palette";
+import { pxToRem, poppinsFont } from "../../../theme/typography";
 export default function SliderStatus() {
     const courseCompletionPercentage = useSelector((state) => state.coursesReducer.courseCompletionPercentage)
     return (
@@ -18,10 +18,6 @@ export default function SliderStatus() {
                         padding: '8px 0px 8px 0px',
                         color: '#0B58F5',
                         width: '300px',
-                        "& .MuiSlider-thumb": {
-                            width: 0,
-                            height: 0,
-                        },
                     }}
                 />
                 <Box sx={{

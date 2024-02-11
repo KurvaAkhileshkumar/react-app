@@ -19,7 +19,7 @@ import { assessmentsSliceActions } from '../../Store/Store.jsx';
 
 import Analytics from '../../features/Dashboard/Analytics/Analytics.jsx'
 
-import Courses from '../../features/Courses/Courses.jsx'
+import Courses from '../../features/Courses/components/Courses.jsx';
 
 import palette from '../../theme/palette.js';
 import { poppinsFont, pxToRem } from '../../theme/typography.js';

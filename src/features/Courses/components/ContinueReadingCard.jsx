@@ -1,13 +1,13 @@
 import { Box } from "@mui/material";
-import document from '../../assets/document.svg'
-import presentationChart from '../../assets/presention-chart.svg'
+import document from '../../../assets/document.svg'
+import presentationChart from '../../../assets/presention-chart.svg'
 import Typography from '@mui/material/Typography';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import typography from "../../theme/typography";
-import { poppinsFont, pxToRem } from "../../theme/typography";
-import palette from "../../theme/palette";
+import typography from "../../../theme/typography";
+import { poppinsFont, pxToRem } from "../../../theme/typography";
+import palette from "../../../theme/palette";
 
 const icons = [document, presentationChart, presentationChart]
 export default function ContinueReadingCard() {

@@ -2,13 +2,13 @@ import { Box } from '@mui/material'
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { useDispatch } from 'react-redux';
-import CourseNameTag from '../../features/Courses/CourseNameTag';
-import SliderStatus from '../../features/Courses/Slider';
-import CourseDescription from '../../features/Courses/CourseDescription';
-import ContinueReadingCard from '../../features/Courses/ContinueReadingCard'
-import AccordianTopics from '../../features/Courses/AccordianTopics';
+import CourseNameTag from '../../features/Courses/components/CourseNameTag';
+import SliderStatus from '../../features/Courses/components/Slider';
+import CourseDescription from '../../features/Courses/components/CourseDescription';
+import ContinueReadingCard from '../../features/Courses/components/ContinueReadingCard'
+import AccordianTopics from '../../features/Courses/components/AccordianTopics';
 import { courseSliceActions } from '../../Store/Store';
-import { useSelector } from 'react-redux';
+
 
 
 export default function CourseLayout() {
