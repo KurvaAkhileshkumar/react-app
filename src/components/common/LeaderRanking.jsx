@@ -35,7 +35,10 @@ const LeaderRanking = ({ data, index, value, percentage }) => {
             marginBottom: '10px',
             textAlign: 'start',
             fontFamily: poppinsFont.fontFamily,
-            fontSize: pxToRem(16),
+            fontSize: {
+              md: pxToRem(10),
+              xl: pxToRem(16)
+            },
             fontWeight: typography.fontWeightMedium,
             color: (theme) => theme.palette.grey[900],
           }}
@@ -48,7 +51,10 @@ const LeaderRanking = ({ data, index, value, percentage }) => {
             padding: '0px',
             textAlign: 'start',
             fontFamily: poppinsFont.fontFamily,
-            fontSize: pxToRem(12),
+            fontSize: {
+              md: pxToRem(10),
+              xl: pxToRem(12)
+            },
             fontWeight: typography.fontWeightMedium,
             color: (theme) => theme.palette.grey[800],
           }}
