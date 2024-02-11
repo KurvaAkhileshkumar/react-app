@@ -2,7 +2,7 @@ import palette from '../../theme/palette'
 import { poppinsFont, pxToRem } from '../../theme/typography'
 
 export const userProfileText = {
-  width: '319px',
+  width: '100%',
   color: palette.grey[800],
   fontFamily: poppinsFont.fontFamily,
   fontSize: pxToRem(20),
@@ -25,6 +25,7 @@ export const calendarText = {
 }
 
 export const yourCoursesText = {
+  width: '100%',
   color: palette.grey[800],
   fontFamily: poppinsFont.fontFamily,
   fontSize: pxToRem(20),

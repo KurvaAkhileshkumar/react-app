@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Stack, Box } from '@mui/material'
-import { Worker, Viewer } from '@react-pdf-viewer/core'
+import { Worker, Viewer, SpecialZoomLevel } from '@react-pdf-viewer/core'
 import '@react-pdf-viewer/core/lib/styles/index.css'
 import { useParams } from 'react-router'
 import { zoomPlugin } from '@react-pdf-viewer/zoom'
@@ -29,7 +29,11 @@ export default function PdfViewer() {
     const pageNavigationPluginInstance = pageNavigationPlugin()
 
     return (
-        <>
+        <Box
+            marginLeft={'120px'}
+            marginTop={'20px'}
+            marginRight={'80px'}
+        >
             <Stack
                 direction={'row'}
                 alignItems={'center'}
@@ -60,11 +64,14 @@ export default function PdfViewer() {
                     )}
                 </EnterFullScreen>
             </Stack>
-            <Box height={'100%'}>
+            <Box
+                height={'800px'}
+            >
                 <Worker
                     workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}
                 >
                     <Viewer
+                        defaultScale={SpecialZoomLevel.PageFit}
                         fileUrl={pdfUrl}
                         plugins={
                             ([zoomPluginInstance],
@@ -74,6 +81,6 @@ export default function PdfViewer() {
                     />
                 </Worker>
             </Box>
-        </>
+        </Box>
     )
 }

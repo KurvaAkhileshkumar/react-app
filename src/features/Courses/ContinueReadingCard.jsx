@@ -69,7 +69,7 @@ export default function ContinueReadingCard() {
                                                     {item.name}
                                                 </Typography>
                                             </Box>
-                                            <Link to={`/viewpdf/${encodeURIComponent(item.url)}`}>
+                                            <Link to={`/pdf/viewpdf/${encodeURIComponent(item.url)}`}>
                                                 <ArrowForwardIcon
                                                     sx={{
                                                         width: '20px',

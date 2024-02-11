@@ -14,6 +14,7 @@ export default function UserProfile() {
     return (
         <>
             <Box sx={{
+                width: '100%',
                 margin: '0px',
                 padding: '0px',
                 bgcolor: '#FFF'

@@ -20,23 +20,26 @@ export default function Courses() {
                         <Box display={'flex'} flexDirection={'column'} gap={'14px'}
                             sx={
                                 {
+                                    width: {
+                                        md: '180px',
+                                        lg: '255px',
+                                        xl: '255px'
+                                    },
                                     border: '1px solid #F4F6F8',
                                     borderRadius: '10px',
                                 }
                             }
                         >
-                            <Box
-                                sx={{
-                                    // width: '244px',                                    
-                                    width: {
-                                        md: '170px',
-                                        lg: '244px',
-                                        xl: '244px'
-                                    },
-                                    height: {
-                                        xs: '183px'
+                            <Box height={'183px'}
+                                sx={
+                                    {
+                                        width: {
+                                            md: '180px',
+                                            lg: '100%',
+                                            xl: '100%'
+                                        },
                                     }
-                                }}
+                                }
                             >
                                 <img
                                     style={{
@@ -58,15 +61,18 @@ export default function Courses() {
                                 />
                                 <Typography
                                     sx={{
-                                        height: '50px',
+                                        height: '70px',
                                         maxWidth: {
-                                            md: '120px',
-                                            lg: '100%'
+                                            md: '170px',
+                                            lg: '250px'
                                         },
                                         color: palette.grey[900],
                                         textAlign: 'start',
                                         fontFamily: poppinsFont.fontFamily,
-                                        fontSize: pxToRem(14),
+                                        fontSize: {
+                                            md: pxToRem(10),
+                                            lg: pxToRem(14)
+                                        },
                                         fontWeight: 600,
                                         lineHeight: '20px',
                                         letterSpacing: '-0.14px',

@@ -103,14 +103,14 @@ export const drawerStyles = {
   background: '#FFF',
 }
 
-export const courses = {
-  padding: '0px',
-  margin: '0px',
-  width: '1041px',
-  height: '281px',
-  marginLeft: '100px',
-  marginRight: '225px',
-  marginBottom: '55px',
-  border: '1px solid #F4F6F8',
-  borderRadius: '10px',
-}
+// export const courses = {
+//   padding: '0px',
+//   margin: '0px',
+//   width: '100%',
+//   height: '281px',
+//   marginLeft: '100px',
+//   marginRight: '225px',
+//   marginBottom: '55px',
+//   border: '1px solid #F4F6F8',
+//   borderRadius: '10px',
+// }

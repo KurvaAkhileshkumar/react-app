@@ -21,7 +21,6 @@ import Analytics from '../../features/Dashboard/Analytics/Analytics.jsx'
 
 import { yourCoursesText } from '../DummyStyles/UserProfileStyles.js';
 import Courses from '../../features/Courses/Courses.jsx'
-import { courses } from '../DummyStyles/LayoutStyles.js';
 
 export default function Layout() {
 
@@ -75,24 +74,33 @@ export default function Layout() {
                             {/* RightChild-3 */}
                             <LeaderBoard />
                         </Grid>
+
+                        <Grid item xs={12} marginTop={'20px'} marginBottom={'50px'}>
+                            <Box
+                                width={'100%'}
+                                display='flex'
+                                flexDirection={'column'}
+                                gap={'15px'}>
+                                <Typography sx={yourCoursesText}>
+                                    Your courses
+                                </Typography>
+                                <Box
+                                    width={'100%'}
+                                    padding={'0px'}
+                                    display={'flex'}
+                                    flexDirection={'row'}
+                                    gap={'22px'}
+                                    paddingRight={'225px'}
+                                    height={'281px'}
+                                >
+                                    <Courses />
+                                </Box>
+                            </Box>
+                        </Grid>
                     </Grid>
                 </Box>
 
             }
-
-            {/* Courses Section */}
-            <>
-                <Box display='flex' flexDirection={'column'} gap={'15px'}>
-                    <Typography sx={yourCoursesText} marginLeft={'100px'}>
-                        Your courses
-                    </Typography>
-                    <Box display={'flex'} flexDirection={'row'}
-                        gap={'22px'}
-                        sx={courses}>
-                        <Courses />
-                    </Box>
-                </Box>
-            </>
         </>
     )
 }

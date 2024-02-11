@@ -14,7 +14,7 @@ export default function Calendar() {
             }}>
                 {/* CalenderText */}
                 <Typography sx={{
-                    width: '319px',
+                    width: '100%',
                     color: palette.grey[800],
                     fontFamily: poppinsFont.fontFamily,
                     fontSize: pxToRem(20),

@@ -1,6 +1,6 @@
 import React, { useEffect, createRef, useState } from 'react'
 import { poppinsFont, pxToRem } from '../../theme/typography'
-import errorMark from '../../assets/errorMark.svg'
+import errorImg from '../../assets/errorMark.svg'
 import palette from '../../theme/palette'
 import {
   Typography,
@@ -50,6 +50,9 @@ const MuiCustomTableWithSortandSelect = () => {
     setAssessmentsTableData(assessmentsData.slice(noOfItemsPerPage * (page - 1), noOfItemsPerPage * (page)))
   }
 
+  const handleReload = () => {
+    setIsError(false)
+  }
   //Fetching the data from api and setting the data in the store.
   useEffect(() => {
     fetch('https://stagingstudentpython.edwisely.com/reactProject/assessments').then((response) => {
@@ -65,80 +68,94 @@ const MuiCustomTableWithSortandSelect = () => {
       setAssessmentsTableData(resData.assessments?.slice(0, noOfItemsPerPage))
       dispatch(assessmentsSliceActions.setAssessmentsData(resData.assessments))
     })
-  }, [])
+  }, [isError])
 
   //Rendering the component
   return (
     <>
-      {isError ? <Skeleton variant='rounded' height={'480px'} /> : assessmentsData ? <Box>
+      {isError ?
         <Box
-          sx={{
-            margin: '0px',
-            padding: '0px',
-            border: '0px',
-            boxShadow: 'none',
-            maxWidth: '100%',
-          }}
+          height='537px'
+          display={'flex'}
+          justifyContent={'center'}
+          flexDirection={'column'}
+          alignItems={'center'}
+          paddingBottom={'100px'}
+          width={'100%'}
         >
-          <Table
+          <img src={errorImg} alt="Error Img" />
+          <Typography>Error Loading Assessment</Typography>
+          <Typography onClick={handleReload}>Relaod</Typography>
+        </Box>
+        : assessmentsData ? <Box>
+          <Box
             sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-evenly',
-              margin: '0px', padding: '0px',
-              width: '100%',
-            }} aria-label='responsive table'>
-            <TableHead
+              margin: '0px',
+              padding: '0px',
+              border: '0px',
+              boxShadow: 'none',
+              maxWidth: '100%',
+            }}
+          >
+            <Table
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-evenly',
+                margin: '0px', padding: '0px',
                 width: '100%',
-                background: palette.grey[100],
-              }}
-            >
-              <MuiCustomTableHeaderRowWithSortandSelect
-                headerArray={HeaderArr}
-              />
-            </TableHead>
-            <TableBody sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-evenly',
-              width: '100%',
-            }}>
-              <Box marginTop={'20px'}>
-                {assessmentsTableData?.map((stu, i) => (
-                  <MuiCustomStudentTableRow
-                    stu={stu}
-                    key={i}
-                  />
-                ))}
-              </Box>
-            </TableBody>
-          </Table>
-        </Box>
+              }} aria-label='responsive table'>
+              <TableHead
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-evenly',
+                  width: '100%',
+                  background: palette.grey[100],
+                }}
+              >
+                <MuiCustomTableHeaderRowWithSortandSelect
+                  headerArray={HeaderArr}
+                />
+              </TableHead>
+              <TableBody sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-evenly',
+                width: '100%',
+              }}>
+                <Box marginTop={'20px'}>
+                  {assessmentsTableData?.map((stu, i) => (
+                    <MuiCustomStudentTableRow
+                      stu={stu}
+                      key={i}
+                    />
+                  ))}
+                </Box>
+              </TableBody>
+            </Table>
+          </Box>
 
-        <Box
-          display={'flex'}
-          flexDirection={'row'}
-          justifyContent='center'
-          alignItems='center'
-          sx={{ marginTop: '1rem' }}
-        >
-          <Pagination
-            count={~~Math.ceil(assessmentsData?.length / noOfItemsPerPage)}
-            onChange={(event, page) => handleChange(event, page)}
-            color='primary'
-            sx={{
-              '& .MuiPaginationItem-previousNext': {
-                background: palette.grey[200]
-              },
-              fontFamily: poppinsFont.fontFamily
-            }}
-          />
-        </Box>
-      </Box> : <h1>Error Occured</h1>}
+          <Box
+            display={'flex'}
+            flexDirection={'row'}
+            justifyContent='center'
+            alignItems='center'
+            sx={{ marginTop: '1rem' }}
+          >
+            <Pagination
+              count={~~Math.ceil(assessmentsData?.length / noOfItemsPerPage)}
+              onChange={(event, page) => handleChange(event, page)}
+              color='primary'
+              sx={{
+                '& .MuiPaginationItem-previousNext': {
+                  background: palette.grey[200]
+                },
+                fontFamily: poppinsFont.fontFamily
+              }}
+            />
+          </Box>
+        </Box> : <h1>Error Occured</h1>}
     </>
   )
 }
