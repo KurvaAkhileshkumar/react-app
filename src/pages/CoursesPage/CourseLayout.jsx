@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Box, Skeleton } from '@mui/material'
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { useDispatch } from 'react-redux';
@@ -8,10 +8,12 @@ import CourseDescription from '../../features/Courses/components/CourseDescripti
 import ContinueReadingCard from '../../features/Courses/components/ContinueReadingCard'
 import AccordianTopics from '../../features/Courses/components/AccordianTopics';
 import { courseSliceActions } from '../../Store/Store';
-
+import SkeletonLoader from '../../features/Courses/components/SkeletonLoader';
 
 
 export default function CourseLayout() {
+
+    const [data, setData] = useState('')
     const params = useParams();
     console.log(params)
     const fetchUrl = 'https://stagingstudentpython.edwisely.com/reactProject/courseData?course_id=' + params.id
@@ -23,6 +25,7 @@ export default function CourseLayout() {
             then((response) => response.json()).
             then((res) => {
                 const resData = res.data
+                setData(resData)
                 console.log(resData)
                 dispatch(courseSliceActions.setCoursesData(resData))
             })
@@ -30,15 +33,18 @@ export default function CourseLayout() {
 
     return (
         <>
-            <Box display={'flex'} flexDirection={'column'} marginTop={'35px'} sx={{
-                marginLeft: '80px',
-            }}>
-                <CourseNameTag />
-                <SliderStatus />
-                <CourseDescription />
-                <ContinueReadingCard />
-                <AccordianTopics />
-            </Box>
+            {
+                data ?
+                    <Box display={'flex'} flexDirection={'column'} marginTop={'35px'} sx={{
+                        marginLeft: '80px',
+                    }}>
+                        <CourseNameTag />
+                        <SliderStatus />
+                        <CourseDescription />
+                        <ContinueReadingCard />
+                        <AccordianTopics />
+                    </Box>
+                    : <SkeletonLoader />}
         </>
     );
 }

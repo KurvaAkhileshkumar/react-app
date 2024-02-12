@@ -78,6 +78,8 @@ const MuiCustomTableHeaderCellWithSortandSelect = ({
             {itemData}
           </Typography>
           {itemData === 'Percentage' ? <ArrowUpward
+            onClick={sortingTheData}
+            cursor={'pointer'}
             sx={{
               margin: '0px',
               padding: '0px',

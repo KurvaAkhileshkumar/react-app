@@ -4,22 +4,30 @@ import Typography from '@mui/material/Typography';
 
 import { poppinsFont, pxToRem } from "../../../theme/typography";
 import palette from "../../../theme/palette";
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useSelector } from "react-redux";
+import CourseSkeleton from "../../../components/common/CourseSkeleton";
 
 const chipColors = ['#E7EEFE', '#FFF0D8', '#EDFAEE', '#FFF0D8']
 const chipTextColor = ['#0B58F5', '#D89932', '#4ECD56', '#D89932']
 export default function Courses() {
 
     const coursesData = useSelector((state) => state.assessmentsReducer.coursesData)
+    const navigate = useNavigate()
+    const handleClick = (index) => {
+        navigate(`courses/${index + 1}`)
+        window.scrollTo(0, 0)
+    }
     return (
         <>
-            {coursesData.map((item, index) => {
-                return (
-                    <Link key={index} to={`courses/${index + 1}`} style={{ textDecoration: 'none' }}>
+            {coursesData ?
+                coursesData.map((item, index) => {
+                    return (
                         <Box display={'flex'} flexDirection={'column'} gap={'14px'}
+                            onClick={() => handleClick(index)}
                             sx={
                                 {
+                                    cursor: 'pointer',
                                     width: {
                                         md: '180px',
                                         lg: '255px',
@@ -91,9 +99,8 @@ export default function Courses() {
                                 >{item.name}</Typography>
                             </Box>
                         </Box>
-                    </Link>
-                );
-            })}
+                    );
+                }) : <CourseSkeleton />}
         </>
     );
 

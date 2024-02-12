@@ -1,19 +1,35 @@
 import { NavLink } from 'react-router-dom'
 import { Stack, Box } from '@mui/material'
 import palette from '../../theme/palette';
-import logo from '../../assets/Group.jpg'
-import elementEqual from '../../assets/element-equal.jpg'
-import book from '../../assets/book.jpg'
-import logoutImg from '../../assets/logout.jpg'
+import edwiselyLogo from '../../assets/edwisely.svg'
+import courseImg from '../../assets/courseimg.svg'
+import courseActiveImg from '../../assets/courseActive.svg'
+import dashBoardImg from '../../assets/dashboardimg.svg'
+import dashBoardHoverImg from '../../assets/dashboardHover.svg'
+import dashBoardNull from '../../assets/dashboardNULL.svg'
+import logoutImg from '../../assets/logout.svg'
 import { authSliceActions } from '../../Store/Store';
 import { useNavigate } from 'react-router'
 import { useDispatch } from 'react-redux'
+import { useState } from 'react';
+import { useLocation } from 'react-router';
 
 export default function SibeBarNavigation() {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
+    const [hovered, setHovered] = useState(false);
+    const location = useLocation();
+
+    //handling dashboard click
+    const handleDashboard = () => {
+        navigate('/dashboard')
+    }
+
+    const handleScroll = () => {
+        window.scrollTo(0, document.body.scrollHeight)
+    }
     const logoutHandler = () => {
         dispatch(authSliceActions.logout())
         navigate('/')
@@ -43,49 +59,100 @@ export default function SibeBarNavigation() {
                     <NavLink
                         to=''
                     >
-                        <img src={logo} alt="Logo Icon" />
+                        <img src={edwiselyLogo} alt="Logo Icon" />
                     </NavLink>
                 </Box>
+
                 <Stack gap={'16px'}>
                     <Box
                         sx={{
-                            width: '80px',
-                            height: '50px',
-                            padding: '8px 18px 8px 19px'
+                            marginBottom: "16px",
+                            width: "80px",
+                            height: "56px",
+                            display: "flex",
+                            cursor: 'pointer'
                         }}
+                        alignItems={"center"}
                     >
+                        {location.pathname === "/dashboard" && (
+                            <Box
+                                component="span"
+                                bgcolor="primary.main"
+                                sx={{
+                                    width: "3px",
+                                    height: "40px",
+                                    display: "inline",
+                                    borderRadius: "5px",
+                                }}
+                            ></Box>
+                        )}
                         <Box
                             sx={{
-                                background: palette.primary[200],
-                                borderRadius: '8px',
-                                width: '40px',
-                                height: '40px',
-                                padding: '8px'
+                                marginLeft: "16px",
+                                width: "40px",
+                                height: "40px",
+                                borderRadius: "10px",
+                                padding: "8px",
                             }}
+                            bgcolor={
+                                location.pathname === "/dashboard" ? palette.primary[200] : ""
+                            }
+                            onMouseEnter={() => setHovered(true)}
+                            onMouseLeave={() => setHovered(false)}
                         >
-                            <NavLink to=''>
-                                <img src={elementEqual} alt="Home page icon" />
-                            </NavLink>
+                            <img
+                                src={
+                                    location.pathname === "/dashboard"
+                                        ? (hovered ? dashBoardHoverImg : dashBoardImg)
+                                        : (hovered ? dashBoardHoverImg : dashBoardNull)
+                                }
+                                width="24px"
+                                height="24px"
+                                alt="dashBoardLogo"
+                                onClick={handleDashboard}
+                            />
                         </Box>
                     </Box>
+
                     <Box
                         sx={{
-                            width: '80px',
-                            height: '50px',
-                            padding: '8px 18px 8px 19px'
+                            marginBottom: "477px",
+                            width: "80px",
+                            height: "56px",
+                            display: "flex",
+                            cursor: 'pointer'
                         }}
+                        alignItems={"center"}
                     >
+                        {location.pathname.includes("/course") && (
+                            <Box
+                                component="span"
+                                bgcolor="primary.main"
+                                sx={{
+                                    width: "3px",
+                                    height: "40px",
+                                    display: "inline",
+                                    borderRadius: "5px",
+                                }}
+                            ></Box>
+                        )}
                         <Box
                             sx={{
-                                borderRadius: '8px',
-                                width: '40px',
-                                height: '40px',
-                                padding: '8px'
+                                marginLeft: "16px",
+                                width: "40px",
+                                height: "40px",
+                                borderRadius: "10px",
+                                padding: "8px",
                             }}
+                            bgcolor={location.pathname.includes('/course') ? palette.primary[200] : ''}
                         >
-                            <NavLink to=''>
-                                <img src={book} alt="Courses Icon" />
-                            </NavLink>
+                            <img
+                                src={location.pathname.includes("/course") ? courseActiveImg : courseImg}
+                                width="24px"
+                                height="24px"
+                                alt="courseLogo"
+                                onClick={handleScroll}
+                            />
                         </Box>
                     </Box>
 

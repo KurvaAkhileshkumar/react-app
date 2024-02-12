@@ -1,129 +1,116 @@
-import React, { useState } from 'react'
-import { Box } from '@mui/material'
-import { Worker, Viewer, SpecialZoomLevel } from '@react-pdf-viewer/core'
-import '@react-pdf-viewer/core/lib/styles/index.css'
-import { useParams } from 'react-router'
-import { RenderCurrentScaleProps, RenderZoomInProps, RenderZoomOutProps, zoomPlugin } from '@react-pdf-viewer/zoom';
-import { fullScreenPlugin } from '@react-pdf-viewer/full-screen'
-import { pageNavigationPlugin } from '@react-pdf-viewer/page-navigation'
-import { toolbarPlugin, ToolbarSlot } from '@react-pdf-viewer/toolbar';
+import React from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { Box, Stack, Typography, Divider, Grid } from "@mui/material";
+import { useState } from "react";
+import { Document, Page, Thumbnail, pdfjs } from "react-pdf";
+import { useSelector } from "react-redux";
+import PdfHeader from "./PdfHeader";
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
+import './PdfCss.css'
 
-export default function PdfViewer() {
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+const options = {
+    standardFontDataUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/standard_fonts`,
+};
 
-    const toolbarPluginInstance = toolbarPlugin();
-    const { Toolbar } = toolbarPluginInstance;
-    const params = useParams()
-    const pdfUrl = decodeURIComponent(params.url)
-    const zoomPluginInstance = zoomPlugin();
-    const { CurrentScale, ZoomIn, ZoomOut } = zoomPluginInstance;
-    const fullScreenPluginInstance = fullScreenPlugin()
-    const pageNavigationPluginInstance = pageNavigationPlugin()
-    const [scale, setScale] = useState(100)
+function PdfViewer() {
+    const navigate = useNavigate();
+    const pdfUrl = useSelector((state) => state.coursesReducer.pdf.url);
+
+    const [numPages, setNumPages] = useState(null);
+    const [pageNumber, setPageNumber] = useState(1);
+    const [scale, setScale] = useState(1);
+    const [rotationAngle, setRotationAngle] = useState(0);
+
+    const onDocumentLoadSuccess = ({ numPages }) => {
+        setNumPages(numPages);
+    };
+
+    const handleClose = () => {
+        window.history.go(-1);
+    };
 
     const handleZoomOut = () => {
-        setScale((scale) => scale - 10)
-    }
-    const handleZoomIn = () => {
-        setScale((scale) => scale + 10)
-    }
-    return (
-        <Box
-            display={'flex'}
-            flexDirection={'column'}
-            marginLeft={'120px'}
-            marginTop={'20px'}
-            marginRight={'80px'}
-            height={'800px'}
-        >
+        setScale((prevScale) => Math.max(0.5, prevScale - 0.1));
+    };
 
+    const handleZoomIn = () => {
+        setScale((prevScale) => Math.min(2, prevScale + 0.1));
+    };
+
+    const handleRotation = () => {
+        setRotationAngle(prevState => prevState + 90);
+    }
+
+    return (
+        <>
             <Box
                 sx={{
-                    margin: '0px 380px 0px 380px',
-                    backgroundColor: '#FFF',
+                    marginLeft: '80px',
+                    boxShadow: "10px 10px 32px rgba(22, 22, 22, 0.04)",
+                    padding: "1rem",
+                    display: "flex",
+                    gap: "6.18rem",
                 }}
             >
-                <Toolbar>
-                    {(ToolbarSlot) => {
-                        const {
-                            CurrentPageInput,
-                            EnterFullScreen,
-                            NumberOfPages,
-                            ZoomIn,
-                            ZoomOut,
-                        } = ToolbarSlot;
-                        return (
-                            <Box display={'flex'} justifyContent={'space-evenly'} alignItems={'center'}>
-                                <Box display={'flex'} gap={'10px'} sx={{ padding: '0px 2px', fontSize: '15px', width: '70px' }}>
-                                    <CurrentPageInput />
-                                    <Box marginTop={'6px'} fontSize={'16px'}>
-                                        /<NumberOfPages />
-                                    </Box>
-                                </Box>
-                                <Box display={'flex'} gap={'5px'} alignItems={'center'} sx={{ padding: '0px 2px' }}>
-                                    <ZoomOut>
-                                        {(RenderZoomOutProps) => (
-                                            <button
-                                                style={{
-                                                    border: '0px',
-                                                    fontSize: '50px',
-                                                    backgroundColor: '#ffffff',
-                                                    cursor: 'pointer',
-                                                }}
-                                                onClick={RenderZoomOutProps.onClick}
-                                            >
-                                                -
-                                            </button>
-                                        )}
-                                    </ZoomOut>
-                                    <Box
-                                        padding={'0px'}
-                                        margin={'0px'}
-                                        fontSize={'20px'}
-                                    >
-                                        <CurrentScale>
-                                            {(RenderCurrentScaleProps) => `${Math.round(RenderCurrentScaleProps.scale * 100)}%`}
-                                        </CurrentScale>
-                                    </Box>
-                                    <ZoomIn>
-                                        {(RenderZoomInProps) => (
-                                            <button
-                                                style={{
-                                                    border: '0px',
-                                                    fontSize: '35px',
-                                                    backgroundColor: '#ffffff',
-                                                    cursor: 'pointer',
-                                                }}
-                                                onClick={RenderZoomInProps.onClick}
-                                            >
-                                                +
-                                            </button>
-                                        )}
-                                    </ZoomIn>
-                                </Box>
-                                <Box sx={{ padding: '0px 2px' }}>
-                                    <EnterFullScreen />
-                                </Box>
-                            </Box>
-                        );
-                    }}
-                </Toolbar>
-            </Box >
-            <Box height={'100%'}>
-                <Worker
-                    workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}
-                >
-                    <Viewer
-                        defaultScale={SpecialZoomLevel.PageFit}
-                        fileUrl={pdfUrl}
-                        plugins={
-                            ([zoomPluginInstance],
-                                [fullScreenPluginInstance],
-                                [pageNavigationPluginInstance],
-                                [toolbarPluginInstance])
-                        }
-                    />
-                </Worker>
+                <PdfHeader
+                    scale={scale}
+                    pageNumber={pageNumber}
+                    numPages={numPages}
+                    handleZoomIn={handleZoomIn}
+                    handleZoomOut={handleZoomOut}
+                    handleClose={handleClose}
+                    handleRotation={handleRotation}
+                />
             </Box>
-        </Box >
-    )
+
+            {/* pdf */}
+            <Box
+                marginLeft={'100px'}
+                sx={{ marginTop: '1.31rem' }}
+            >
+                <Document
+                    className="document"
+                    file={pdfUrl}
+                    options={options}
+                    onLoadSuccess={onDocumentLoadSuccess}
+                    style={{ display: "flex" }}
+                >
+                    <Page className="page" pageNumber={pageNumber} scale={scale} rotate={rotationAngle}
+                    />
+                    <Stack
+                        sx={{
+                            overflowY: "auto",
+                            maxHeight: "520px",
+                            marginTop: "2rem",
+                            marginLeft: '20%',
+                            "&::-webkit-scrollbar": {
+                                display: "none",
+                            },
+                            "-ms-overflow-style": "none",
+                            scrollbarWidth: "none",
+                            gap: "20px",
+                        }}
+                    >
+                        {[...Array(numPages).keys()].map((pageIndex) => (
+                            <Thumbnail
+                                key={pageIndex}
+                                className="thumbnail"
+                                pageNumber={pageIndex + 1}
+                                width={100}
+                                onClick={() => setPageNumber(pageIndex + 1)}
+                            >
+                                <Typography sx={{ marginLeft: "50%", textDecoration: "none" }}>
+                                    {pageIndex + 1}
+                                </Typography>
+                            </Thumbnail>
+                        ))}
+                    </Stack>
+                </Document>
+            </Box>
+        </>
+    );
 }
+
+export default PdfViewer;

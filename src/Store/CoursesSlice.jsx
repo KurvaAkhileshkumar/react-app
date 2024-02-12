@@ -16,6 +16,10 @@ const courseDescription = ''
 const continueReadingCardData = []
 
 const unitsData = []
+const pdf = {
+    name: '',
+    url: ''
+}
 
 const intialCoursesData = {
     courseName,
@@ -23,7 +27,8 @@ const intialCoursesData = {
     courseCompletionPercentage,
     courseDescription,
     continueReadingCardData,
-    unitsData
+    unitsData,
+    pdf
 }
 
 const courseSlice = createSlice({
@@ -39,6 +44,10 @@ const courseSlice = createSlice({
             state.continueReadingCardData = action.payload.continue_reading
             state.unitsData = action.payload.units
         },
+        setPdf(state, action) {
+            state.pdf.name = action.payload.name
+            state.pdf.url = action.payload.url
+        }
     }
 })
 

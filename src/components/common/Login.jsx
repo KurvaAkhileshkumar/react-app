@@ -1,80 +1,73 @@
+import React from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
-    Grid, FormControl,
-    InputLabel,
-    Input,
-    InputAdornment,
-    IconButton,
-    Checkbox,
-    FormControlLabel,
+    Grid,
+    TextField,
     Button,
+    createTheme,
+    ThemeProvider,
+    Box,
     Stack,
     Typography,
-    Box
 } from "@mui/material";
-import loginImage from "../../assets/loginimg.svg";
-import { pxToRem, poppinsFont } from "../../theme/typography.js";
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router'
-import { useDispatch } from 'react-redux'
-import { Visibility, VisibilityOff } from '@mui/icons-material'
+import loginImage from '../../assets/loginimg.svg'
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import InputAdornment from "@mui/material/InputAdornment";
+import Visibility from "@mui/icons-material/Visibility";
 import { authSliceActions } from "../../Store/Store.jsx";
+import { poppinsFont, pxToRem } from "../../theme/typography.js";
 
 
-export default function Login() {
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-    const [showPassword, setShowPassword] = useState(false)
-    const [rememberMe, setRememberMe] = useState(false)
-    const [helper, setHelper] = useState(false)
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
+const theme = createTheme({});
 
-    useEffect(() => {
-        const storedUsername = localStorage.getItem('rememberMeUsername')
-        const storedPassword = localStorage.getItem('rememberMePassword')
+function Login() {
+    const [password, setPassword] = useState("");
+    const [username, setUsername] = useState("");
+    const [usernameHelper, setUsernameHelper] = useState(false);
+    const [passwordHelper, setPasswordHelper] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-        if (storedUsername && storedPassword) {
-            setUsername(storedUsername)
-            setPassword(storedPassword)
-            setRememberMe(true)
-        }
-    }, [])
+    const handleClick = () => {
+        setIsClicked((prevState) => !prevState);
+    };
 
+
+    //login routing and state update in store
     const handleLogin = () => {
-        fetch(`https://stagingstudentpython.edwisely.com/reactProject/loginUser?username=${username}&password=${password}`).
-            then((resposne) => resposne.json()).
-            then((res) => {
-                if (res.status === 200) {
-                    navigate('/dashboard')
-                    setHelper(prevState => !prevState)
-                    dispatch(authSliceActions.login())
+        fetch(
+            `https://stagingstudentpython.edwisely.com/reactProject/loginUser?username=${username}&password=${password}`
+        )
+            .then((res) => res.json())
+            .then((value) => {
+                if (value.status === 200) {
+                    dispatch(authSliceActions.login());
+                    localStorage.setItem("isLogin", true);
+                    navigate("/dashboard");
                 } else {
-                    alert(res.message)
-                    setHelper(prevState => !prevState)
+                    setUsernameHelper((prevState) => !prevState);
+                    setPasswordHelper((prevState) => !prevState);
                 }
-            })
+            });
+    };
 
-    }
-    const handleCheckboxChange = () => {
-        setRememberMe(!rememberMe)
+    const handleUsername = (event) => {
+        setUsername(event.target.value);
+    };
 
-        if (!rememberMe) {
-            localStorage.setItem('rememberMeUsername', username)
-            localStorage.setItem('rememberMePassword', password)
-            localStorage.setItem('rememberMe', 'true')
-        } else {
-            localStorage.removeItem('rememberMeUsername')
-            localStorage.removeItem('rememberMePassword')
-            localStorage.removeItem('rememberMe')
-        }
-    }
+    const handlePassword = (event) => {
+        setPassword(event.target.value);
+    };
 
-    const handleTogglePasswordVisibility = () => {
-        setShowPassword((prevShowPassword) => !prevShowPassword)
-    }
+    //handling local storage
+    const value = localStorage.getItem("isLogin");
+
     return (
-        <>
-            <Grid container sx={{ height: '100vh' }}>
+        <ThemeProvider theme={theme}>
+            <Grid container sx={{ maxHeight: "100vh" }}>
                 <Grid
                     md={6}
                     item
@@ -89,8 +82,11 @@ export default function Login() {
                         <Box sx={{
                             display: 'flex',
                             flexDirection: 'column',
-                            width: '405px',
-                            height: '101px',
+                            maxWidth: '405px',
+                            height: {
+                                md: '88.6px',
+                                lg: '98px',
+                            },
                             marginTop: '84px',
                             marginLeft: '86px',
                         }}>
@@ -127,90 +123,143 @@ export default function Login() {
                         </Box>
                     </Stack>
                 </Grid>
-                <Stack
-                    sx={{
-                        width: '381px',
-                        margin: '204px 151px'
-                    }}
+                <Grid
+                    md={6}
+                    item
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
                 >
-                    <Typography
-                        sx={{
-                            color: '#161C24',
-                            fontSize: '48px',
-                            fontStyle: 'normal',
-                            fontWeight: 700,
-                            lineHeight: 'normal',
-                            textAlign: 'start'
-                        }}
-                    >
-                        Login
-                    </Typography>
-                    <Typography
-                        sx={{
-                            color: '#161C24',
-                            fontSize: '16px',
-                            fontStyle: 'normal',
-                            fontWeight: 500,
-                            lineHeight: 'normal',
-                            my: '12px',
-                            textAlign: 'start'
-                        }}
-                    >
-                        Enter your account details
-                    </Typography>
-                    <FormControl>
-                        <InputLabel htmlFor="name"></InputLabel>
-                        {/* <Typography sx={{ display: 'none' }}></Typography> */}
-                        <Input
-                            placeholder="Username"
-                            type="Username"
-                            autoComplete="off"
-                            helperText={helper && '*Enter Valid Username'}
-                            onChange={(e) => setUsername(e.target.value)}
-                        />
-
-                        <InputLabel htmlFor="password" />
-                        {/* <Typography sx={{ display: 'none' }}></Typography> */}
-                        <Input
+                    <Box>
+                        <Box
+                            id="login-header-div"
                             sx={{
-                                marginTop: '20px'
+                                fontSize: "48px",
+                                fontStyle: "normal",
+                                display: "flex",
+                                flexDirection: "column",
                             }}
-                            type={showPassword ? 'text' : 'password'}
-                            id="password"
-                            onChange={(e) => setPassword(e.target.value)}
-                            placeholder="Password"
-                            autoComplete="off"
-                            helperText={helper && '*Enter Valid Username'}
-                            endAdornment={
-                                <InputAdornment position="end">
-                                    <IconButton
-                                        onClick={handleTogglePasswordVisibility}
-                                        edge="end">
-                                        {showPassword ? <VisibilityOff /> : <Visibility />}
-                                    </IconButton>
-                                </InputAdornment>
-                            }
-                        />
-
-                        <FormControlLabel
-                            control={
-                                <Checkbox id="rememberMe"
-                                    onChange={handleCheckboxChange}
-                                />
-                            }
-                            label="Remember Me"
-                        />
-
-                        <Button variant="contained" color="primary"
-                            onClick={handleLogin}
                         >
-                            Login
-                        </Button>
-                    </FormControl>
-                </Stack>
+                            <Box
+                                sx={{
+                                    color: "#161c24",
+                                    fontFamily: "Poppins",
+                                    fontSize: "48px",
+                                    fontStyle: "normal",
+                                    fontWeight: 700,
+                                    lineHeight: "normal",
+                                }}
+                            >
+                                Login
+                            </Box>
+                            <Box
+                                id="account-details"
+                                sx={{
+                                    color: "#161c24",
+                                    fontFamily: "Poppins",
+                                    fontSize: "16px",
+                                    fontStyle: "normal",
+                                    fontWeight: 500,
+                                    lineHeight: "normal",
+                                }}
+                            >
+                                Enter your account details
+                            </Box>
+                        </Box>
+                        <Box id="login-cred-div" sx={{ marginTop: "48px", width: "381px" }}>
+                            <TextField
+                                className="cred-field"
+                                label="Username"
+                                variant="standard"
+                                autoComplete="off"
+                                value={username}
+                                onChange={handleUsername}
+                                helperText={usernameHelper && "*Enter Valid Username"}
+                                error={usernameHelper}
+                                sx={{ width: "100%" }}
+                            />
+                            <TextField
+                                className="cred-field"
+                                sx={{ width: "100%" }}
+                                label="Password"
+                                variant="standard"
+                                onChange={handlePassword}
+                                value={password}
+                                type={!isClicked ? "password" : "text"}
+                                error={passwordHelper}
+                                helperText={passwordHelper && "*Enter valid Password"}
+                                InputProps={{
+                                    endAdornment: (
+                                        <InputAdornment position="end" sx={{ cursor: "pointer" }}>
+                                            {!isClicked ? (
+                                                <VisibilityOffIcon
+                                                    className="visibility-button"
+                                                    onClick={handleClick}
+                                                />
+                                            ) : (
+                                                <Visibility
+                                                    className="visibility-button"
+                                                    onClick={handleClick}
+                                                />
+                                            )}
+                                        </InputAdornment>
+                                    ),
+                                }}
+                            ></TextField>
+                            <Box
+                                id="login-remember-div"
+                                sx={{ marginTop: "2px", display: "flex", alignItems: "center" }}
+                            >
+                                <input
+                                    type="checkbox"
+                                    id="remember"
+                                    style={{
+                                        width: "14.823px",
+                                        height: "14.823px",
+                                        borderRadius: "3px",
+                                        marginRight: "5px",
+                                        marginTop: "5px",
+                                        fontWeight: 100,
+                                    }}
+                                />
+                                <label
+                                    htmlFor="remember"
+                                    id="remember-text"
+                                    style={{
+                                        marginTop: "3px",
+                                        color: "#919EAB",
+                                        textAlign: "center",
+                                        fontFamily: "Poppins",
+                                        fontSize: "14px",
+                                        fontStyle: "normal",
+                                        fontWeight: 400,
+                                        lineHeight: "normal",
+                                    }}
+                                >
+                                    Remember me
+                                </label>
+                            </Box>
+                            <Button
+                                className="cred-field"
+                                variant="contained"
+                                sx={{
+                                    marginTop: "30px",
+                                    backgroundColor: "#0B58F5",
+                                    padding: "10px",
+                                    borderRadius: "10px",
+                                    fontFamily: "Poppins",
+                                    width: "100%",
+                                }}
+                                onClick={handleLogin}
+                            >
+                                Login
+                            </Button>
+                        </Box>
+                    </Box>
+                </Grid>
             </Grid>
-
-
-        </>
+        </ThemeProvider>
     );
 }
+
+export default Login;

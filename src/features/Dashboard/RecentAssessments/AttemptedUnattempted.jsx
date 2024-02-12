@@ -52,11 +52,19 @@ export default function AttemptedUnattempted() {
             >
                 <Box display={'flex'} flexDirection={'row'}>
                     <CircleIcon sx={{ ...circleIcon, color: 'blue', }} />
-                    <Typography variant={'subtitle2'} fontWeight={'400'}>Attempted</Typography>
+                    <Typography variant={'subtitle2'} fontWeight={'400'}
+                        sx={{
+                            md: pxToRem(8),
+                            lg: pxToRem(14)
+                        }}
+                    >Attempted</Typography>
                 </Box>
                 <Box display={'flex'} flexDirection={'row'}>
                     <CircleIcon sx={{ ...circleIcon, color: 'red', }} />
-                    <Typography variant={'subtitle2'} fontWeight={'400'}>Unattempted</Typography>
+                    <Typography variant={'subtitle2'} fontWeight={'400'} sx={{
+                        md: pxToRem(8),
+                        lg: pxToRem(14)
+                    }}>Unattempted</Typography>
                 </Box>
                 <Box display='flex' flexDirection={'row'}>
                     <InputLabel

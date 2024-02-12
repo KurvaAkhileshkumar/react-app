@@ -2,7 +2,7 @@ import MuiColumnChart from "../../../components/common/MuiColumnChart";
 import palette from "../../../theme/palette";
 import Typography from '@mui/material/Typography';
 import AttemptedUnattempted from "./AttemptedUnattempted";
-import typography from "../../../theme/typography";
+import typography, { pxToRem } from "../../../theme/typography";
 import { useSelector } from "react-redux";
 import { Box } from "@mui/material";
 import Skeleton from '@mui/material/Skeleton';
@@ -50,7 +50,11 @@ export default function RecenetAssessmentsChart() {
                             sx={{
                                 marginLeft: '23px',
                                 textAlign: 'start',
-                                color: (theme) => theme.palette.grey[900]
+                                color: (theme) => theme.palette.grey[900],
+                                fontSize: {
+                                    md: pxToRem(14),
+                                    lg: pxToRem(20)
+                                }
                             }}>
                             Recent Assessments
                         </Typography>
@@ -62,7 +66,11 @@ export default function RecenetAssessmentsChart() {
                             textAlign: 'start',
                             marginLeft: '23px',
                             color: (theme) => theme.palette.grey[900],
-                            fontWeight: typography.fontWeightMedium
+                            fontWeight: typography.fontWeightMedium,
+                            fontSize: {
+                                md: pxToRem(10),
+                                lg: pxToRem(14)
+                            }
                         }}>
                         Avg.performance
                     </Typography>

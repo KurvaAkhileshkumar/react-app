@@ -3,15 +3,23 @@ import document from '../../../assets/document.svg'
 import presentationChart from '../../../assets/presention-chart.svg'
 import Typography from '@mui/material/Typography';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import typography from "../../../theme/typography";
 import { poppinsFont, pxToRem } from "../../../theme/typography";
 import palette from "../../../theme/palette";
+import { courseSliceActions } from "../../../Store/Store";
 
 const icons = [document, presentationChart, presentationChart]
 export default function ContinueReadingCard() {
     const continueReadingCardData = useSelector((state) => state.coursesReducer.continueReadingCardData)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const goToPdf = (name, url) => {
+        window.scrollTo(0, 0)
+        dispatch(courseSliceActions.setPdf({ name, url }))
+        navigate(`/pdf/viewpdf/${encodeURIComponent(url)}`)
+    }
     return (
         <>
             <Box
@@ -90,17 +98,18 @@ export default function ContinueReadingCard() {
                                                     {item.name}
                                                 </Typography>
                                             </Box>
-                                            <Link to={`/pdf/viewpdf/${encodeURIComponent(item.url)}`}>
-                                                <ArrowForwardIcon
-                                                    sx={{
-                                                        width: '20px',
-                                                        height: '15px',
-                                                        marginTop: '25px',
-                                                        alignContent: 'flex-start',
-                                                        strokeWidth: '2px',
+                                            <ArrowForwardIcon
+                                                cursor={'pointer'}
+                                                onClick={() => goToPdf(item.name, item.url)}
+                                                sx={{
+                                                    width: '20px',
+                                                    height: '15px',
+                                                    marginTop: '25px',
+                                                    alignContent: 'flex-start',
+                                                    strokeWidth: '2px',
 
-                                                    }}
-                                                /></Link>
+                                                }}
+                                            />
                                         </Box>
                                     </Box>
                                 </Box>

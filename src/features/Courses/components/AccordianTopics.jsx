@@ -10,11 +10,13 @@ import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
 import document from '../../../assets/document.svg'
 import VectorBlue from '../../../assets/VectorBlue.svg'
-import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Tab from '@mui/material/Tab'
 import Tabs from '@mui/material/Tabs'
 import Search from '../../../assets/Search'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { courseSliceActions } from '../../../Store/Store'
 
 export default function AccordianTopics() {
 
@@ -40,6 +42,14 @@ export default function AccordianTopics() {
 
     const handleSearchInputChange = (event) => {
         setSearchInput(event.target.value)
+    }
+
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const goToPdf = (name, url) => {
+        window.scrollTo(0, 0)
+        dispatch(courseSliceActions.setPdf({ name, url }))
+        navigate(`/pdf/viewpdf/${encodeURIComponent(url)}`)
     }
     return (
         <>
@@ -135,7 +145,6 @@ export default function AccordianTopics() {
                                             <AccordionDetails
                                                 key={materialItemsIndex}
                                                 sx={{
-                                                    padding: '0px 0px 12px 12px',
                                                     display: 'flex',
                                                     width: '504px',
                                                     fontFamily: poppinsFont.fontFamily,
@@ -165,40 +174,42 @@ export default function AccordianTopics() {
                                                     >
                                                         {materialItems.name}
                                                     </Typography>
-                                                    <Link
-                                                        to={`/pdf/viewpdf/${encodeURIComponent(
-                                                            materialItems.url
-                                                        )}`}
+                                                    <Box
+                                                        onClick={() => { goToPdf(materialItems.name, materialItems.url) }}
+                                                        display={'flex'}
+                                                        flexDirection={'row'}
+                                                        position={'absolute'}
+                                                        right={'10px'}
+                                                        sx={{
+                                                            cursor: 'pointer'
+                                                        }}
                                                     >
-                                                        <Box
-                                                            display={'flex'}
-                                                            flexDirection={'row'}
-                                                            position={'absolute'}
-                                                            right={'10px'}
+                                                        <Typography
+                                                            color={palette.primary.main}
+                                                            fontFamily={poppinsFont.fontFamily}
+                                                            fontSize={pxToRem(14)}
+                                                            fontWeight={400}
+                                                            fontStyle={'normal'}
+                                                            lineHeight={'normal'}
+                                                            sx={{
+
+                                                            }}
                                                         >
-                                                            <Typography
-                                                                color={palette.primary.main}
-                                                                fontFamily={poppinsFont.fontFamily}
-                                                                fontSize={pxToRem(14)}
-                                                                fontWeight={400}
-                                                                fontStyle={'normal'}
-                                                                lineHeight={'normal'}
-                                                            >
-                                                                Start
-                                                            </Typography>
-                                                            <Box
-                                                                sx={{
-                                                                    width: '14px',
-                                                                    height: '14px',
-                                                                    borderRadius: '5px',
-                                                                    marginTop: '4px',
-                                                                    marginLeft: '8px',
-                                                                }}
-                                                            >
-                                                                <img src={VectorBlue} alt="Broken" />
-                                                            </Box>
+                                                            Start
+                                                        </Typography>
+                                                        <Box
+                                                            sx={{
+
+                                                                width: '14px',
+                                                                height: '14px',
+                                                                borderRadius: '5px',
+                                                                marginTop: '4px',
+                                                                marginLeft: '8px',
+                                                            }}
+                                                        >
+                                                            <img src={VectorBlue} alt="Broken" />
                                                         </Box>
-                                                    </Link>
+                                                    </Box>
                                                 </Box>
                                             </AccordionDetails>
                                         )
