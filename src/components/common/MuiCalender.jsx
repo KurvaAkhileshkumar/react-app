@@ -10,6 +10,7 @@ export default function MuiCalendar() {
                 <DateCalendar
                     views={['day']}
                     sx={{
+
                         '&.MuiDateCalendar-root': {
                             width: '100%',
                             maxHeight: '234px',
